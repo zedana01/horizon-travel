@@ -10,9 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function toggleMobileMenu() {
+            var d = document.getElementById('mobileMenuDrawer');
+            var o = document.getElementById('mobileDrawerOverlay');
+            if (!d) return;
+            d.classList.toggle('active');
+            if (o) o.classList.toggle('active');
+            document.body.style.overflow = d.classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            var d = document.getElementById('mobileMenuDrawer');
+            var o = document.getElementById('mobileDrawerOverlay');
+            if (d) d.classList.remove('active');
+            if (o) o.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
 </head>
 <body>
-    <!-- 1. TOP ANNOUNCEMENT BAR -->
+    <!-- 1. TOP ANNOUNCEMENT BAR (Desktop) -->
     <div class="tour-top-bar">
         <div class="tour-container tour-top-bar-inner">
             <div>
@@ -28,7 +45,7 @@
         </div>
     </div>
 
-    <!-- 2. EXECUTIVE MODERN LIGHT HEADER -->
+    <!-- 2. EXECUTIVE MODERN LIGHT HEADER (Desktop) -->
     <header class="tour-header" id="home">
         <div class="tour-container tour-header-main">
             <!-- Brand Logo -->
@@ -69,7 +86,7 @@
             </div>
         </div>
 
-        <!-- Secondary Navigation Bar -->
+        <!-- Secondary Navigation Bar (Desktop) -->
         <div class="tour-navbar">
             <div class="tour-container tour-navbar-inner">
                 <ul class="tour-nav-menu">
@@ -84,8 +101,8 @@
                     <li class="tour-nav-item "><a href="destination.html">الوجهات العالمية</a></li>
                     <li class="tour-nav-item"><a href="destination.html?dest=maldives">جزر المالديف</a></li>
                     <li class="tour-nav-item"><a href="destination.html?dest=swiss">سويسرا والألب</a></li>
-                    <li class="tour-nav-item"><a href="destination.html?dest=egypt">مصر والأقصر</a></li>
-                    <li class="tour-nav-item"><a href="destination.html?dest=turkey">تركيا وكابادوكيا</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=egypt">مصر وسحر النيل</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=cappadocia">تركيا وكابادوكيا</a></li>
                     <li class="tour-nav-item"><a href="destination.html?dest=alula">العلا والمملكة</a></li>
                     <li class="tour-nav-item "><a href="about.html">من نحن</a></li>
                     <li class="tour-nav-item active"><a href="contact.html">اتصل بنا</a></li>
@@ -97,6 +114,45 @@
             </div>
         </div>
     </header>
+
+    <!-- MOBILE STICKY HEADER (Visible ONLY on Mobile) -->
+    <div class="mobile-header-bar">
+        <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="tour-logo-link" style="gap:8px;">
+            <div class="tour-logo-icon" style="width:36px; height:36px; font-size:16px;">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <div class="tour-logo-text">
+                <span class="tour-logo-title" style="font-size:18px;">هورايزون تورز</span>
+                <span class="tour-logo-sub" style="font-size:8px;">LUXURY TOURS</span>
+            </div>
+        </a>
+        <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20حجز%20رحلة" target="_blank" style="width:38px; height:38px; background:#25d366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:18px;" title="واتساب">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- MOBILE SUB-BAR (Direct Horizontal Scrollable Strip for Mobile) -->
+    <div class="mobile-sub-bar">
+        <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
+            <i class="fa-solid fa-bars"></i>
+            <span>الوجهات</span>
+        </button>
+        <div class="mob-sub-links-scroll">
+            <a href="index.html" class="">الرئيسية</a>
+            <a href="tours.html" class="">كافة الباقات</a>
+            <a href="destination.html" class="">الوجهات</a>
+            <a href="destination.html?dest=maldives">المالديف</a>
+            <a href="destination.html?dest=swiss">سويسرا</a>
+            <a href="destination.html?dest=cappadocia">تركيا</a>
+            <a href="destination.html?dest=egypt">مصر</a>
+            <a href="destination.html?dest=alula">العلا</a>
+            <a href="about.html" class="">من نحن</a>
+            <a href="contact.html" class="active">اتصل بنا</a>
+        </div>
+    </div>
 
     <!-- HERO TITLE -->
     <div style="position: relative; background: #0f172a; min-height: 280px; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 50px 20px; overflow: hidden; border-bottom: 3px solid var(--color-primary);">
@@ -264,7 +320,7 @@
                     <ul>
                         <li><a href="destination.html?dest=maldives">جزر المالديف الفاخرة</a></li>
                         <li><a href="destination.html?dest=swiss">سويسرا وجبال الألب</a></li>
-                        <li><a href="destination.html?dest=turkey">كابادوكيا وإسطنبول</a></li>
+                        <li><a href="destination.html?dest=cappadocia">كابادوكيا وإسطنبول</a></li>
                         <li><a href="destination.html?dest=egypt">الأهرامات وكروز النيل</a></li>
                         <li><a href="destination.html?dest=alula">واحة العلا التاريخية</a></li>
                     </ul>
@@ -310,5 +366,86 @@
             </div>
         </div>
     </footer>
+
+    <!-- SLIDE-OUT MOBILE MENU DRAWER (Exact standard as organic-food & modest-fashion) -->
+    <div class="mobile-menu-overlay" id="mobileDrawerOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu-drawer" id="mobileMenuDrawer">
+        <div class="mob-drawer-header">
+            <div class="tour-logo-link" style="gap:8px;">
+                <div class="tour-logo-icon" style="width:34px; height:34px; font-size:16px;">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <div class="tour-logo-text">
+                    <span class="tour-logo-title" style="font-size:17px;">هورايزون تورز</span>
+                    <span class="tour-logo-sub" style="font-size:8px;">LUXURY TOURS</span>
+                </div>
+            </div>
+            <button class="mob-drawer-close" onclick="toggleMobileMenu()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="mob-drawer-search">
+            <form action="tours.html" method="GET" style="display:flex; align-items:center; background:#fff; border:1px solid #cbd5e1; border-radius:30px; padding:6px 12px;">
+                <input type="text" name="q" placeholder="ابحث عن باقة أو وجهة..." style="width:100%; border:none; outline:none; font-family:inherit; font-size:13px;">
+                <button type="submit" style="background:none; border:none; color:var(--color-primary); cursor:pointer;"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <div class="mob-drawer-body">
+            <div class="mob-section-title"><i class="fa-solid fa-compass" style="margin-left:6px; color:var(--color-primary);"></i> الصفحات الرئيسية</div>
+            <div class="mob-cat-list" style="margin-bottom:24px;">
+                <a href="index.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-house" style="margin-left:8px; color:var(--color-primary);"></i> الرئيسية</span> <span>›</span></a>
+                <a href="tours.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-plane-departure" style="margin-left:8px; color:var(--color-primary);"></i> كافة باقات السفر</span> <span>›</span></a>
+                <a href="destination.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-earth-americas" style="margin-left:8px; color:var(--color-primary);"></i> الوجهات والتصنيفات</span> <span>›</span></a>
+                <a href="about.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-circle-info" style="margin-left:8px; color:var(--color-primary);"></i> من نحن وعن الوكالة</span> <span>›</span></a>
+                <a href="contact.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-headset" style="margin-left:8px; color:var(--color-primary);"></i> اتصل بنا ومكاتبنا</span> <span>›</span></a>
+                <a href="admin/index.html" class="mob-cat-item" style="background:#e0f2fe; color:var(--color-primary);"><span style="font-weight:900;"><i class="fa-solid fa-lock" style="margin-left:8px;"></i> لوحة الإدارة (Admin)</span> <span>🔑</span></a>
+            </div>
+
+            <div class="mob-section-title"><i class="fa-solid fa-location-dot" style="margin-left:6px; color:var(--color-primary);"></i> الأقسام والوجهات العالمية</div>
+            <div class="mob-cat-list" style="margin-bottom:24px;">
+                <a href="destination.html?dest=maldives" class="mob-cat-item"><span>🏝️ جزر المالديف الفاخرة</span> <span style="font-size:11.5px; color:#64748b;">3 باقات</span></a>
+                <a href="destination.html?dest=swiss" class="mob-cat-item"><span>🏔️ سويسرا وقمم الألب</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
+                <a href="destination.html?dest=cappadocia" class="mob-cat-item"><span>🎈 تركيا ومناطيد كابادوكيا</span> <span style="font-size:11.5px; color:#64748b;">3 باقات</span></a>
+                <a href="destination.html?dest=egypt" class="mob-cat-item"><span>🚢 مصر وكروز النيل الملكي</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
+                <a href="destination.html?dest=sharm" class="mob-cat-item"><span>🏖️ منتجعات شرم الشيخ</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
+                <a href="destination.html?dest=alula" class="mob-cat-item"><span>🏛️ واحة العلا التاريخية</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
+            </div>
+
+            <div class="mob-section-title"><i class="fa-brands fa-whatsapp" style="margin-left:6px; color:#25d366;"></i> خدمة العملاء الفورية</div>
+            <a href="https://wa.me/201027093535" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#25d366; color:#fff; padding:12px; border-radius:10px; font-weight:900; text-decoration:none; margin-top:8px;">
+                <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
+                <span>محادثة واتساب: 01027093535</span>
+            </a>
+            <div style="text-align:center; margin-top:12px; font-size:12.5px; color:#64748b; font-weight:700;">
+                الرقم الموحد المباشر: <strong style="color:var(--color-navy);">800-HORIZON</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION (Fixed at bottom on phones) -->
+    <div class="mobile-bottom-nav">
+        <div class="mob-nav-grid">
+            <a href="index.html" class="mob-nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>الرئيسية</span>
+            </a>
+            <a href="tours.html" class="mob-nav-item">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>الباقات</span>
+            </a>
+            <a href="destination.html" class="mob-nav-item">
+                <i class="fa-solid fa-earth-americas"></i>
+                <span>الوجهات</span>
+            </a>
+            <a href="https://wa.me/201027093535" target="_blank" class="mob-nav-item" style="color:#25d366;">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>واتساب</span>
+            </a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu()" class="mob-nav-item">
+                <i class="fa-solid fa-bars"></i>
+                <span>القائمة</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

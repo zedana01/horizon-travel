@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوجهات السياحية العالمية الفاخرة | هورايزون تورز</title>
+    <meta name="description" content="استكشف أرقى الوجهات السياحية العالمية (المالديف، سويسرا، تركيا، مصر، العلا) مع هورايزون تورز.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function toggleMobileMenu() {
+            var d = document.getElementById('mobileMenuDrawer');
+            var o = document.getElementById('mobileDrawerOverlay');
+            if (!d) return;
+            d.classList.toggle('active');
+            if (o) o.classList.toggle('active');
+            document.body.style.overflow = d.classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            var d = document.getElementById('mobileMenuDrawer');
+            var o = document.getElementById('mobileDrawerOverlay');
+            if (d) d.classList.remove('active');
+            if (o) o.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</head>
+<body>
+    <!-- 1. TOP ANNOUNCEMENT BAR (Desktop) -->
+    <div class="tour-top-bar">
+        <div class="tour-container tour-top-bar-inner">
+            <div>
+                <span class="tour-top-tag"><i class="fa-solid fa-fire"></i> عروض 2026 الحصرية</span>
+                <span>خصومات تصل إلى 35% على باقات المالديف وأوروبا عند الحجز المبكر هذا الأسبوع!</span>
+            </div>
+            <div class="tour-top-links">
+                <span><i class="fa-solid fa-phone"></i> 201027093535+</span>
+                <span><i class="fa-solid fa-headset"></i> خدمة الكونسيرج 24/7</span>
+                <span><i class="fa-solid fa-money-bill-wave"></i> العملة: ريال سعودي (SAR)</span>
+                <a href="admin/index.html" style="color: #38bdf8; font-weight: 800; text-decoration: none; margin-left: 14px;"><i class="fa-solid fa-lock"></i> لوحة الإدارة (Admin)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. EXECUTIVE MODERN LIGHT HEADER (Desktop) -->
+    <header class="tour-header" id="home">
+        <div class="tour-container tour-header-main">
+            <!-- Brand Logo -->
+            <a href="index.html" class="tour-logo-link">
+                <div class="tour-logo-icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <div class="tour-logo-text">
+                    <span class="tour-logo-title">هورايزون تورز</span>
+                    <span class="tour-logo-sub">HORIZON LUXURY ESCAPES</span>
+                </div>
+            </a>
+
+            <!-- Search Form -->
+            <form action="tours.html" method="GET" class="tour-search-form" style="display:flex; align-items:center;">
+                <i class="fa-solid fa-magnifying-glass" style="color: #64748b;"></i>
+                <input type="text" name="q" class="tour-search-input" placeholder="ابحث عن وجهتك أو برنامجك المفضل (المالديف، سويسرا، مصر، تركيا)...">
+                <button type="submit" class="tour-search-btn">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>بحث عن رحلة</span>
+                </button>
+            </form>
+
+            <!-- Action Buttons -->
+            <div class="tour-header-actions">
+                <a href="tours.html" class="tour-btn-hub">
+                    <i class="fa-solid fa-layer-group" style="color: #38bdf8;"></i>
+                    <span>كافة البرامج</span>
+                </a>
+                <a href="https://wa.me/201027093535?text=مرحباً%D8%8C%20أود%20الاستفسار%20عن%20باقات%20وعروض%20السياحة%20المتاحة" target="_blank" rel="noopener" class="tour-action-btn">
+                    <i class="fa-brands fa-whatsapp" style="color: #0284c7; font-size: 16px;"></i>
+                    <span>واتساب مباشر</span>
+                </a>
+                <a href="tours.html" class="btn-tour-primary" style="padding: 10px 20px; font-size: 13.5px;">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>احجز رحلتك</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Secondary Navigation Bar (Desktop) -->
+        <div class="tour-navbar">
+            <div class="tour-container tour-navbar-inner">
+                <ul class="tour-nav-menu">
+                    <li class="tour-nav-item">
+                        <a href="destination.html" class="tour-nav-mega-btn">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                            <span>كافة الوجهات السياحية</span>
+                        </a>
+                    </li>
+                    <li class="tour-nav-item "><a href="index.html">الرئيسية</a></li>
+                    <li class="tour-nav-item "><a href="tours.html">باقات وعروض السفر</a></li>
+                    <li class="tour-nav-item active"><a href="destination.html">الوجهات العالمية</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=maldives">جزر المالديف</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=swiss">سويسرا والألب</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=egypt">مصر وسحر النيل</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=cappadocia">تركيا وكابادوكيا</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=alula">العلا والمملكة</a></li>
+                    <li class="tour-nav-item "><a href="about.html">من نحن</a></li>
+                    <li class="tour-nav-item "><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="tour-nav-hotline">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>الرقم الموحد المباشر: <strong>800-HORIZON</strong></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE STICKY HEADER (Visible ONLY on Mobile) -->
+    <div class="mobile-header-bar">
+        <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="tour-logo-link" style="gap:8px;">
+            <div class="tour-logo-icon" style="width:36px; height:36px; font-size:16px;">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <div class="tour-logo-text">
+                <span class="tour-logo-title" style="font-size:18px;">هورايزون تورز</span>
+                <span class="tour-logo-sub" style="font-size:8px;">LUXURY TOURS</span>
+            </div>
+        </a>
+        <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20حجز%20رحلة" target="_blank" style="width:38px; height:38px; background:#25d366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:18px;" title="واتساب">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- MOBILE SUB-BAR (Direct Horizontal Scrollable Strip for Mobile) -->
+    <div class="mobile-sub-bar">
+        <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
+            <i class="fa-solid fa-bars"></i>
+            <span>الوجهات</span>
+        </button>
+        <div class="mob-sub-links-scroll">
+            <a href="index.html" class="">الرئيسية</a>
+            <a href="tours.html" class="">كافة الباقات</a>
+            <a href="destination.html" class="active">الوجهات</a>
+            <a href="destination.html?dest=maldives">المالديف</a>
+            <a href="destination.html?dest=swiss">سويسرا</a>
+            <a href="destination.html?dest=cappadocia">تركيا</a>
+            <a href="destination.html?dest=egypt">مصر</a>
+            <a href="destination.html?dest=alula">العلا</a>
+            <a href="about.html" class="">من نحن</a>
+            <a href="contact.html" class="">اتصل بنا</a>
+        </div>
+    </div>
+
+    <!-- DYNAMIC DESTINATION HERO BANNER -->
+    <div id="destHeroBanner" style="position: relative; background: #0f172a; min-height: 280px; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 50px 20px; overflow: hidden; border-bottom: 3px solid var(--color-primary);">
+        <img id="destBannerImg" src="images/maldives.jpg" alt="الوجهة" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.38;">
+        <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+            <span id="destBadge" style="display: inline-block; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 800; padding: 5px 16px; border-radius: 50px; margin-bottom: 12px; letter-spacing: 1px;">MALDIVES RESORTS</span>
+            <h1 id="destTitle" style="font-size: 36px; font-weight: 900; color: #ffffff; margin-bottom: 12px;">جزر المالديف الفاخرة</h1>
+            <p id="destDesc" style="font-size: 16px; color: #e2e8f0; line-height: 1.8; margin: 0 auto; max-width: 680px;">
+                منتجعات وفيلات عائمة فوق المياه الفيروزية مع خصوصية ملكية تامة وشواطئ رملية بيضاء نقية مع خدمات الـ VIP.
+            </p>
+        </div>
+    </div>
+
+    <!-- DESTINATION QUICK CHIPS -->
+    <div style="background: #ffffff; border-bottom: 1px solid var(--color-border); padding: 16px 0; position: sticky; top: 0; z-index: 90; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div class="tour-container" style="display: flex; align-items: center; gap: 10px; overflow-x: auto; white-space: nowrap; scrollbar-width: none;">
+            <a href="destination.html?dest=all" class="dest-chip" data-dest="all" style="padding: 8px 18px; border-radius: 50px; font-size: 13.5px; font-weight: 800; text-decoration: none; border: 1.5px solid var(--color-border); color: #1e293b; transition: all 0.2s;">كافة الوجهات</a>
+            <a href="destination.html?dest=maldives" class="dest-chip" data-dest="maldives" style="padding: 8px 18px; border-radius: 50px; font-size: 13.5px; font-weight: 800; text-decoration: none; border: 1.5px solid var(--color-border); color: #1e293b; transition: all 0.2s;">جزر المالديف</a>
+            <a href="destination.html?dest=swiss" class="dest-chip" data-dest="swiss" style="padding: 8px 18px; border-radius: 50px; font-size: 13.5px; font-weight: 800; text-decoration: none; border: 1.5px solid var(--color-border); color: #1e293b; transition: all 0.2s;">سويسرا والألب</a>
+            <a href="destination.html?dest=cappadocia" class="dest-chip" data-dest="cappadocia" style="padding: 8px 18px; border-radius: 50px; font-size: 13.5px; font-weight: 800; text-decoration: none; border: 1.5px solid var(--color-border); color: #1e293b; transition: all 0.2s;">تركيا وكابادوكيا</a>
+            <a href="destination.html?dest=egypt" class="dest-chip" data-dest="egypt" style="padding: 8px 18px; border-radius: 50px; font-size: 13.5px; font-weight: 800; text-decoration: none; border: 1.5px solid var(--color-border); color: #1e293b; transition: all 0.2s;">مصر وكروز النيل</a>
+            <a href="destination.html?dest=alula" class="dest-chip" data-dest="alula" style="padding: 8px 18px; border-radius: 50px; font-size: 13.5px; font-weight: 800; text-decoration: none; border: 1.5px solid var(--color-border); color: #1e293b; transition: all 0.2s;">واحة العلا</a>
+        </div>
+    </div>
+
+    <!-- DESTINATIONS TOURS GRID -->
+    <section style="padding: 50px 0 80px; background: var(--color-bg);">
+        <div class="tour-container">
+            <div class="tour-section-header" style="margin-bottom: 30px;">
+                <div>
+                    <span class="tour-section-subtitle"><i class="fa-solid fa-map-location-dot"></i> البرامج المتاحة في هذه الوجهة</span>
+                    <h2 class="tour-section-title" id="destSectionTitle">الباقات السياحية المتوفرة</h2>
+                </div>
+                <a href="tours.html" class="tour-btn-hub" style="text-decoration:none;">عرض كافة البرامج</a>
+            </div>
+
+            <div class="tour-grid" id="destToursGrid">
+                <div class="tour-card" data-dest="maldives">
+                    <div class="tour-card-badge">خصم 22%</div>
+                    <a href="tour-detail.html?id=1" class="tour-card-img-box">
+                        <img src="images/maldives.jpg" alt="باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>جزر المالديف • MALDIVES • 6 أيام / 5 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=1" style="color:inherit; text-decoration:none;">باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    4,850 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">6,200 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=1" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص%20بسعر%204850%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="switzerland">
+                    <div class="tour-card-badge">الأكثر طلباً</div>
+                    <a href="tour-detail.html?id=2" class="tour-card-img-box">
+                        <img src="images/swiss_alps.jpg" alt="سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>سويسرا • SWITZERLAND • 8 أيام / 7 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=2" style="color:inherit; text-decoration:none;">سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    5,600 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">7,100 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=2" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري%20بسعر%205600%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="turkey">
+                    <div class="tour-card-badge">رحلة منطاد مجانية</div>
+                    <a href="tour-detail.html?id=3" class="tour-card-img-box">
+                        <img src="images/cappadocia.jpg" alt="مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>تركيا • TURKEY • 6 أيام / 5 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=3" style="color:inherit; text-decoration:none;">مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    3,200 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">4,100 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=3" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة%20بسعر%203200%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="egypt">
+                    <div class="tour-card-badge">باقة شاملة VIP</div>
+                    <a href="tour-detail.html?id=4" class="tour-card-img-box">
+                        <img src="images/egypt_pyramids.jpg" alt="كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>مصر • EGYPT • 7 أيام / 6 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=4" style="color:inherit; text-decoration:none;">كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    2,850 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">3,600 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=4" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية%20بسعر%202850%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="egypt">
+                    <div class="tour-card-badge">الترا شامل كلياً</div>
+                    <a href="tour-detail.html?id=5" class="tour-card-img-box">
+                        <img src="images/sharm_resort.jpg" alt="منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>شرم الشيخ • RED SEA • 5 أيام / 4 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=5" style="color:inherit; text-decoration:none;">منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    2,150 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">2,800 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=5" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد%20بسعر%202150%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="alula">
+                    <div class="tour-card-badge">تجربة استثنائية</div>
+                    <a href="tour-detail.html?id=6" class="tour-card-img-box">
+                        <img src="images/alula_resort.jpg" alt="واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>العلا • SAUDI ARABIA • 4 أيام / 3 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=6" style="color:inherit; text-decoration:none;">واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    4,200 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">5,300 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=6" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر%20بسعر%204200%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="switzerland">
+                    <div class="tour-card-badge">حرية واستكشاف</div>
+                    <a href="tour-detail.html?id=7" class="tour-card-img-box">
+                        <img src="images/camper_van.jpg" alt="مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>سويسرا • SWITZERLAND • 7 أيام / 6 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=7" style="color:inherit; text-decoration:none;">مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    3,650 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">4,600 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=7" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية%20بسعر%203650%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card" data-dest="maldives">
+                    <div class="tour-card-badge">شهر عسل ملكي</div>
+                    <a href="tour-detail.html?id=8" class="tour-card-img-box">
+                        <img src="images/honeymoon.jpg" alt="باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص" loading="lazy">
+                    </a>
+                    <div class="tour-card-body">
+                        <div>
+                            <div class="tour-card-cat">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>جزر المالديف • HONEYMOON • 7 أيام / 6 ليالٍ</span>
+                            </div>
+                            <h3 class="tour-card-title"><a href="tour-detail.html?id=8" style="color:inherit; text-decoration:none;">باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص</a></h3>
+                            <div class="tour-card-specs">
+                                <span><i class="fa-solid fa-plane"></i> طيران دولي</span>
+                                <span><i class="fa-solid fa-hotel"></i> 5 نجوم دي لوكس</span>
+                                <span><i class="fa-solid fa-utensils"></i> إفطار يومي</span>
+                            </div>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="tour-card-reviews">(38 مسافر قيّموا التجربة)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="tour-card-pricing">
+                                <div class="tour-price-current">
+                                    5,200 <span>ر.س / للفرد</span>
+                                </div>
+                                <div class="tour-price-old">6,800 ر.س</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="tour-detail.html?id=8" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <span>التفاصيل</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص%20بسعر%205200%20ر.س" target="_blank" class="btn-tour-primary" style="flex:1.4; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>احجز الآن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    const destMeta = {
+        'maldives': { name: 'جزر المالديف الفاخرة', badge: 'MALDIVES RESORTS', desc: 'منتجعات وفيلات عائمة فوق المياه الفيروزية مع خصوصية ملكية تامة وشواطئ رملية بيضاء نقية.', img: 'images/maldives.jpg' },
+        'swiss': { name: 'سويسرا وقمم جبال الألب', badge: 'SWISS ALPS & LAKES', desc: 'بحيرات نقية، قطار بانورامي فاخر، ومروج خضراء وشلالات أسطورية في إنترلاكن ولوسيرن.', img: 'images/swiss_alps.jpg' },
+        'cappadocia': { name: 'تركيا ومناطيد كابادوكيا', badge: 'TURKEY & CAPPADOCIA', desc: 'التحليق بالمناطيد الهوائية وقت الشروق والإقامة في أجنحة الكهوف الفاخرة وسحر البوسفور.', img: 'images/cappadocia.jpg' },
+        'egypt': { name: 'مصر وكروز النيل الملكي', badge: 'EGYPT & NILE CRUISE', desc: 'كروز نيلية 5 نجوم دي لوكس بين الأقصر وأسوان، أهرامات الجيزة، ومنتجعات شرم الشيخ الفاخرة.', img: 'images/egypt_pyramids.jpg' },
+        'sharm': { name: 'شرم الشيخ والبحر الأحمر', badge: 'SHARM RESORTS', desc: 'منتجعات ريكسوس الفاخرة ويخوت بحرية خاصة لمحمية رأس محمد والمغاطس العالمية.', img: 'images/sharm_resort.jpg' },
+        'alula': { name: 'واحة العلا التاريخية', badge: 'ALULA LUXURY OASIS', desc: 'إقامة أسطورية في منتجعات بانيان تري ومسار الحجر وجولات النجوم ومسرح مرايا العالمي.', img: 'images/alula_resort.jpg' }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const curDest = params.get('dest') || 'maldives';
+
+        document.querySelectorAll('.dest-chip').forEach(c => {
+            if (c.getAttribute('data-dest') === curDest) {
+                c.style.background = 'var(--color-primary)';
+                c.style.color = '#ffffff';
+                c.style.borderColor = 'var(--color-primary)';
+            }
+        });
+
+        if (destMeta[curDest]) {
+            const m = destMeta[curDest];
+            document.getElementById('destTitle').textContent = m.name;
+            document.getElementById('destDesc').textContent = m.desc;
+            document.getElementById('destBadge').textContent = m.badge;
+            document.getElementById('destBannerImg').src = m.img;
+            document.getElementById('destSectionTitle').textContent = 'باقات ' + m.name;
+        }
+
+        const cards = document.querySelectorAll('#destToursGrid .tour-card');
+        cards.forEach(card => {
+            const dest = card.getAttribute('data-dest');
+            if (curDest === 'all' || dest === curDest) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+    </script>
+    <!-- FOOTER -->
+    <footer class="tour-footer">
+        <div class="tour-container">
+            <div class="tour-footer-grid">
+                <div class="tour-footer-col">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                        <div class="tour-logo-icon" style="width: 38px; height: 38px; font-size: 18px;">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <span style="font-size: 20px; font-weight: 900; color: #ffffff;">هورايزون تورز</span>
+                    </div>
+                    <p style="font-size: 13.5px; color: #94a3b8; line-height: 1.8; margin-bottom: 20px;">
+                        وكالة هورايزون لاكجري تورز العالمية، بوابتك لتجارب سفر لا تُنسى في أرقى وجهات العالم، مصممة بأعلى معايير الرفاهية والأمان وخدمة الكونسيرج الخاصة.
+                    </p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://wa.me/201027093535" target="_blank" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="tour-footer-col">
+                    <h4>أشهر الوجهات</h4>
+                    <ul>
+                        <li><a href="destination.html?dest=maldives">جزر المالديف الفاخرة</a></li>
+                        <li><a href="destination.html?dest=swiss">سويسرا وجبال الألب</a></li>
+                        <li><a href="destination.html?dest=cappadocia">كابادوكيا وإسطنبول</a></li>
+                        <li><a href="destination.html?dest=egypt">الأهرامات وكروز النيل</a></li>
+                        <li><a href="destination.html?dest=alula">واحة العلا التاريخية</a></li>
+                    </ul>
+                </div>
+
+                <div class="tour-footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="tours.html">كافة الباقات السياحية</a></li>
+                        <li><a href="destination.html">الوجهات العالمية</a></li>
+                        <li><a href="about.html">من نحن وعن الوكالة</a></li>
+                        <li><a href="contact.html">اتصل بنا ومكاتبنا</a></li>
+                        <li><a href="admin/index.html">لوحة الإدارة (Admin PIN: 1234)</a></li>
+                    </ul>
+                </div>
+
+                <div class="tour-footer-col">
+                    <h4>خدمة العملاء والاتصال</h4>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 10px;">
+                        <i class="fa-solid fa-phone" style="color: #0284c7; margin-left: 8px;"></i> 201027093535+
+                    </p>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 10px;">
+                        <i class="fa-solid fa-envelope" style="color: #0284c7; margin-left: 8px;"></i> concierge@horizontours.com
+                    </p>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: #0284c7; margin-left: 8px;"></i> برج المملكة - الرياض / شارع التسعين - القاهرة
+                    </p>
+                    <div style="background: #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 12px; color: #cbd5e1; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-shield-halved" style="color: #38bdf8;"></i>
+                        <span>حجوزات مرخصة ومعتمدة رسمياً | عضو منظمة IATA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-footer-bottom">
+                <div>جميع الحقوق محفوظة © 2026 لوكالة هورايزون لاكجري تورز للسياحة والسفر</div>
+                <div style="display: flex; gap: 14px;">
+                    <a href="about.html" style="color: #64748b;">عن الوكالة</a>
+                    <a href="contact.html" style="color: #64748b;">خدمة العملاء</a>
+                    <a href="admin/index.html" style="color: #38bdf8; font-weight:800;">لوحة التحكم</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OUT MOBILE MENU DRAWER (Exact standard as organic-food & modest-fashion) -->
+    <div class="mobile-menu-overlay" id="mobileDrawerOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu-drawer" id="mobileMenuDrawer">
+        <div class="mob-drawer-header">
+            <div class="tour-logo-link" style="gap:8px;">
+                <div class="tour-logo-icon" style="width:34px; height:34px; font-size:16px;">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <div class="tour-logo-text">
+                    <span class="tour-logo-title" style="font-size:17px;">هورايزون تورز</span>
+                    <span class="tour-logo-sub" style="font-size:8px;">LUXURY TOURS</span>
+                </div>
+            </div>
+            <button class="mob-drawer-close" onclick="toggleMobileMenu()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="mob-drawer-search">
+            <form action="tours.html" method="GET" style="display:flex; align-items:center; background:#fff; border:1px solid #cbd5e1; border-radius:30px; padding:6px 12px;">
+                <input type="text" name="q" placeholder="ابحث عن باقة أو وجهة..." style="width:100%; border:none; outline:none; font-family:inherit; font-size:13px;">
+                <button type="submit" style="background:none; border:none; color:var(--color-primary); cursor:pointer;"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <div class="mob-drawer-body">
+            <div class="mob-section-title"><i class="fa-solid fa-compass" style="margin-left:6px; color:var(--color-primary);"></i> الصفحات الرئيسية</div>
+            <div class="mob-cat-list" style="margin-bottom:24px;">
+                <a href="index.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-house" style="margin-left:8px; color:var(--color-primary);"></i> الرئيسية</span> <span>›</span></a>
+                <a href="tours.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-plane-departure" style="margin-left:8px; color:var(--color-primary);"></i> كافة باقات السفر</span> <span>›</span></a>
+                <a href="destination.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-earth-americas" style="margin-left:8px; color:var(--color-primary);"></i> الوجهات والتصنيفات</span> <span>›</span></a>
+                <a href="about.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-circle-info" style="margin-left:8px; color:var(--color-primary);"></i> من نحن وعن الوكالة</span> <span>›</span></a>
+                <a href="contact.html" class="mob-cat-item"><span style="font-weight:800;"><i class="fa-solid fa-headset" style="margin-left:8px; color:var(--color-primary);"></i> اتصل بنا ومكاتبنا</span> <span>›</span></a>
+                <a href="admin/index.html" class="mob-cat-item" style="background:#e0f2fe; color:var(--color-primary);"><span style="font-weight:900;"><i class="fa-solid fa-lock" style="margin-left:8px;"></i> لوحة الإدارة (Admin)</span> <span>🔑</span></a>
+            </div>
+
+            <div class="mob-section-title"><i class="fa-solid fa-location-dot" style="margin-left:6px; color:var(--color-primary);"></i> الأقسام والوجهات العالمية</div>
+            <div class="mob-cat-list" style="margin-bottom:24px;">
+                <a href="destination.html?dest=maldives" class="mob-cat-item"><span>🏝️ جزر المالديف الفاخرة</span> <span style="font-size:11.5px; color:#64748b;">3 باقات</span></a>
+                <a href="destination.html?dest=swiss" class="mob-cat-item"><span>🏔️ سويسرا وقمم الألب</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
+                <a href="destination.html?dest=cappadocia" class="mob-cat-item"><span>🎈 تركيا ومناطيد كابادوكيا</span> <span style="font-size:11.5px; color:#64748b;">3 باقات</span></a>
+                <a href="destination.html?dest=egypt" class="mob-cat-item"><span>🚢 مصر وكروز النيل الملكي</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
+                <a href="destination.html?dest=sharm" class="mob-cat-item"><span>🏖️ منتجعات شرم الشيخ</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
+                <a href="destination.html?dest=alula" class="mob-cat-item"><span>🏛️ واحة العلا التاريخية</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
+            </div>
+
+            <div class="mob-section-title"><i class="fa-brands fa-whatsapp" style="margin-left:6px; color:#25d366;"></i> خدمة العملاء الفورية</div>
+            <a href="https://wa.me/201027093535" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#25d366; color:#fff; padding:12px; border-radius:10px; font-weight:900; text-decoration:none; margin-top:8px;">
+                <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
+                <span>محادثة واتساب: 01027093535</span>
+            </a>
+            <div style="text-align:center; margin-top:12px; font-size:12.5px; color:#64748b; font-weight:700;">
+                الرقم الموحد المباشر: <strong style="color:var(--color-navy);">800-HORIZON</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION (Fixed at bottom on phones) -->
+    <div class="mobile-bottom-nav">
+        <div class="mob-nav-grid">
+            <a href="index.html" class="mob-nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>الرئيسية</span>
+            </a>
+            <a href="tours.html" class="mob-nav-item">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>الباقات</span>
+            </a>
+            <a href="destination.html" class="mob-nav-item">
+                <i class="fa-solid fa-earth-americas"></i>
+                <span>الوجهات</span>
+            </a>
+            <a href="https://wa.me/201027093535" target="_blank" class="mob-nav-item" style="color:#25d366;">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>واتساب</span>
+            </a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu()" class="mob-nav-item">
+                <i class="fa-solid fa-bars"></i>
+                <span>القائمة</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
