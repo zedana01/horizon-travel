@@ -3,32 +3,1236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وكالة هورايزون تورز للسياحة والسفر | HORIZON TOURS</title>
-    <meta name="description" content="وكالة هورايزون تورز الرائدة في برامج السفر السياحية الفاخرة وشهر العسل والعطلات العائلية مع كونسيرج شخصي 24/7.">
+    <title>وكالة هورايزون لاكجري تورز | Horizon Luxury Travel - نموذج منصة سياحية متكاملة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script>
-        function toggleMobileMenu() {
-            var d = document.getElementById('mobileMenuDrawer');
-            var o = document.getElementById('mobileDrawerOverlay');
-            if (!d) return;
-            d.classList.toggle('active');
-            if (o) o.classList.toggle('active');
-            document.body.style.overflow = d.classList.contains('active') ? 'hidden' : '';
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+    <style>
+    /* ==========================================================================
+       HORIZON LUXURY TRAVEL - ULTRA-MODERN LIGHT BLUE & CRISP WHITE THEME
+       Adapted from TechNova Luxury E-Commerce Architecture (100% Bug-Free)
+       ========================================================================== */
+    :root {
+        --color-bg: #f8fafc;
+        --color-surface: #ffffff;
+        --color-surface-card: #ffffff;
+        --color-surface-alt: #f1f5f9;
+        --color-primary: #0284c7;         /* Ocean Royal Blue */
+        --color-primary-dark: #0369a1;
+        --color-primary-light: #e0f2fe;
+        --color-primary-glow: rgba(2, 132, 199, 0.18);
+        --color-cyan: #06b6d4;            /* Sky Blue Accent */
+        --color-cyan-light: #ecfeff;
+        --color-navy: #090d16;            /* Deep black-navy for ultra contrast */
+        --color-slate: #1e293b;           /* Rich dark slate */
+        --color-muted: #334155;           /* Rich charcoal/slate text */
+        --color-border: #cbd5e1;          /* Crisp clear border */
+        --color-border-light: #e2e8f0;
+        --color-border-blue: rgba(2, 132, 199, 0.35);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --radius-xl: 28px;
+        --font-main: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+        --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        --shadow-subtle: 0 4px 20px rgba(15, 23, 42, 0.04);
+        --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.05);
+        --shadow-hover: 0 16px 36px rgba(2, 132, 199, 0.14);
+        --shadow-glow: 0 0 25px rgba(6, 182, 212, 0.25);
+    }
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-slate);
+        direction: rtl;
+        text-align: right !important;
+        line-height: 1.7;
+    }
+    body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, select, label, div {
+        font-family: var(--font-main) !important;
+        text-align: right !important;
+    }
+    i, .fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands, [class^="fa-"], [class*=" fa-"], svg.svg-inline--fa {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+        font-style: normal !important;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    .tour-container {
+        width: 100%;
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+
+    /* 1. TOP ANNOUNCEMENT BAR */
+    .tour-top-bar {
+        background: linear-gradient(90deg, #0369a1 0%, #0284c7 50%, #06b6d4 100%);
+        color: #ffffff;
+        padding: 10px 0;
+        font-size: 13px;
+        font-weight: 700;
+        width: 100%;
+        overflow: hidden;
+    }
+    .tour-top-bar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .tour-top-tag {
+        background: rgba(255, 255, 255, 0.22);
+        color: #ffffff;
+        padding: 3px 12px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 11.5px;
+        margin-left: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .tour-top-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 12.5px;
+    }
+    .tour-top-links a:hover {
+        opacity: 0.85;
+    }
+
+    /* 2. EXECUTIVE MODERN LIGHT HEADER */
+    .tour-header {
+        background: #ffffff;
+        border-bottom: 1px solid var(--color-border);
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+    .tour-header-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px 0;
+    }
+    .tour-logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+    .tour-logo-icon {
+        width: 46px;
+        height: 46px;
+        background: linear-gradient(135deg, #0284c7, #0369a1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 22px;
+        box-shadow: 0 8px 16px rgba(2, 132, 199, 0.25);
+    }
+    .tour-logo-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .tour-logo-title {
+        font-size: 22px;
+        font-weight: 900;
+        color: var(--color-navy);
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+    }
+    .tour-logo-sub {
+        font-size: 11px;
+        font-weight: 900;
+        color: #0284c7;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    /* Search Bar */
+    .tour-search-form {
+        flex: 1;
+        max-width: 580px;
+        display: flex;
+        align-items: center;
+        background: #f8fafc;
+        border: 1.5px solid var(--color-border);
+        border-radius: 50px;
+        padding: 4px 6px 4px 18px;
+        transition: var(--transition);
+    }
+    .tour-search-form:focus-within {
+        border-color: var(--color-primary);
+        background: #ffffff;
+        box-shadow: 0 0 0 4px var(--color-primary-glow);
+    }
+    .tour-search-input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: var(--color-navy);
+        font-weight: 600;
+        outline: none;
+    }
+    .tour-search-input::placeholder {
+        color: #64748b !important;
+        font-weight: 500;
+    }
+    .tour-search-btn {
+        background: linear-gradient(135deg, #0284c7, #0369a1);
+        border: none;
+        color: #ffffff;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-size: 13.5px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .tour-search-btn:hover {
+        background: linear-gradient(135deg, #0369a1, #075985);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+
+    /* Header Actions */
+    .tour-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+    .tour-btn-hub {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #0f172a;
+        color: #ffffff;
+        border: 1.5px solid #1e293b;
+        padding: 9px 18px;
+        border-radius: 50px;
+        font-size: 13.5px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: var(--transition);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    }
+    .tour-btn-hub:hover {
+        background: #0284c7;
+        border-color: #0284c7;
+    }
+    .tour-action-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 50px;
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
+        color: #090d16;
+        cursor: pointer;
+        transition: var(--transition);
+        position: relative;
+        font-size: 13.5px;
+        font-weight: 800;
+        text-decoration: none;
+    }
+    .tour-action-btn:hover {
+        background: var(--color-primary-light);
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+
+    /* Secondary Nav Bar */
+    .tour-navbar {
+        background: #ffffff;
+        border-top: 1px solid var(--color-border-light);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .tour-navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tour-nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .tour-nav-item a:not(.tour-nav-mega-btn) {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 14px;
+        font-size: 14px;
+        font-weight: 800;
+        color: #090d16 !important;
+        border-radius: 8px;
+        transition: var(--transition);
+        text-decoration: none;
+    }
+    .tour-nav-item a:not(.tour-nav-mega-btn):hover,
+    .tour-nav-item.active a:not(.tour-nav-mega-btn) {
+        color: var(--color-primary) !important;
+        background: var(--color-primary-light);
+    }
+    .tour-nav-item a.tour-nav-mega-btn {
+        background: #0284c7 !important;
+        color: #ffffff !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        border-radius: 10px !important;
+        padding: 10px 20px !important;
+        font-weight: 900 !important;
+        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+        transition: var(--transition) !important;
+        text-decoration: none;
+    }
+    .tour-nav-item a.tour-nav-mega-btn:hover {
+        background: #0369a1 !important;
+        box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45) !important;
+    }
+    .tour-nav-hotline {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13.5px;
+        font-weight: 800;
+        color: #090d16;
+    }
+    .tour-nav-hotline i {
+        color: #0284c7;
+        font-size: 16px;
+    }
+
+    /* 3. HERO SHOWCASE SECTION */
+    .tour-hero {
+        padding: 40px 0 60px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        position: relative;
+    }
+    .tour-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+    }
+    .tour-hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .tour-hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        border: 1px solid var(--color-border-blue);
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 800;
+        width: fit-content;
+    }
+    .tour-hero-title {
+        font-size: 42px;
+        font-weight: 900;
+        color: var(--color-navy);
+        line-height: 1.25;
+        letter-spacing: -0.8px;
+    }
+    .tour-hero-title span {
+        background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .tour-hero-desc {
+        font-size: 16px;
+        color: var(--color-muted);
+        line-height: 1.8;
+    }
+    .tour-hero-ctas {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+    .btn-tour-primary {
+        background: linear-gradient(135deg, #0284c7, #0369a1);
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 800;
+        color: #ffffff !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 10px 24px rgba(2, 132, 199, 0.28);
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .btn-tour-primary:hover {
+        background: linear-gradient(135deg, #0369a1, #075985);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(2, 132, 199, 0.35);
+    }
+    .btn-tour-secondary {
+        background: #ffffff;
+        color: #090d16 !important;
+        padding: 14px 26px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1.5px solid #cbd5e1;
+        transition: var(--transition);
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .btn-tour-secondary:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary) !important;
+        background: var(--color-primary-light);
+    }
+    .tour-hero-trust {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding-top: 20px;
+        border-top: 1px solid var(--color-border);
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+    .tour-trust-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-slate);
+    }
+    .tour-trust-pill i {
+        color: var(--color-primary);
+        font-size: 16px;
+    }
+
+    /* Hero Visual Showcase */
+    .tour-hero-visual {
+        position: relative;
+    }
+    .tour-hero-image-wrapper {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid #ffffff;
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+        background: #ffffff;
+    }
+    .tour-hero-image-wrapper img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+    .tour-hero-image-wrapper:hover img {
+        transform: scale(1.03);
+    }
+    /* Floating Badges */
+    .tour-float-badge {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--color-border);
+        padding: 10px 16px;
+        border-radius: 14px;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 10;
+        animation: floatAnim 4s ease-in-out infinite alternate;
+    }
+    .tour-float-badge.top-right {
+        top: 20px;
+        right: 20px;
+    }
+    .tour-float-badge.bottom-left {
+        bottom: 25px;
+        left: 25px;
+        animation-delay: 2s;
+    }
+    @keyframes floatAnim {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-8px); }
+    }
+    .tour-badge-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+    .tour-badge-title {
+        font-size: 13.5px;
+        font-weight: 800;
+        color: var(--color-navy);
+        line-height: 1.2;
+    }
+    .tour-badge-sub {
+        font-size: 11px;
+        color: var(--color-muted);
+        font-weight: 600;
+    }
+
+    /* 4. VALUE PROPOSITION ROW */
+    .tour-features-bar {
+        padding: 30px 0;
+        background: #ffffff;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .tour-features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+    .tour-feature-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px;
+        border-radius: 12px;
+        transition: var(--transition);
+    }
+    .tour-feature-item:hover {
+        background: var(--color-bg);
+    }
+    .tour-feature-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    .tour-feature-info h4 {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--color-navy);
+        margin-bottom: 3px;
+    }
+    .tour-feature-info p {
+        font-size: 12.5px;
+        color: var(--color-muted);
+        line-height: 1.4;
+    }
+
+    /* 5. DESTINATIONS CATEGORIES GRID */
+    .tour-section {
+        padding: 60px 0;
+    }
+    .tour-section-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 36px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .tour-section-title-box {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .tour-section-subtitle {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--color-primary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .tour-section-title {
+        font-size: 28px;
+        font-weight: 900;
+        color: var(--color-navy);
+        letter-spacing: -0.5px;
+    }
+    .tour-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+    }
+    .tour-cat-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 18px;
+        padding: 24px 14px;
+        text-align: center !important;
+        transition: var(--transition);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        box-shadow: var(--shadow-subtle);
+        text-decoration: none;
+    }
+    .tour-cat-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary);
+        box-shadow: var(--shadow-hover);
+    }
+    .tour-cat-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        transition: var(--transition);
+    }
+    .tour-cat-card:hover .tour-cat-icon {
+        background: var(--color-primary);
+        color: #ffffff;
+        transform: scale(1.08);
+    }
+    .tour-cat-name {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: var(--color-navy);
+        text-align: center !important;
+    }
+    .tour-cat-count {
+        font-size: 11.5px;
+        font-weight: 600;
+        color: var(--color-muted);
+        background: #f1f5f9;
+        padding: 2px 10px;
+        border-radius: 50px;
+        text-align: center !important;
+    }
+
+    /* 6. BOOKING SEARCH BAR */
+    .tour-booking-bar-wrap {
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 20px;
+        padding: 24px 28px;
+        box-shadow: var(--shadow-card);
+        margin: -30px auto 40px;
+        position: relative;
+        z-index: 20;
+    }
+    .tour-booking-form {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+        gap: 16px;
+        align-items: center;
+    }
+    .tour-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .tour-input-label {
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--color-navy);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .tour-input-label i {
+        color: var(--color-primary);
+    }
+    .tour-select, .tour-date-input {
+        width: 100%;
+        padding: 10px 14px;
+        background: #f8fafc;
+        border: 1.5px solid var(--color-border);
+        border-radius: 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--color-navy);
+        outline: none;
+        transition: var(--transition);
+    }
+    .tour-select:focus, .tour-date-input:focus {
+        border-color: var(--color-primary);
+        background: #ffffff;
+    }
+
+    /* 7. FLASH TOURS & DEALS (4 CARDS GRID) */
+    .tour-flash-section {
+        background: #ffffff;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        padding: 60px 0;
+    }
+    .tour-flash-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .tour-flash-timer-box {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--color-primary-light);
+        padding: 8px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--color-border-blue);
+    }
+    .tour-flash-timer-label {
+        font-size: 13.5px;
+        font-weight: 800;
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .tour-countdown {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        direction: ltr;
+    }
+    .tour-countdown-unit {
+        background: #ffffff;
+        color: var(--color-navy);
+        font-weight: 900;
+        font-size: 14px;
+        padding: 4px 8px;
+        border-radius: 6px;
+        border: 1px solid var(--color-border);
+        min-width: 32px;
+        text-align: center !important;
+    }
+
+    /* Filter Tabs */
+    .tour-filter-tabs {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .tour-filter-btn {
+        padding: 9px 20px;
+        border-radius: 50px;
+        background: #ffffff;
+        border: 1.5px solid var(--color-border);
+        color: var(--color-navy);
+        font-size: 13.5px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    .tour-filter-btn:hover,
+    .tour-filter-btn.active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
+    }
+
+    /* Tours Grid */
+    .tour-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+    .tour-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-shadow: var(--shadow-subtle);
+        position: relative;
+    }
+    .tour-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-border-blue);
+        box-shadow: var(--shadow-hover);
+    }
+    .tour-card-badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: linear-gradient(135deg, #0284c7, #06b6d4);
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 800;
+        padding: 4px 10px;
+        border-radius: 50px;
+        z-index: 5;
+    }
+    .tour-card-img-box {
+        position: relative;
+        background: #f1f5f9;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        display: block;
+    }
+    .tour-card-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    .tour-card:hover .tour-card-img-box img {
+        transform: scale(1.06);
+    }
+    .tour-card-body {
+        padding: 18px 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+        background: #ffffff;
+    }
+    .tour-card-cat {
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--color-primary);
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .tour-card-title {
+        font-size: 15.5px;
+        font-weight: 800;
+        color: var(--color-navy);
+        line-height: 1.4;
+        margin-bottom: 8px;
+        min-height: 44px;
+    }
+    .tour-card-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    .tour-spec-tag {
+        font-size: 11px;
+        font-weight: 700;
+        background: #f1f5f9;
+        color: var(--color-slate);
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+    .tour-card-rating {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        margin-bottom: 14px;
+    }
+    .tour-card-stars {
+        color: #f59e0b;
+        display: flex;
+        gap: 2px;
+    }
+    .tour-card-reviews {
+        color: var(--color-muted);
+        font-weight: 600;
+        font-size: 11.5px;
+    }
+    .tour-card-pricing {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    .tour-price-current {
+        font-size: 21px;
+        font-weight: 900;
+        color: var(--color-navy);
+    }
+    .tour-price-old {
+        font-size: 14px;
+        font-weight: 600;
+        color: #94a3b8;
+        text-decoration: line-through;
+    }
+    .btn-tour-book {
+        width: 100%;
+        background: #f8fafc;
+        border: 1.5px solid var(--color-border);
+        color: var(--color-navy);
+        padding: 11px 16px;
+        border-radius: 12px;
+        font-size: 13.5px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+    .btn-tour-book:hover {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
+    }
+
+    /* 8. VIP CONCIERGE BANNER */
+    .tour-vip-section {
+        padding: 60px 0;
+        background: #ffffff;
+    }
+    .tour-vip-card {
+        background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+        border-radius: 24px;
+        padding: 48px 40px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        align-items: center;
+        color: #ffffff;
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+    }
+    .tour-vip-content h3 {
+        font-size: 32px;
+        font-weight: 900;
+        color: #ffffff;
+        line-height: 1.3;
+        margin-bottom: 14px;
+    }
+        /* MASTER CONTRAST RULE: Text on DARK backgrounds = Crisp White */
+    .tour-vip-card,
+    .tour-vip-card p,
+    .tour-vip-content p,
+    .tour-cta-section p,
+    .tour-site-footer p,
+    [style*="#090d16"] p,
+    [style*="#1e293b"] p,
+    [style*="#090e1a"] p,
+    [style*="#0f172a"] p,
+    [style*="#0b1120"] p {
+        color: #f1f5f9 !important;
+    }
+    .tour-vip-content h3 {
+        color: #ffffff !important;
+    }
+
+    /* MASTER CONTRAST RULE: Text on LIGHT / WHITE backgrounds = Deep Dark High Contrast */
+    .tour-hero p,
+    .tour-hero-desc,
+    .tour-hero .tour-hero-desc,
+    .tour-sec-title p,
+    .tour-review-text,
+    .tour-faq-answer {
+        color: #334155 !important;
+    }
+    .tour-vip-content p {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.8;
+        margin-bottom: 24px;
+    }
+    .tour-vip-perks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+    }
+    .tour-perk-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #f8fafc;
+    }
+    .tour-perk-item i {
+        color: #38bdf8;
+    }
+
+    /* 9. TESTIMONIALS SECTION */
+    .tour-reviews-section {
+        padding: 60px 0;
+        background: var(--color-bg);
+    }
+    .tour-reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .tour-review-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: 18px;
+        padding: 28px 24px;
+        box-shadow: var(--shadow-subtle);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .tour-review-stars {
+        color: #f59e0b;
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
+    .tour-review-text {
+        font-size: 14.5px;
+        color: var(--color-muted);
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    .tour-reviewer {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 14px;
+        border-top: 1px solid var(--color-border-light);
+    }
+    .tour-reviewer-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 15px;
+    }
+    .tour-reviewer-info h5 {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: var(--color-navy);
+        margin-bottom: 2px;
+    }
+    .tour-reviewer-info span {
+        font-size: 12px;
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    /* 10. FAQ SECTION */
+    .tour-faq-section {
+        padding: 60px 0;
+        background: #ffffff;
+        border-top: 1px solid var(--color-border);
+    }
+    .tour-faq-list {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .tour-faq-item {
+        background: #f8fafc;
+        border: 1px solid var(--color-border);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+    .tour-faq-item.active {
+        border-color: var(--color-primary);
+        background: #ffffff;
+    }
+    .tour-faq-question {
+        padding: 18px 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15.5px;
+        font-weight: 800;
+        color: var(--color-navy);
+    }
+    .tour-faq-answer {
+        padding: 0 24px 20px;
+        font-size: 14px;
+        color: var(--color-muted);
+        line-height: 1.8;
+        display: none;
+    }
+    .tour-faq-item.active .tour-faq-answer {
+        display: block;
+    }
+
+    /* 11. MODERN FOOTER */
+    .tour-footer {
+        background: #090d16;
+        color: #ffffff;
+        padding: 60px 0 30px;
+        border-top: 1px solid #1e293b;
+    }
+    .tour-footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    .tour-footer-col h4 {
+        font-size: 16px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 18px;
+    }
+    .tour-footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tour-footer-col ul a {
+        color: #94a3b8;
+        font-size: 13.5px;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+    .tour-footer-col ul a:hover {
+        color: #38bdf8;
+        transform: translateX(-4px);
+    }
+    .tour-footer-bottom {
+        padding-top: 24px;
+        border-top: 1px solid #1e293b;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        color: #64748b;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1200px) {
+        .tour-grid { grid-template-columns: repeat(3, 1fr); }
+        .tour-categories-grid { grid-template-columns: repeat(3, 1fr); }
+        .tour-features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+        .tour-hero-grid { grid-template-columns: 1fr; text-align: center; }
+        .tour-hero-title { font-size: 32px; }
+        .tour-hero-trust { justify-content: center; }
+        .tour-hero-ctas { justify-content: center; }
+        .tour-vip-card { grid-template-columns: 1fr; text-align: center; padding: 32px 20px; }
+        .tour-vip-perks { grid-template-columns: 1fr; text-align: right; }
+        .tour-booking-form { grid-template-columns: 1fr; }
+        .tour-grid { grid-template-columns: repeat(2, 1fr); }
+        .tour-reviews-grid { grid-template-columns: 1fr; }
+        .tour-footer-grid { grid-template-columns: 1fr; }
+        .tour-header-actions .tour-action-btn span { display: none; }
+        .tour-navbar {
+            display: block !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            padding: 6px 0 !important;
+            border-bottom: 1px solid var(--color-border-light) !important;
+            background: #ffffff !important;
+            scrollbar-width: none !important;
         }
-        function closeMobileMenu() {
-            var d = document.getElementById('mobileMenuDrawer');
-            var o = document.getElementById('mobileDrawerOverlay');
-            if (d) d.classList.remove('active');
-            if (o) o.classList.remove('active');
-            document.body.style.overflow = '';
+        .tour-navbar::-webkit-scrollbar { display: none; }
+        .tour-navbar-inner {
+            display: flex !important;
+            width: max-content !important;
+            padding: 0 16px !important;
         }
-    </script>
+        .tour-nav-menu {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 6px !important;
+        }
+        .tour-nav-item a {
+            white-space: nowrap !important;
+            font-size: 13px !important;
+            padding: 8px 14px !important;
+        }
+        .tour-nav-hotline {
+            display: none !important;
+        }
+    }
+    @media (max-width: 600px) {
+        .tour-grid { grid-template-columns: 1fr; }
+        .tour-categories-grid { grid-template-columns: repeat(2, 1fr); }
+        .tour-features-grid { grid-template-columns: 1fr; }
+        .tour-header-main { flex-wrap: wrap; }
+        .tour-search-form { order: 3; width: 100%; max-width: 100%; }
+    }
+    </style>
 </head>
 <body>
+
     <!-- 1. TOP ANNOUNCEMENT BAR -->
     <div class="tour-top-bar">
         <div class="tour-container tour-top-bar-inner">
@@ -37,748 +1241,650 @@
                 <span>خصومات تصل إلى 35% على باقات المالديف وأوروبا عند الحجز المبكر هذا الأسبوع!</span>
             </div>
             <div class="tour-top-links">
-                <a href="admin/index.html" style="color:#38bdf8; font-weight:800; text-decoration:none;"><i class="fa-solid fa-lock"></i> لوحة الإدارة (Admin)</a>
-                <span><i class="fa-solid fa-phone"></i> 01027093535</span>
+                <span><i class="fa-solid fa-phone"></i> 201027093535+</span>
                 <span><i class="fa-solid fa-headset"></i> خدمة الكونسيرج 24/7</span>
                 <span><i class="fa-solid fa-money-bill-wave"></i> العملة: ريال سعودي (SAR)</span>
+                <a href="admin/index.html" style="color: #38bdf8; font-weight: 800; text-decoration: none; margin-left: 14px;"><i class="fa-solid fa-lock"></i> لوحة الإدارة (Admin)</a>
             </div>
         </div>
     </div>
 
     <!-- 2. EXECUTIVE MODERN LIGHT HEADER -->
-    <header class="tour-header">
-        <div class="tour-container tour-header-inner">
-            <a href="index.html" class="tour-logo" style="text-decoration:none;">
-                <div class="tour-logo-icon"><i class="fa-solid fa-plane-departure"></i></div>
+    <header class="tour-header" id="home">
+        <div class="tour-container tour-header-main">
+            <!-- Brand Logo -->
+            <a href="#home" class="tour-logo-link">
+                <div class="tour-logo-icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
                 <div class="tour-logo-text">
-                    <h1>HORIZON TOURS</h1>
-                    <span>LUXURY TRAVEL & VACATIONS</span>
+                    <span class="tour-logo-title">هورايزون تورز</span>
+                    <span class="tour-logo-sub">HORIZON LUXURY ESCAPES</span>
                 </div>
             </a>
 
-            <!-- Search Bar in Header -->
-            <form class="tour-search-header-box" onsubmit="event.preventDefault(); handleCustomSearch();" style="display:flex; align-items:center; background:#f1f5f9; border-radius:30px; padding:4px 6px; border:1px solid #cbd5e1; width:380px;">
-                <select id="formDest" style="background:none; border:none; font-size:13px; font-weight:700; color:#334155; padding:6px 10px; outline:none; font-family:inherit;">
-                    <option value="all">كافة الوجهات</option>
-                    <option value="maldives">جزر المالديف</option>
-                    <option value="switzerland">سويسرا والألب</option>
-                    <option value="turkey">تركيا وكابادوكيا</option>
-                    <option value="egypt">مصر وسحر النيل</option>
-                    <option value="alula">العلا والمملكة</option>
-                </select>
-                <input type="text" id="searchDestinationInput" placeholder="ابحث عن باقة، دولة، أو نشاط..." style="background:none; border:none; padding:6px 10px; font-size:13px; width:100%; outline:none; font-family:inherit;">
-                <button type="submit" style="background:var(--color-primary); color:#fff; border:none; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i class="fa-solid fa-magnifying-glass" style="font-size:12px;"></i></button>
-            </form>
+            <!-- Search Form -->
+            <div class="tour-search-form">
+                <i class="fa-solid fa-magnifying-glass" style="color: #64748b;"></i>
+                <input type="text" class="tour-search-input" id="searchDestinationInput" placeholder="ابحث عن وجهتك أو برنامجك المفضل (المالديف، سويسرا، مصر، تركيا)...">
+                <button type="button" class="tour-search-btn" onclick="scrollToTours()">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>بحث عن رحلة</span>
+                </button>
+            </div>
 
+            <!-- Action Buttons -->
             <div class="tour-header-actions">
-                <div class="tour-nav-hotline">
-                    <div class="tour-hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
-                    <div>
-                        <div class="tour-hotline-label">استشارة سفر فورية مجانية</div>
-                        <div class="tour-hotline-num">9200 88 777</div>
-                    </div>
-                </div>
-                <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20باقات%20السفر%20المتاحة" target="_blank" class="tour-btn tour-btn-primary" style="text-decoration:none;">
-                    <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i>
-                    <span>احجز عبر واتساب</span>
+                <a href="https://entejsites.com/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%85%d9%88%d8%a7%d9%82%d8%b9/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%85%d9%88%d8%a7%d9%82%d8%b9-%d8%a7%d9%84%d8%b3%d9%8a%d8%a7%d8%ad%d8%a9-%d9%88%d8%a7%d9%84%d8%b3%d9%81%d8%b1/" class="tour-btn-hub">
+                    <i class="fa-solid fa-layer-group" style="color: #38bdf8;"></i>
+                    <span>نماذج مواقع السياحة</span>
                 </a>
+                <a href="https://wa.me/201027093535?text=مرحباً%D8%8C%20أود%20الاستفسار%20عن%20باقات%20وعروض%20السياحة%20المتاحة" target="_blank" rel="noopener" class="tour-action-btn">
+                    <i class="fa-brands fa-whatsapp" style="color: #0284c7; font-size: 16px;"></i>
+                    <span>واتساب مباشر</span>
+                </a>
+                <a href="#tours" class="btn-tour-primary" style="padding: 10px 20px; font-size: 13.5px;">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>احجز رحلتك</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Secondary Navigation Bar -->
+        <div class="tour-navbar">
+            <div class="tour-container tour-navbar-inner">
+                <ul class="tour-nav-menu">
+                    <li class="tour-nav-item">
+                        <a href="#tours" class="tour-nav-mega-btn">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                            <span>كافة الوجهات السياحية</span>
+                        </a>
+                    </li>
+                    <li class="tour-nav-item active"><a href="#home">الرئيسية</a></li>
+                    <li class="tour-nav-item"><a href="#tours" onclick="filterTours('all')">عروض 2026 الخاطفة</a></li>
+                    <li class="tour-nav-item"><a href="#tours" onclick="filterTours('maldives')">جزر المالديف</a></li>
+                    <li class="tour-nav-item"><a href="#tours" onclick="filterTours('swiss')">سويسرا والألب</a></li>
+                    <li class="tour-nav-item"><a href="#tours" onclick="filterTours('egypt')">مصر والأقصر</a></li>
+                    <li class="tour-nav-item"><a href="#tours" onclick="filterTours('turkey')">تركيا وكابادوكيا</a></li>
+                    <li class="tour-nav-item"><a href="#vip">باقات VIP</a></li>
+                    <li class="tour-nav-item"><a href="#reviews">آراء المسافرين</a></li>
+                    <li class="tour-nav-item"><a href="#faq">الأسئلة الشائعة</a></li>
+                </ul>
+                <div class="tour-nav-hotline">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>الرقم الموحد المباشر: <strong>800-HORIZON</strong></span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE HEADER BAR (Sticky on Mobile) -->
-    <div class="mobile-header-bar">
-        <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <a href="index.html" class="tour-logo" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
-            <div class="tour-logo-icon" style="width:36px; height:36px; font-size:16px;"><i class="fa-solid fa-plane-departure"></i></div>
-            <div class="tour-logo-text">
-                <span style="font-size:18px; font-weight:900; color:#0f172a; line-height:1; display:block;">HORIZON</span>
-                <span style="font-size:9px; font-weight:800; color:var(--color-primary); letter-spacing:1px;">LUXURY TOURS</span>
-            </div>
-        </a>
-        <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20حجز%20رحلة" target="_blank" style="width:38px; height:38px; background:#25d366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:18px;" title="محادثة واتساب">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- MOBILE SUB-BAR (Direct Mobile Menu Strip) -->
-    <div class="mobile-sub-bar">
-        <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
-            <i class="fa-solid fa-bars"></i>
-            <span>الوجهات</span>
-        </button>
-        <div class="mob-sub-links-scroll">
-            <a href="index.html" class="active">الرئيسية</a>
-            <a href="tours.html" class="">كافة الباقات</a>
-            <a href="destination.html?dest=maldives">المالديف</a>
-            <a href="destination.html?dest=switzerland">سويسرا</a>
-            <a href="destination.html?dest=turkey">تركيا</a>
-            <a href="destination.html?dest=egypt">مصر</a>
-            <a href="destination.html?dest=alula">العلا</a>
-            <a href="tours.html?filter=vip" class="mob-deal-chip"><i class="fa-solid fa-crown"></i> باقات VIP</a>
-        </div>
-    </div>
-
-    <!-- 3. NAVIGATION BAR (Desktop) -->
-    <nav class="tour-navbar">
-        <div class="tour-container tour-navbar-inner">
-            <!-- All Destinations Dropdown -->
-            <div class="dept-dropdown-wrapper" style="position:relative;">
-                <button class="dept-btn" type="button" onclick="this.parentElement.classList.toggle('open');" style="background:var(--color-primary); color:#fff; border:none; padding:12px 20px; font-weight:800; font-size:13.5px; border-radius:8px; display:flex; align-items:center; gap:10px; cursor:pointer;">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>جميع الوجهات السياحية</span>
-                    <i class="fa-solid fa-chevron-down" style="font-size:11px; margin-right:6px;"></i>
-                </button>
-                <div class="dept-menu" style="position:absolute; top:100%; right:0; width:260px; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.1); display:none; flex-direction:column; z-index:200; overflow:hidden;">
-                    <a href="destination.html?dest=maldives" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-umbrella-beach" style="color:var(--color-primary); margin-left:8px;"></i> جزر المالديف <span>›</span></a>
-                    <a href="destination.html?dest=switzerland" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-mountain-sun" style="color:#0284c7; margin-left:8px;"></i> سويسرا والألب <span>›</span></a>
-                    <a href="destination.html?dest=turkey" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-mosque" style="color:#06b6d4; margin-left:8px;"></i> تركيا وكابادوكيا <span>›</span></a>
-                    <a href="destination.html?dest=egypt" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-monument" style="color:#d97706; margin-left:8px;"></i> مصر وسحر النيل <span>›</span></a>
-                    <a href="destination.html?dest=alula" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-gem" style="color:#8b5cf6; margin-left:8px;"></i> العلا والمملكة <span>›</span></a>
-                    <a href="tours.html?filter=deals" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:800; color:#d84315; background:#fff8e1; text-decoration:none;"><i class="fa-solid fa-fire" style="color:#ea580c; margin-left:8px;"></i> عروض الأسبوع التوفيرية <span>%</span></a>
-                </div>
-            </div>
-
-            <!-- Horizontal Links -->
-            <ul class="tour-nav-links">
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="tours.html" class="">باقات وعروض السفر</a></li>
-                <li><a href="destination.html" class="">الوجهات العالمية</a></li>
-                <li><a href="tours.html?filter=vip" class="">باقات VIP الخاصة</a></li>
-                <li><a href="about.html" class="">عن الوكالة</a></li>
-                <li><a href="contact.html" class="">اتصل بنا</a></li>
-            </ul>
-
-            <div class="tour-flash-deal-pill">
-                <i class="fa-solid fa-bolt" style="color:#f59e0b;"></i>
-                <span>عروض الموسم 2026</span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="tour-hero-section">
-        <div class="tour-container tour-hero-inner">
+    <!-- 3. HERO SHOWCASE SECTION -->
+    <section class="tour-hero">
+        <div class="tour-container tour-hero-grid">
             <div class="tour-hero-content">
                 <div class="tour-hero-tag">
-                    <i class="fa-solid fa-crown" style="color:#f59e0b;"></i>
-                    <span>عالم من الفخامة والاستكشاف بين يديك.. رحلات سياحية بمعايير الـ VIP</span>
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>الجيل الجديد من منصات حجز السفر والسياحة 2026</span>
                 </div>
                 <h1 class="tour-hero-title">
-                    سافر بلا حدود.. <br>
-                    <span>واستمتع بعطلات ملكية</span> تفوق التوقعات
+                    عالم من الفخامة والاستكشاف بين يديك.. <span>رحلات سياحية بأعلى معايير الـ VIP</span>
                 </h1>
-                <p class="tour-hero-subtitle">
-                    نصمم لك تجارب سياحية حصرية تجمع بين الفخامة، الخصوصية، والراحة التامة في أفخم فنادق ومنتجعات العالم مع باقات شاملة الطيران الدولي والمساعد الشخصي على مدار الساعة.
+                <p class="tour-hero-desc" style="color: #334155 !important; font-size: 17px !important; line-height: 1.85 !important; font-weight: 500 !important;">
+                    استمتع بتجارب سفر استثنائية مع وكالة هورايزون العالمية. باقات متكاملة تشمل تذاكر الطيران الدولي، أفخم الفيلات العائمة والمنتجعات، استقبال خاص VIP من المطار، وجولات سياحية حصرية مع مرشدين معتمدين وخدمة كونسيرج على مدار الساعة.
                 </p>
-
-                <!-- Search Box -->
-                <div class="tour-search-bar-wrap">
-                    <div class="tour-search-grid">
-                        <div class="tour-search-col">
-                            <label><i class="fa-solid fa-map-pin"></i> اختر الوجهة</label>
-                            <select id="heroDestSelect">
-                                <option value="all">كافة الوجهات العالمية</option>
-                                <option value="maldives">جزر المالديف الفاخرة</option>
-                                <option value="switzerland">سويسرا وجبال الألب</option>
-                                <option value="turkey">تركيا وكابادوكيا</option>
-                                <option value="egypt">مصر وسحر النيل</option>
-                                <option value="alula">العلا والمملكة</option>
-                            </select>
-                        </div>
-                        <div class="tour-search-col">
-                            <label><i class="fa-solid fa-calendar-day"></i> موعد السفر</label>
-                            <input type="month" value="2026-11">
-                        </div>
-                        <div class="tour-search-col">
-                            <label><i class="fa-solid fa-users"></i> نوع الرحلة</label>
-                            <select>
-                                <option>شهر عسل رومانسي</option>
-                                <option>عطلة عائلية فاخرة</option>
-                                <option>مغامرة واستكشاف</option>
-                                <option>باقة VIP مخصصة</option>
-                            </select>
-                        </div>
-                        <button class="tour-search-submit" onclick="var d=document.getElementById('heroDestSelect').value; filterTours(d); scrollToTours();">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span>ابحث عن باقتك</span>
-                        </button>
-                    </div>
+                <div class="tour-hero-ctas">
+                    <a href="#tours" class="btn-tour-primary">
+                        <i class="fa-solid fa-suitcase-rolling"></i>
+                        <span>استكشف كافة البرامج الآن</span>
+                    </a>
+                    <a href="https://wa.me/201027093535?text=مرحباً،%20أريد%20تصميم%20برنامج%20سياحي%20مخصص%20VIP" target="_blank" rel="noopener" class="btn-tour-secondary">
+                        <i class="fa-solid fa-gem" style="color: #0284c7;"></i>
+                        <span>طلب برنامج مخصص VIP</span>
+                    </a>
                 </div>
-
                 <div class="tour-hero-trust">
-                    <div class="tour-trust-item"><i class="fa-solid fa-shield-halved"></i> <span>دفع آمن وتقسيط ميسر</span></div>
-                    <div class="tour-trust-item"><i class="fa-solid fa-headset"></i> <span>كونسيرج شخصي 24/7</span></div>
-                    <div class="tour-trust-item"><i class="fa-solid fa-award"></i> <span>مرشدون معتمدون</span></div>
+                    <div class="tour-trust-pill"><i class="fa-solid fa-circle-check"></i> <span>تأكيد فوري للحجز</span></div>
+                    <div class="tour-trust-pill"><i class="fa-solid fa-shield-halved"></i> <span>أفضل الأسعار المعتمدة</span></div>
+                    <div class="tour-trust-pill"><i class="fa-solid fa-credit-card"></i> <span>دفع آمن بالتقسيط</span></div>
+                    <div class="tour-trust-pill"><i class="fa-solid fa-user-tie"></i> <span>كونسيرج شخصي 24/7</span></div>
                 </div>
             </div>
 
+            <!-- Hero Visual Showcase Card -->
             <div class="tour-hero-visual">
+                <div class="tour-float-badge top-right">
+                    <div class="tour-badge-icon"><i class="fa-solid fa-hotel"></i></div>
+                    <div>
+                        <div class="tour-badge-title">فيلات عائمة 5 نجوم</div>
+                        <div class="tour-badge-sub">إطلالة بانورامية ومسبح خاص</div>
+                    </div>
+                </div>
                 <div class="tour-hero-image-wrapper">
-                    <img src="images/maldives.jpg" alt="باقات السفر الفاخرة" class="tour-hero-main-img">
-                    <div class="tour-hero-float-card">
-                        <div class="tour-float-badge"><i class="fa-solid fa-fire"></i> عرض الموسم</div>
-                        <div class="tour-float-title">باقة المالديف الملكية</div>
-                        <div class="tour-float-price">4,850 ر.س <span>بدلاً من 6,200</span></div>
+                    <img decoding="async" src="images/maldives.jpg" alt="رحلات المالديف الفاخرة" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
+                </div>
+                <div class="tour-float-badge bottom-left">
+                    <div class="tour-badge-icon" style="background: #ecfeff; color: #0284c7;"><i class="fa-solid fa-percent"></i></div>
+                    <div>
+                        <div class="tour-badge-title">خصم حصري 35%</div>
+                        <div class="tour-badge-sub">شامل الطيران والإقامة لشخصين</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES BAR (4 Badges) -->
-    <section class="tour-features-section" style="background:#ffffff; padding:35px 0; border-bottom:1px solid #e2e8f0;">
-        <div class="tour-container">
-            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
-                <div style="display:flex; align-items:center; gap:16px; padding:12px;">
-                    <div style="width:54px; height:54px; background:#e0f2fe; color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;"><i class="fa-solid fa-plane-departure"></i></div>
-                    <div>
-                        <h4 style="font-size:15px; font-weight:800; color:#0f172a; margin-bottom:4px;">باقات شاملة الطيران</h4>
-                        <p style="font-size:13px; color:#64748b; margin:0;">تذاكر طيران دولي وداخلي مؤكدة</p>
-                    </div>
+    <!-- 4. VALUE PROPOSITION BAR -->
+    <div class="tour-features-bar">
+        <div class="tour-container tour-features-grid">
+            <div class="tour-feature-item">
+                <div class="tour-feature-icon"><i class="fa-solid fa-plane-lock"></i></div>
+                <div class="tour-feature-info">
+                    <h4>باقات شاملة الطيران والفنادق</h4>
+                    <p>حجوزات طيران مؤكدة وأفخم المنتجعات 5 نجوم</p>
                 </div>
-                <div style="display:flex; align-items:center; gap:16px; padding:12px;">
-                    <div style="width:54px; height:54px; background:#e0f2fe; color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;"><i class="fa-solid fa-credit-card"></i></div>
-                    <div>
-                        <h4 style="font-size:15px; font-weight:800; color:#0f172a; margin-bottom:4px;">دفع آمن وتقسيط ميسر</h4>
-                        <p style="font-size:13px; color:#64748b; margin:0;">إمكانية التقسيط مع تابي وتمارا</p>
-                    </div>
+            </div>
+            <div class="tour-feature-item">
+                <div class="tour-feature-icon"><i class="fa-solid fa-wallet"></i></div>
+                <div class="tour-feature-info">
+                    <h4>دفع آمن وتقسيط ميسر</h4>
+                    <p>فيزا، مدى، Apple Pay، أو تقسيط عبر تابي وتمارا</p>
                 </div>
-                <div style="display:flex; align-items:center; gap:16px; padding:12px;">
-                    <div style="width:54px; height:54px; background:#e0f2fe; color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;"><i class="fa-solid fa-user-tie"></i></div>
-                    <div>
-                        <h4 style="font-size:15px; font-weight:800; color:#0f172a; margin-bottom:4px;">مرشدون معتمدون</h4>
-                        <p style="font-size:13px; color:#64748b; margin:0;">مرشد سياحي خاص ناطق بالعربية</p>
-                    </div>
+            </div>
+            <div class="tour-feature-item">
+                <div class="tour-feature-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="tour-feature-info">
+                    <h4>مرشدون سياحيون معتمدون</h4>
+                    <p>جولات سياحية يومية خاصة ومسارات استكشافية موثقة</p>
                 </div>
-                <div style="display:flex; align-items:center; gap:16px; padding:12px;">
-                    <div style="width:54px; height:54px; background:#e0f2fe; color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;"><i class="fa-solid fa-headset"></i></div>
-                    <div>
-                        <h4 style="font-size:15px; font-weight:800; color:#0f172a; margin-bottom:4px;">كونسيرج شخصي 24/7</h4>
-                        <p style="font-size:13px; color:#64748b; margin:0;">متابعة فورية ومباشرة عبر واتساب</p>
-                    </div>
+            </div>
+            <div class="tour-feature-item">
+                <div class="tour-feature-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+                <div class="tour-feature-info">
+                    <h4>مساعد وكونسيرج شخصي 24/7</h4>
+                    <p>متابعة دقيقة معك خطوة بخطوة طوال فترة الرحلة</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- POPULAR DESTINATIONS -->
-    <section class="tour-section" style="background:#f8fafc; padding:70px 0;">
+    <!-- 5. DESTINATIONS CATEGORIES GRID -->
+    <section class="tour-section">
         <div class="tour-container">
             <div class="tour-section-header">
-                <div>
-                    <span class="tour-section-subtitle"><i class="fa-solid fa-compass"></i> وجهات استثنائية</span>
+                <div class="tour-section-title-box">
+                    <span class="tour-section-subtitle">تصفح حسب الوجهة</span>
                     <h2 class="tour-section-title">أشهر الوجهات السياحية العالمية</h2>
                 </div>
-                <a href="destination.html" class="tour-btn" style="background:#ffffff; color:#334155; border:1px solid #cbd5e1; text-decoration:none;">
+                <a href="#tours" class="btn-tour-secondary" style="padding: 10px 20px; font-size: 13.5px;" onclick="filterTours('all')">
                     <span>عرض كافة الوجهات</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
             </div>
 
             <div class="tour-categories-grid">
-                <a href="destination.html?dest=maldives" class="tour-cat-card" style="text-decoration:none;">
-                    <img src="images/maldives.jpg" alt="جزر المالديف" class="tour-cat-img" loading="lazy">
-                    <div class="tour-cat-overlay">
-                        <span class="tour-cat-badge">وجهة العشاق</span>
-                        <h3 class="tour-cat-name">جزر المالديف</h3>
-                        <div class="tour-cat-count"><i class="fa-solid fa-plane"></i> 3 برامج متاحة</div>
-                    </div>
-                </a>
-                <a href="destination.html?dest=switzerland" class="tour-cat-card" style="text-decoration:none;">
-                    <img src="images/swiss_alps.jpg" alt="سويسرا والألب" class="tour-cat-img" loading="lazy">
-                    <div class="tour-cat-overlay">
-                        <span class="tour-cat-badge">سحر الطبيعة</span>
-                        <h3 class="tour-cat-name">سويسرا والألب</h3>
-                        <div class="tour-cat-count"><i class="fa-solid fa-plane"></i> 4 برامج متاحة</div>
-                    </div>
-                </a>
-                <a href="destination.html?dest=turkey" class="tour-cat-card" style="text-decoration:none;">
-                    <img src="images/cappadocia.jpg" alt="تركيا وكابادوكيا" class="tour-cat-img" loading="lazy">
-                    <div class="tour-cat-overlay">
-                        <span class="tour-cat-badge">أساطير الشرق</span>
-                        <h3 class="tour-cat-name">تركيا وكابادوكيا</h3>
-                        <div class="tour-cat-count"><i class="fa-solid fa-plane"></i> 3 برامج متاحة</div>
-                    </div>
-                </a>
-                <a href="destination.html?dest=egypt" class="tour-cat-card" style="text-decoration:none;">
-                    <img src="images/egypt_pyramids.jpg" alt="مصر وسحر النيل" class="tour-cat-img" loading="lazy">
-                    <div class="tour-cat-overlay">
-                        <span class="tour-cat-badge">تاريخ وحضارة</span>
-                        <h3 class="tour-cat-name">مصر وسحر النيل</h3>
-                        <div class="tour-cat-count"><i class="fa-solid fa-plane"></i> 4 برامج متاحة</div>
-                    </div>
-                </a>
-                <a href="destination.html?dest=alula" class="tour-cat-card" style="text-decoration:none;">
-                    <img src="images/alula_resort.jpg" alt="العلا والمملكة" class="tour-cat-img" loading="lazy">
-                    <div class="tour-cat-overlay">
-                        <span class="tour-cat-badge">أعجوبة الصحراء</span>
-                        <h3 class="tour-cat-name">العلا والمملكة</h3>
-                        <div class="tour-cat-count"><i class="fa-solid fa-plane"></i> 2 برامج متاحة</div>
-                    </div>
-                </a>
+                <div class="tour-cat-card" onclick="filterTours('maldives'); scrollToTours();">
+                    <div class="tour-cat-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <div class="tour-cat-name">جزر المالديف</div>
+                    <span class="tour-cat-count">12 باقة فاخرة</span>
+                </div>
+                <div class="tour-cat-card" onclick="filterTours('swiss'); scrollToTours();">
+                    <div class="tour-cat-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                    <div class="tour-cat-name">سويسرا والألب</div>
+                    <span class="tour-cat-count">9 برامج جبلية</span>
+                </div>
+                <div class="tour-cat-card" onclick="filterTours('egypt'); scrollToTours();">
+                    <div class="tour-cat-icon"><i class="fa-solid fa-monument"></i></div>
+                    <div class="tour-cat-name">مصر وتاريخ الفراعنة</div>
+                    <span class="tour-cat-count">15 رحلة نيلية</span>
+                </div>
+                <div class="tour-cat-card" onclick="filterTours('turkey'); scrollToTours();">
+                    <div class="tour-cat-icon"><i class="fa-solid fa-hotairballoon"></i></div>
+                    <div class="tour-cat-name">تركيا وكابادوكيا</div>
+                    <span class="tour-cat-count">14 برنامج متكامل</span>
+                </div>
+                <div class="tour-cat-card" onclick="filterTours('camper'); scrollToTours();">
+                    <div class="tour-cat-icon"><i class="fa-solid fa-caravan"></i></div>
+                    <div class="tour-cat-name">سفاري وكامبر فان</div>
+                    <span class="tour-cat-count">8 مخيمات بيئية</span>
+                </div>
+                <div class="tour-cat-card" onclick="filterTours('all'); scrollToTours();">
+                    <div class="tour-cat-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="tour-cat-name">رحلات شهر العسل VIP</div>
+                    <span class="tour-cat-count">10 منتجعات خاصة</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FLASH OFFER COUNTDOWN BANNER -->
-    <section style="background:linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color:#fff; padding:30px 0;">
-        <div class="tour-container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
-            <div style="display:flex; align-items:center; gap:16px;">
-                <div style="width:50px; height:50px; background:rgba(255,255,255,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px;"><i class="fa-solid fa-stopwatch"></i></div>
-                <div>
-                    <h3 style="font-size:20px; font-weight:900; margin:0 0 4px;">عروض الحجز المبكر لشتاء وربيع 2026</h3>
-                    <p style="margin:0; font-size:14px; color:#e0f2fe;">احجز الآن ووفر حتى 35% مع إمكانية الإلغاء المرن المجاني</p>
+    <!-- 6. INSTANT SEARCH & BOOKING CARD -->
+    <div class="tour-container">
+        <div class="tour-booking-bar-wrap">
+            <form class="tour-booking-form" onsubmit="event.preventDefault(); handleCustomSearch();">
+                <div class="tour-input-group">
+                    <label class="tour-input-label"><i class="fa-solid fa-location-dot"></i> وجهة السفر</label>
+                    <select class="tour-select" id="formDest">
+                        <option value="all">كافة الوجهات السياحية</option>
+                        <option value="maldives">جزر المالديف (فيلات عائمة)</option>
+                        <option value="swiss">سويسرا وبحيرات الألب</option>
+                        <option value="egypt">مصر (الأهرامات وكروز النيل)</option>
+                        <option value="turkey">تركيا (إسطنبول وكابادوكيا)</option>
+                    </select>
                 </div>
-            </div>
-            <div style="display:flex; align-items:center; gap:15px;">
-                <div style="display:flex; gap:8px; text-align:center;">
-                    <div style="background:rgba(0,0,0,0.25); padding:8px 14px; border-radius:8px;"><span id="cd-days" style="font-size:22px; font-weight:900; display:block;">03</span><span style="font-size:11px;">أيام</span></div>
-                    <div style="background:rgba(0,0,0,0.25); padding:8px 14px; border-radius:8px;"><span id="cd-hours" style="font-size:22px; font-weight:900; display:block;">14</span><span style="font-size:11px;">ساعة</span></div>
-                    <div style="background:rgba(0,0,0,0.25); padding:8px 14px; border-radius:8px;"><span id="cd-mins" style="font-size:22px; font-weight:900; display:block;">42</span><span style="font-size:11px;">دقيقة</span></div>
-                    <div style="background:rgba(0,0,0,0.25); padding:8px 14px; border-radius:8px;"><span id="cd-secs" style="font-size:22px; font-weight:900; display:block;">18</span><span style="font-size:11px;">ثانية</span></div>
+                <div class="tour-input-group">
+                    <label class="tour-input-label"><i class="fa-solid fa-calendar-days"></i> تاريخ المغادرة</label>
+                    <input type="date" class="tour-date-input" id="formDate" value="2026-06-01">
                 </div>
-                <a href="#tours" class="tour-btn" style="background:#ffffff; color:#0284c7; font-weight:900; text-decoration:none; padding:12px 24px;">استغل العرض الآن</a>
-            </div>
+                <div class="tour-input-group">
+                    <label class="tour-input-label"><i class="fa-solid fa-clock"></i> مدة الرحلة</label>
+                    <select class="tour-select" id="formDuration">
+                        <option>7 أيام / 6 ليالٍ</option>
+                        <option>10 أيام / 9 ليالٍ</option>
+                        <option>14 يوماً / 13 ليلة</option>
+                        <option>4 أيام (رحلة قصيرة)</option>
+                    </select>
+                </div>
+                <div class="tour-input-group">
+                    <label class="tour-input-label"><i class="fa-solid fa-user-group"></i> عدد المسافرين</label>
+                    <select class="tour-select" id="formTravelers">
+                        <option>شخصين (زوجي / عرسان)</option>
+                        <option>فردي (مسافر مستقل)</option>
+                        <option>عائلي (3 - 5 أفراد)</option>
+                        <option>مجموعة سياحية (6+ أفراد)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-tour-primary" style="height: 48px; margin-top: auto; padding: 0 28px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>بحث مخصص</span>
+                </button>
+            </form>
         </div>
-    </section>
+    </div>
 
-    <!-- TOURS PACKAGES SECTION WITH FILTER TABS -->
-    <section class="tour-section" id="tours" style="padding:70px 0;">
+    <!-- 7. FLASH TOURS & DEALS (INTERACTIVE FILTER TABS & CRISP CARDS) -->
+    <section class="tour-flash-section" id="tours">
         <div class="tour-container">
-            <div class="tour-section-header" style="margin-bottom:30px;">
-                <div>
-                    <span class="tour-section-subtitle"><i class="fa-solid fa-crown" style="color:#f59e0b;"></i> باقات منتقاة بعناية</span>
+            <div class="tour-flash-header">
+                <div class="tour-section-title-box">
+                    <span class="tour-section-subtitle">عروض محدودة المدة</span>
                     <h2 class="tour-section-title">برامج وعروض الرحلات السياحية الأكثر طلباً</h2>
                 </div>
-                <div class="tour-filter-tabs">
-                    <button class="tour-filter-btn active" onclick="filterTours('all', this)">عرض الكل</button>
-                    <button class="tour-filter-btn" onclick="filterTours('maldives', this)">جزر المالديف</button>
-                    <button class="tour-filter-btn" onclick="filterTours('switzerland', this)">سويسرا والألب</button>
-                    <button class="tour-filter-btn" onclick="filterTours('turkey', this)">تركيا وكابادوكيا</button>
-                    <button class="tour-filter-btn" onclick="filterTours('egypt', this)">مصر وسحر النيل</button>
-                    <button class="tour-filter-btn" onclick="filterTours('alula', this)">العلا والمملكة</button>
+                <div class="tour-flash-timer-box">
+                    <span class="tour-flash-timer-label"><i class="fa-solid fa-bolt"></i> ينتهي العرض الخاص خلال:</span>
+                    <div class="tour-countdown">
+                        <span class="tour-countdown-unit" id="cd-hours">14</span> :
+                        <span class="tour-countdown-unit" id="cd-mins">35</span> :
+                        <span class="tour-countdown-unit" id="cd-secs">09</span>
+                    </div>
                 </div>
             </div>
 
+            <!-- Destination Filter Tabs -->
+            <div class="tour-filter-tabs">
+                <button type="button" class="tour-filter-btn active" onclick="filterTours('all', this)">كافة البرامج (8)</button>
+                <button type="button" class="tour-filter-btn" onclick="filterTours('maldives', this)">جزر المالديف</button>
+                <button type="button" class="tour-filter-btn" onclick="filterTours('swiss', this)">سويسرا والألب</button>
+                <button type="button" class="tour-filter-btn" onclick="filterTours('egypt', this)">مصر الفرعونية</button>
+                <button type="button" class="tour-filter-btn" onclick="filterTours('turkey', this)">تركيا وكابادوكيا</button>
+            </div>
+
+            <!-- Tour Cards Grid -->
             <div class="tour-grid" id="toursGrid">
+
+                <!-- Tour 1: Maldives Luxury Villa -->
                 <div class="tour-card" data-dest="maldives">
+                    <div class="tour-card-badge">خصم 35%</div>
                     <div class="tour-card-img-box">
-                        <img src="images/maldives.jpg" alt="باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص" loading="lazy">
-                        <span class="tour-card-badge">خصم 22%</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 6 أيام / 5 ليالٍ</div>
+                        <img decoding="async" src="images/maldives.jpg" alt="رحلة المالديف الفاخرة" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">جزر المالديف • MALDIVES</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=1">باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> جزر المالديف الاستوائية</div>
+                            <h3 class="tour-card-title">باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">7 أيام / 6 ليالٍ</span>
+                                <span class="tour-spec-tag">شامل الطيران</span>
+                                <span class="tour-spec-tag">إقامة كاملة All Inclusive</span>
                             </div>
-                            <span class="tour-card-reviews">(48 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">5.0 (68 تقييم حقيقي)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل طيران دولي مباشر ذهاب وعودة</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>منتجع 5 نجوم دي لوكس (أوفرفيلا)</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>إقامة كاملة شاملة جميع الوجبات والمشروبات</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">4850</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">6200 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">4,850 ر.س</span>
+                                <span class="tour-price-old">7,200 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=1" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(1, 'باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص', 4850)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20المالديف%20الملكية%20(فيلات%20عائمة%20بسعر%204,850%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="tour-card" data-dest="switzerland">
+
+                <!-- Tour 2: Swiss Alps Chalets & Lakes -->
+                <div class="tour-card" data-dest="swiss">
+                    <div class="tour-card-badge">الأكثر مبيعاً</div>
                     <div class="tour-card-img-box">
-                        <img src="images/swiss_alps.jpg" alt="سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري" loading="lazy">
-                        <span class="tour-card-badge">الأكثر طلباً</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 8 أيام / 7 ليالٍ</div>
+                        <img decoding="async" src="images/swiss_alps.jpg" alt="رحلة سويسرا والألب" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">سويسرا • SWITZERLAND</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=2">سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> سويسرا وجبال الألب</div>
+                            <h3 class="tour-card-title">سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">8 أيام / 7 ليالٍ</span>
+                                <span class="tour-spec-tag">تذاكر القطار السويسري</span>
+                                <span class="tour-spec-tag">أكواخ فاخرة 5 نجوم</span>
                             </div>
-                            <span class="tour-card-reviews">(62 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">4.9 (54 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل تذاكر الطيران المباشر ذهاب وعودة</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>فنادق ألبية فاخرة 5 نجوم مطلة على الطبيعة</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>إفطار بوفيه فاخر يومياً + تذاكر القطار السويسري</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">5600</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">7100 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">5,600 ر.س</span>
+                                <span class="tour-price-old">8,100 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=2" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(2, 'سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري', 5600)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20سويسرا%20وبحيرات%20إنترلاكن%20(بسعر%205,600%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tour 3: Cappadocia Balloons & Cave Suites -->
                 <div class="tour-card" data-dest="turkey">
+                    <div class="tour-card-badge">خصم 30%</div>
                     <div class="tour-card-img-box">
-                        <img src="images/cappadocia.jpg" alt="مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة" loading="lazy">
-                        <span class="tour-card-badge">رحلة منطاد مجانية</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 6 أيام / 5 ليالٍ</div>
+                        <img decoding="async" src="images/cappadocia.jpg" alt="مناطيد كابادوكيا" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">تركيا • TURKEY</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=3">مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> تركيا - كابادوكيا وإسطنبول</div>
+                            <h3 class="tour-card-title">مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">6 أيام / 5 ليالٍ</span>
+                                <span class="tour-spec-tag">شامل تذكرة المنطاد</span>
+                                <span class="tour-spec-tag">جلسة تصوير احترافية</span>
                             </div>
-                            <span class="tour-card-reviews">(39 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">4.9 (82 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل الطيران الدولي والداخلي بين إسطنبول وكابادوكيا</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>منتجع كهوف فاخر 5 نجوم (Cave Resort)</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>إفطار يومي + عشاء فاخر بالمطاعم الصخرية</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">3200</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">4100 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">3,200 ر.س</span>
+                                <span class="tour-price-old">4,500 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=3" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(3, 'مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة', 3200)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20مناطيد%20كابادوكيا%20(بسعر%203,200%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tour 4: Egypt Pyramids & Nile Cruise Luxury -->
                 <div class="tour-card" data-dest="egypt">
+                    <div class="tour-card-badge">باقة VIP ملكية</div>
                     <div class="tour-card-img-box">
-                        <img src="images/egypt_pyramids.jpg" alt="كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية" loading="lazy">
-                        <span class="tour-card-badge">باقة شاملة VIP</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 7 أيام / 6 ليالٍ</div>
+                        <img decoding="async" src="images/egypt_pyramids.jpg" alt="الأهرامات وكروز النيل" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">مصر • EGYPT</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=4">كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> مصر - القاهرة والأقصر وأسوان</div>
+                            <h3 class="tour-card-title">كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">7 أيام / 6 ليالٍ</span>
+                                <span class="tour-spec-tag">إقامة كاملة بالنيل</span>
+                                <span class="tour-spec-tag">مرشد آثار خاص</span>
                             </div>
-                            <span class="tour-card-reviews">(54 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">5.0 (96 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل الطيران الداخلي القاهرة / الأقصر / أسوان / القاهرة</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>باخرة نيلية فاخرة + فندق 5 نجوم بالقاهرة مطل على النيل</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>إقامة كاملة (Full Board) طوال رحلة الكروز</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">2850</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">3600 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">2,850 ر.س</span>
+                                <span class="tour-price-old">3,900 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=4" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(4, 'كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية', 2850)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20مصر%20وكروز%20النيل%20الملكي%20(بسعر%202,850%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tour 5: Red Sea Luxury Resort & Yacht -->
                 <div class="tour-card" data-dest="egypt">
+                    <div class="tour-card-badge">شاطئية وعائلية</div>
                     <div class="tour-card-img-box">
-                        <img src="images/sharm_resort.jpg" alt="منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد" loading="lazy">
-                        <span class="tour-card-badge">الترا شامل كلياً</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 5 أيام / 4 ليالٍ</div>
+                        <img decoding="async" src="images/sharm_resort.jpg" alt="منتجعات البحر الأحمر" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">شرم الشيخ • RED SEA</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=5">منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> مصر - شرم الشيخ والغردقة</div>
+                            <h3 class="tour-card-title">منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">5 أيام / 4 ليالٍ</span>
+                                <span class="tour-spec-tag">Ultra All Inclusive</span>
+                                <span class="tour-spec-tag">يخت بحري خاص</span>
                             </div>
-                            <span class="tour-card-reviews">(41 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">4.9 (41 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل تذاكر الطيران المباشر لشرم الشيخ</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>منتجع ريكسوس شرم الشيخ 5 نجوم الترا</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>شامل كلياً جميع الوجبات والمشروبات والسناكس 24/7</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">2150</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">2800 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">2,150 ر.س</span>
+                                <span class="tour-price-old">2,950 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=5" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(5, 'منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد', 2150)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20منتجعات%20شرم%20الشيخ%20(بسعر%202,150%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="tour-card" data-dest="alula">
+
+                <!-- Tour 6: AlUla Desert & Luxury Eco Stays -->
+                <div class="tour-card" data-dest="all">
+                    <div class="tour-card-badge">وجهة الموسم</div>
                     <div class="tour-card-img-box">
-                        <img src="images/alula_resort.jpg" alt="واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر" loading="lazy">
-                        <span class="tour-card-badge">تجربة استثنائية</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 4 أيام / 3 ليالٍ</div>
+                        <img decoding="async" src="images/alula_resort.jpg" alt="العلا بالمملكة" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">العلا • SAUDI ARABIA</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=6">واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> المملكة العربية السعودية - العلا</div>
+                            <h3 class="tour-card-title">واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">4 أيام / 3 ليالٍ</span>
+                                <span class="tour-spec-tag">فيلا بمسبح خاص</span>
+                                <span class="tour-spec-tag">سيارة دفع رباعي خاصة</span>
                             </div>
-                            <span class="tour-card-reviews">(29 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">5.0 (32 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل تذاكر الطيران المباشر لمطار العلا الدولي</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>فيلا فاخرة في منتجع بانيان تري العلا (Banyan Tree)</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>إفطار فاخر يومياً + عشاء في قمة حرة عويرض</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">4200</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">5300 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">4,200 ر.س</span>
+                                <span class="tour-price-old">5,800 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=6" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(6, 'واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر', 4200)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20العلا%20الفاخرة%20(بسعر%204,200%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="tour-card" data-dest="switzerland">
+
+                <!-- Tour 7: Camper Van & Eco Safari Adventure -->
+                <div class="tour-card" data-dest="swiss">
+                    <div class="tour-card-badge">مغامرات وتخييم</div>
                     <div class="tour-card-img-box">
-                        <img src="images/camper_van.jpg" alt="مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية" loading="lazy">
-                        <span class="tour-card-badge">حرية واستكشاف</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 7 أيام / 6 ليالٍ</div>
+                        <img decoding="async" src="images/camper_van.jpg" alt="مغامرات الكامبر" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">سويسرا • SWITZERLAND</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=7">مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> جبال الألب - مسارات الكامبر فان</div>
+                            <h3 class="tour-card-title">مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">7 أيام / 6 ليالٍ</span>
+                                <span class="tour-spec-tag">مركبة مجهزة بالكامل</span>
+                                <span class="tour-spec-tag">مسارات GPS ومخيمات VIP</span>
                             </div>
-                            <span class="tour-card-reviews">(33 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">4.8 (27 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل الطيران المباشر ذهاب وعودة لمطار جنيف</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>كامبر فان مرسيدس / فولكسفاجن فاخر موديل 2026</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>باقة تموين أولية فاخرة + تأمين شامل بدون اقتطاع</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">3650</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">4600 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">3,650 ر.س</span>
+                                <span class="tour-price-old">4,900 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=7" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(7, 'مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية', 3650)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20الكامبر%20فان%20(بسعر%203,650%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tour 8: Grand Tour Maldives Luxury Honeymoon -->
                 <div class="tour-card" data-dest="maldives">
+                    <div class="tour-card-badge">عرسان VIP</div>
                     <div class="tour-card-img-box">
-                        <img src="images/honeymoon.jpg" alt="باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص" loading="lazy">
-                        <span class="tour-card-badge">شهر عسل ملكي</span>
-                        <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 7 أيام / 6 ليالٍ</div>
+                        <img decoding="async" src="images/honeymoon.jpg" alt="منتجعات المالديف البوتيكية" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                     </div>
                     <div class="tour-card-body">
-                        <div class="tour-card-cat">جزر المالديف • HONEYMOON</div>
-                        <h3 class="tour-card-title"><a href="tour-detail.html?id=8">باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص</a></h3>
-                        <div class="tour-card-rating">
-                            <div class="tour-card-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div>
+                            <div class="tour-card-cat"><i class="fa-solid fa-location-dot"></i> جزر المالديف - باقة شهر العسل</div>
+                            <h3 class="tour-card-title">باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص</h3>
+                            <div class="tour-card-specs">
+                                <span class="tour-spec-tag">6 أيام / 5 ليالٍ</span>
+                                <span class="tour-spec-tag">فيلا شاطئية مع سبا</span>
+                                <span class="tour-spec-tag">طيران مائي Seaplane</span>
                             </div>
-                            <span class="tour-card-reviews">(57 تقييم ممتاز)</span>
+                            <div class="tour-card-rating">
+                                <div class="tour-card-stars">★★★★★</div>
+                                <span class="tour-card-reviews">5.0 (49 تقييم)</span>
+                            </div>
                         </div>
-                        <div class="tour-card-specs">
-                            <div class="tour-spec-item"><i class="fa-solid fa-plane"></i> <span>شامل الطيران الدولي ذهاب وعودة للمالديف</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-hotel"></i> <span>جناح ووتر بول مع مسبح خاص لا متناهي وممر زجاجي</span></div>
-                            <div class="tour-spec-item"><i class="fa-solid fa-utensils"></i> <span>إقامة كاملة مع عشاء خاص رومانسي يومياً</span></div>
-                        </div>
-                        <div class="tour-card-pricing">
-                            <div>
-                                <span class="tour-price-label">السعر للشخص يبدأ من</span>
-                                <div class="tour-price-main">
-                                    <span class="tour-price-num">5200</span>
-                                    <span class="tour-price-cur">ر.س</span>
-                                    <span class="tour-price-old">6800 ر.س</span>
-                                </div>
+                        <div>
+                            <div class="tour-card-pricing">
+                                <span class="tour-price-current">5,200 ر.س</span>
+                                <span class="tour-price-old">7,800 ر.س</span>
                             </div>
-                            <div style="display:flex; gap:8px;">
-                                <a href="tour-detail.html?id=8" class="tour-btn" style="background:#f1f5f9; color:#334155; border:1px solid #cbd5e1; padding:9px 12px; font-size:13px; text-decoration:none;" title="عرض تفاصيل البرنامج">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button onclick="openBookingModal(8, 'باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص', 5200)" class="tour-btn tour-btn-primary" style="padding:9px 18px; font-size:13px;">
-                                    <i class="fa-solid fa-calendar-check"></i> احجز الآن
-                                </button>
-                            </div>
+                            <a href="https://wa.me/201027093535?text=مرحباً،%20أود%20حجز%20باقة%20شهر%20العسل%20جراند%20تور%20(بسعر%205,200%20ر.س)" target="_blank" rel="noopener" class="btn-tour-book">
+                                <i class="fa-brands fa-whatsapp" style="color: #0284c7;"></i>
+                                <span>احجز الآن عبر واتساب</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- VIP TAILORED EXPERIENCE SECTION -->
-    <section class="tour-section" id="vip" style="background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('images/vip_concierge.jpg') center/cover; padding:90px 0; color:#fff; text-align:center;">
-        <div class="tour-container" style="max-width:850px; margin:0 auto;">
-            <span style="background:rgba(56,189,248,0.2); color:#38bdf8; border:1px solid #38bdf8; padding:6px 18px; border-radius:30px; font-size:13px; font-weight:800; display:inline-block; margin-bottom:16px;">
-                <i class="fa-solid fa-gem"></i> خدمة كبار الشخصيات VIP CONCIERGE
-            </span>
-            <h2 style="font-size:38px; font-weight:900; margin-bottom:16px; line-height:1.3;">
-                هل تبحث عن تجربة سفر مخصصة بالكامل لك ولعائلتك؟
-            </h2>
-            <p style="font-size:16px; color:#cbd5e1; line-height:1.8; margin-bottom:32px;">
-                فريق الكونسيرج الملكي لدينا جاهز لتصميم مسار رحلتك من الصفر: طائرات خاصة، يخوت بحرية فاخرة، فلل شاطئية معزولة، وحجوزات حصرية في أرقى مطاعم الميشلان حول العالم.
-            </p>
-            <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-                <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أريد%20تصميم%20برنامج%20سياحي%20مخصص%20VIP" target="_blank" class="tour-btn" style="background:#25d366; color:#fff; font-size:16px; font-weight:900; padding:15px 32px; text-decoration:none; display:flex; align-items:center; gap:10px;">
-                    <i class="fa-brands fa-whatsapp" style="font-size:22px;"></i>
-                    <span>طلب برنامج مخصص VIP عبر واتساب</span>
-                </a>
-                <a href="contact.html" class="tour-btn" style="background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.3); font-size:16px; font-weight:800; padding:15px 28px; text-decoration:none;">
-                    تحدث مع مستشار السفر
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLIENT REVIEWS -->
-    <section class="tour-section" id="reviews" style="background:#f8fafc; padding:80px 0;">
+    <!-- 8. VIP CONCIERGE BANNER -->
+    <section class="tour-vip-section" id="vip">
         <div class="tour-container">
-            <div class="tour-section-header" style="text-align:center; display:block; margin-bottom:45px;">
-                <span class="tour-section-subtitle"><i class="fa-solid fa-heart" style="color:#ef4444;"></i> ثقة نعتز بها</span>
-                <h2 class="tour-section-title">آراء وتجارب المسافرين مع هورايزون تورز</h2>
-                <p style="color:#64748b; font-size:15px; max-width:600px; margin:10px auto 0;">أكثر من 12,000 مسافر اختاروا هورايزون تورز لقضاء أروع العطلات في 2026</p>
+            <div class="tour-vip-card">
+                <div class="tour-vip-content" style="color: #f1f5f9 !important;">
+                    <span style="color: #38bdf8; font-size: 13.5px; font-weight: 800; text-transform: uppercase;"><i class="fa-solid fa-crown"></i> خدمة النخبة VIP Concierge</span>
+                    <h3>هل تبحث عن تجربة سفر مخصصة بالكامل لك ولعائلتك؟</h3>
+                    <p style="color: #f1f5f9 !important; font-size: 16px !important; line-height: 1.85 !important; font-weight: 500 !important; text-shadow: 0 1px 2px rgba(0,0,0,0.4);">
+                        يقوم خبراؤنا بتصميم مسار رحلتك بالكامل من الصفر؛ طائرات خاصة، يخوت فاخرة، حجز أجنحة القصور التاريخية، وتوفير حراسة شخصية وسيارات فارهة بسائق خاص في أي مكان حول العالم.
+                    </p>
+                    <div class="tour-vip-perks">
+                        <div class="tour-perk-item"><i class="fa-solid fa-check-circle"></i> طيران خاص واستقبال صالة كبار الشخصيات</div>
+                        <div class="tour-perk-item"><i class="fa-solid fa-check-circle"></i> أجنحة رئاسية ومنتجعات جزر خاصة</div>
+                        <div class="tour-perk-item"><i class="fa-solid fa-check-circle"></i> مرشد سياحي خاص متعدد اللغات</div>
+                        <div class="tour-perk-item"><i class="fa-solid fa-check-circle"></i> تخطيط كامل للمسارات وتأشيرات السفر</div>
+                    </div>
+                    <a href="https://wa.me/201027093535?text=مرحباً%D8%8C%20أريد%20استشارة%20خاصة%20لباقة%20سفر%20VIP%20مخصصة" target="_blank" rel="noopener" class="btn-tour-primary" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>تحدث مع مستشار الـ VIP مباشرة</span>
+                    </a>
+                </div>
+                <div style="border-radius: 18px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+                    <img decoding="async" src="images/vip_concierge.jpg" alt="سياحة VIP" style="width: 100%; height: 360px; object-fit: cover;" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. TESTIMONIALS SECTION -->
+    <section class="tour-reviews-section" id="reviews">
+        <div class="tour-container">
+            <div class="tour-section-header">
+                <div class="tour-section-title-box">
+                    <span class="tour-section-subtitle">ثقة عملائنا</span>
+                    <h2 class="tour-section-title">آراء وتجارب المسافرين مع هورايزون تورز</h2>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; color: #0284c7;">
+                    <span>تقييم ممتاز 4.9 من 5</span>
+                    <i class="fa-solid fa-star" style="color: #f59e0b;"></i>
+                </div>
             </div>
 
-            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
-                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:26px 20px; box-shadow:0 4px 20px rgba(0,0,0,0.04); display:flex; flex-direction:column; justify-content:space-between;">
+            <div class="tour-reviews-grid">
+                <div class="tour-review-card">
                     <div>
-                        <div style="color:#f59e0b; margin-bottom:14px; font-size:15px;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p style="color:#334155; font-size:14px; line-height:1.7; margin-bottom:20px;">"تجربتي مع هورايزون تورز في باقة المالديف كانت فوق الوصف! الاستقبال بالطائرة المائية، فيلا خيالية بمسبح خاص، والكونسيرج كان يتابع معنا عبر الواتساب لحظة بلحظة. احترافية سعودية نفتخر بها."</p>
+                        <div class="tour-review-stars">★★★★★</div>
+                        <p class="tour-review-text">
+                            "تجربة سفر ولا في الأحلام إلى جزر المالديف! تم التنسيق مع فريق هورايزون في أقل من 24 ساعة، استقبلونا من مطار مالي ونقلونا بالطيران المائي إلى المنتجع. الخدمة فاخرة وكل التفاصيل تمت بأعلى دقة."
+                        </p>
                     </div>
-                    <div style="display:flex; align-items:center; gap:12px; border-top:1px solid #f1f5f9; padding-top:14px;">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="سعود بن عبد العزيز" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
-                        <div>
-                            <strong style="font-size:14.5px; color:#0f172a; display:block;">سعود بن عبد العزيز</strong>
-                            <span style="font-size:12px; color:#64748b;">مسافر VIP - الرياض</span>
+                    <div class="tour-reviewer">
+                        <div class="tour-reviewer-avatar">س.ع</div>
+                        <div class="tour-reviewer-info">
+                            <h5>سعود بن عبد العزيز</h5>
+                            <span>رحلة شهر عسل - المالديف</span>
                         </div>
                     </div>
                 </div>
-                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:26px 20px; box-shadow:0 4px 20px rgba(0,0,0,0.04); display:flex; flex-direction:column; justify-content:space-between;">
+
+                <div class="tour-review-card">
                     <div>
-                        <div style="color:#f59e0b; margin-bottom:14px; font-size:15px;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p style="color:#334155; font-size:14px; line-height:1.7; margin-bottom:20px;">"حجزت باقة سويسرا وبحيرات إنترلاكن لعائلتي. الفنادق كانت مختارة بعناية فائقة في قلب الألب، وبطاقة القطارات وفرت علينا مبالغ ضخمة. كل تفصيلة ذكروها بالبرنامج كانت مطابقة بدقة 100%."</p>
+                        <div class="tour-review-stars">★★★★★</div>
+                        <p class="tour-review-text">
+                            "برنامج سويسرا كان منظماً لدرجة لا تُصدق. تذاكر القطارات السويسرية، الإقامة في إنترلاكن، والجولات اليومية في الجبال كانت مريحة جداً لعائلتي. شكراً لفريق الكونسيرج الذي كان يتابعنا يومياً عبر واتساب."
+                        </p>
                     </div>
-                    <div style="display:flex; align-items:center; gap:12px; border-top:1px solid #f1f5f9; padding-top:14px;">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="د. فيصل الحربي" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
-                        <div>
-                            <strong style="font-size:14.5px; color:#0f172a; display:block;">د. فيصل الحربي</strong>
-                            <span style="font-size:12px; color:#64748b;">طبيب استشاري - جدة</span>
+                    <div class="tour-reviewer">
+                        <div class="tour-reviewer-avatar">د.ف</div>
+                        <div class="tour-reviewer-info">
+                            <h5>د. فيصل الحربي</h5>
+                            <span>رحلة عائلية - سويسرا وإنترلاكن</span>
                         </div>
                     </div>
                 </div>
-                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:26px 20px; box-shadow:0 4px 20px rgba(0,0,0,0.04); display:flex; flex-direction:column; justify-content:space-between;">
+
+                <div class="tour-review-card">
                     <div>
-                        <div style="color:#f59e0b; margin-bottom:14px; font-size:15px;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p style="color:#334155; font-size:14px; line-height:1.7; margin-bottom:20px;">"رحلة كابادوكيا كانت حلم وتحقق! حجز المنطاد الفجري كان في أفضل يوم بدون أي إلغاء، والفندق الصخري فخم جداً ونظيف لأبعد الحدود. خدمة العملاء عبر الواتساب سريعة ومحترمة جداً."</p>
+                        <div class="tour-review-stars">★★★★★</div>
+                        <p class="tour-review-text">
+                            "رحلة مناطيد كابادوكيا كانت تجربة لا تُنسى في العمر. الفندق الصخري التاريخي كان نظيفاً وغاية في الروعة، وتجربة التحليق مع شروق الشمس تمت باحترافية وأمان كامل. أنصح بالتعامل معهم بشدة."
+                        </p>
                     </div>
-                    <div style="display:flex; align-items:center; gap:12px; border-top:1px solid #f1f5f9; padding-top:14px;">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="مها الخالدي" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
-                        <div>
-                            <strong style="font-size:14.5px; color:#0f172a; display:block;">مها الخالدي</strong>
-                            <span style="font-size:12px; color:#64748b;">سيدة أعمال - الدمام</span>
-                        </div>
-                    </div>
-                </div>
-                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:26px 20px; box-shadow:0 4px 20px rgba(0,0,0,0.04); display:flex; flex-direction:column; justify-content:space-between;">
-                    <div>
-                        <div style="color:#f59e0b; margin-bottom:14px; font-size:15px;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p style="color:#334155; font-size:14px; line-height:1.7; margin-bottom:20px;">"باقة كروز النيل في مصر كانت استثنائية بكل المعايير. المرشد المرافق دكتور متخصص بالآثار جعل الرحلة ممتعة وتثقيفية للأولاد، والباخرة كانت قمة في النظافة والفخامة. شكراً هورايزون تورز!"</p>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:12px; border-top:1px solid #f1f5f9; padding-top:14px;">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="م. خالد الشمري" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
-                        <div>
-                            <strong style="font-size:14.5px; color:#0f172a; display:block;">م. خالد الشمري</strong>
-                            <span style="font-size:12px; color:#64748b;">مهندس - الكويت</span>
+                    <div class="tour-reviewer">
+                        <div class="tour-reviewer-avatar">م.خ</div>
+                        <div class="tour-reviewer-info">
+                            <h5>مها الخالدي</h5>
+                            <span>رحلة استكشافية - تركيا وكابادوكيا</span>
                         </div>
                     </div>
                 </div>
@@ -786,298 +1892,208 @@
         </div>
     </section>
 
-    <!-- FAQS ACCORDION -->
-    <section class="tour-section" id="faq" style="background:#ffffff; padding:80px 0;">
-        <div class="tour-container" style="max-width:850px;">
-            <div class="tour-section-header" style="text-align:center; display:block; margin-bottom:45px;">
-                <span class="tour-section-subtitle"><i class="fa-solid fa-circle-question"></i> إجابات شافية</span>
-                <h2 class="tour-section-title">الأسئلة الشائعة حول حجز الرحلات السياحية</h2>
+    <!-- 10. FAQ SECTION -->
+    <section class="tour-faq-section" id="faq">
+        <div class="tour-container">
+            <div class="tour-section-header" style="justify-content: center; text-align: center;">
+                <div class="tour-section-title-box" style="text-align: center;">
+                    <span class="tour-section-subtitle" style="text-align: center;">إجابات واضحة</span>
+                    <h2 class="tour-section-title" style="text-align: center;">الأسئلة الشائعة حول حجز الرحلات السياحية</h2>
+                </div>
             </div>
 
-            <div class="tour-faqs-wrapper" style="display:flex; flex-direction:column; gap:14px;">
-                <div class="tour-faq-item" style="border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:#f8fafc;">
-                    <div onclick="toggleFaq(this)" style="padding:18px 22px; font-weight:800; font-size:15px; color:#0f172a; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none;">
-                        <span><i class="fa-solid fa-circle-info" style="color:var(--color-primary); margin-left:10px;"></i> كيف يتم تأكيد الحجز والدفع؟</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size:12px; color:#64748b; transition:transform 0.3s;"></i>
+            <div class="tour-faq-list">
+                <div class="tour-faq-item active">
+                    <div class="tour-faq-question" onclick="toggleFaq(this)">
+                        <span>كيف تتم عملية تأكيد الحجز واستلام قسائم الفنادق والطيران؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="tour-faq-answer" style="padding:0 22px 18px; font-size:14px; color:#475569; line-height:1.8; display:none;">
-                        يمكنك الضغط على زر 'احجز الآن عبر واتساب' وسيقوم مستشار السفر بتأكيد التواريخ المتاحة معك وإرسال رابط دفع إلكتروني آمن معتمد، أو الدفع عبر التحويل البنكي لحساب المؤسسة الرسمي، كما نوفر خيارات تقسيط ميسرة عبر تابي وتمارا.
-                    </div>
-                </div>
-                <div class="tour-faq-item" style="border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:#f8fafc;">
-                    <div onclick="toggleFaq(this)" style="padding:18px 22px; font-weight:800; font-size:15px; color:#0f172a; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none;">
-                        <span><i class="fa-solid fa-circle-info" style="color:var(--color-primary); margin-left:10px;"></i> هل تذاكر الطيران الدولي مشمولة في الأسعار المعروضة؟</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size:12px; color:#64748b; transition:transform 0.3s;"></i>
-                    </div>
-                    <div class="tour-faq-answer" style="padding:0 22px 18px; font-size:14px; color:#475569; line-height:1.8; display:none;">
-                        نعم، معظم باقاتنا المعروضة شاملة تذاكر الطيران الدولي المباشر ذهاب وعودة من المطارات الرئيسية (الرياض، جدة، الدمام، الكويت، القاهرة)، كما يمكنك طلب تخصيص الباقة لتشمل أو تستثني الطيران حسب رغبتك.
+                    <div class="tour-faq-answer">
+                        بمجرد اختيار الباقة وإتمام الدفع أو التواصل عبر واتساب، يتم إصدار تذاكر الطيران الإلكترونية وقسائم الفنادق (Hotel Vouchers) فوراً بصيغة PDF وإرسالها إلى بريدك الإلكتروني ورقم الواتساب مع جدول الرحلة اليومي المفصل.
                     </div>
                 </div>
-                <div class="tour-faq-item" style="border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:#f8fafc;">
-                    <div onclick="toggleFaq(this)" style="padding:18px 22px; font-weight:800; font-size:15px; color:#0f172a; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none;">
-                        <span><i class="fa-solid fa-circle-info" style="color:var(--color-primary); margin-left:10px;"></i> ما هي سياسة الإلغاء أو تعديل موعد الرحلة؟</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size:12px; color:#64748b; transition:transform 0.3s;"></i>
+
+                <div class="tour-faq-item">
+                    <div class="tour-faq-question" onclick="toggleFaq(this)">
+                        <span>هل يمكنني تعديل مواعيد الرحلة أو إضافة ليالٍ إضافية؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="tour-faq-answer" style="padding:0 22px 18px; font-size:14px; color:#475569; line-height:1.8; display:none;">
-                        نوفر سياسة مرونة استثنائية تتيح تعديل موعد الرحلة مجاناً قبل موعد السفر بـ 14 يوماً على الأقل. وفي حالة الإلغاء، يتم استرداد المبالغ وفقاً لسياسة خطوط الطيران والفنادق الشريكة مع ضمان كامل حقوق العميل.
-                    </div>
-                </div>
-                <div class="tour-faq-item" style="border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:#f8fafc;">
-                    <div onclick="toggleFaq(this)" style="padding:18px 22px; font-weight:800; font-size:15px; color:#0f172a; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none;">
-                        <span><i class="fa-solid fa-circle-info" style="color:var(--color-primary); margin-left:10px;"></i> هل تقدمون خدمات استخراج التأشيرات السياحية (الفيزا)؟</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size:12px; color:#64748b; transition:transform 0.3s;"></i>
-                    </div>
-                    <div class="tour-faq-answer" style="padding:0 22px 18px; font-size:14px; color:#475569; line-height:1.8; display:none;">
-                        نعم، يقدم فريق الكونسيرج لدينا خدمة مساعدة كاملة في استخراج تأشيرات الشنغن، بريطانيا، أمريكا، وتركيا، بما يشمل حجز المواعيد، التأمين الطبي الدولي المعتمد، وتجهيز ملفات الحجز الفندقي والطيران.
+                    <div class="tour-faq-answer">
+                        نعم بكل سهولة! نوفر مرونة كاملة في تعديل تواريخ السفر أو ترقية الفنادق والغرف، كما يمكنك إضافة أنشطة وجولات حصرية وفقاً لرغبتك الشخصية قبل موعد الرحلة بوقت كافٍ.
                     </div>
                 </div>
-                <div class="tour-faq-item" style="border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:#f8fafc;">
-                    <div onclick="toggleFaq(this)" style="padding:18px 22px; font-weight:800; font-size:15px; color:#0f172a; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none;">
-                        <span><i class="fa-solid fa-circle-info" style="color:var(--color-primary); margin-left:10px;"></i> هل يمكن تصميم برنامج سياحي مخصص بالكامل؟</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size:12px; color:#64748b; transition:transform 0.3s;"></i>
+
+                <div class="tour-faq-item">
+                    <div class="tour-faq-question" onclick="toggleFaq(this)">
+                        <span>ما هي طرق الدفع المتاحة لحجز الباقات؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="tour-faq-answer" style="padding:0 22px 18px; font-size:14px; color:#475569; line-height:1.8; display:none;">
-                        بالتأكيد! نتميز في باقات الـ VIP الخاصة بتصميم برامج سفر حصرية مصممة حسب ميزانيتك، عدد أفراد عائلتك، والأنشطة المفضلة لديكم (سياحة عائلية، شهر عسل، مغامرات، تسوق فاخر) مع مرشد وسيارة خاصة.
+                    <div class="tour-faq-answer">
+                        نوفر بوابات دفع إلكترونية آمنة ومعتمدة 100%: بطاقات الائتمان (Visa / Mastercard)، بطاقات مدى، Apple Pay، والتحويل البنكي المباشر، بالإضافة إلى إمكانية تقسيط تكلفة الرحلة على 4 دفعات بدون فوائد عبر تابي وتمارا.
+                    </div>
+                </div>
+
+                <div class="tour-faq-item">
+                    <div class="tour-faq-question" onclick="toggleFaq(this)">
+                        <span>هل تشمل البرامج السياحية تأشيرة الدخول (الفيزا)؟</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="tour-faq-answer">
+                        نقدم خدمة المساعدة الكاملة وإصدار خطابات الحجز المعتمدة المطلوبة للشنغن والتأشيرات الأوروبية وتأشيرات المالديف وتركيا، لمساعدتك في استخراج التأشيرة بأسرع وأيسر الإجراءات.
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- FOOTER -->
+
+    <!-- 11. MODERN FOOTER -->
     <footer class="tour-footer">
         <div class="tour-container">
             <div class="tour-footer-grid">
                 <div class="tour-footer-col">
-                    <div class="tour-logo" style="margin-bottom:18px;">
-                        <div class="tour-logo-icon" style="background:#0284c7; color:#fff;"><i class="fa-solid fa-plane-departure"></i></div>
-                        <div class="tour-logo-text">
-                            <span style="font-size:22px; font-weight:900; color:#ffffff; line-height:1; display:block;">HORIZON TOURS</span>
-                            <span style="font-size:9.5px; font-weight:800; color:#38bdf8; letter-spacing:1px;">LUXURY TRAVEL & VIP SERVICES</span>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                        <div class="tour-logo-icon" style="width: 38px; height: 38px; font-size: 18px;">
+                            <i class="fa-solid fa-compass"></i>
                         </div>
+                        <span style="font-size: 20px; font-weight: 900; color: #ffffff;">هورايزون تورز</span>
                     </div>
-                    <p style="color:#94a3b8; font-size:14px; line-height:1.8; margin-bottom:20px;">
-                        وكالة هورايزون تورز الرائدة في تصميم برامج السفر الفاخرة وشهر العسل والرحلات العائلية بأعلى معايير الرفاهية والخصوصية مع كونسيرج شخصي على مدار الساعة.
+                    <p style="font-size: 13.5px; color: #94a3b8; line-height: 1.8; margin-bottom: 20px;">
+                        وكالة هورايزون لاكجري تورز العالمية، بوابتك لتجارب سفر لا تُنسى في أرقى وجهات العالم، مصممة بأعلى معايير الرفاهية والأمان وخدمة الكونسيرج الخاصة.
                     </p>
-                    <div style="display:flex; gap:10px; font-size:16px;">
-                        <a href="https://wa.me/201027093535" target="_blank" style="width:38px; height:38px; background:#1e293b; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" style="width:38px; height:38px; background:#1e293b; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" style="width:38px; height:38px; background:#1e293b; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fa-brands fa-x-twitter"></i></a>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
                 <div class="tour-footer-col">
-                    <h3 class="tour-footer-title">أشهر الوجهات السياحية</h3>
-                    <ul class="tour-footer-links">
-                        <li><a href="destination.html?dest=maldives"><i class="fa-solid fa-angle-left"></i> جزر المالديف الفاخرة</a></li>
-                        <li><a href="destination.html?dest=switzerland"><i class="fa-solid fa-angle-left"></i> سويسرا وجبال الألب</a></li>
-                        <li><a href="destination.html?dest=turkey"><i class="fa-solid fa-angle-left"></i> كابادوكيا وإسطنبول</a></li>
-                        <li><a href="destination.html?dest=egypt"><i class="fa-solid fa-angle-left"></i> الأهرامات وكروز النيل الملكي</a></li>
-                        <li><a href="destination.html?dest=alula"><i class="fa-solid fa-angle-left"></i> واحة العلا ومنتجعات بانيان تري</a></li>
+                    <h4>أشهر الوجهات</h4>
+                    <ul>
+                        <li><a href="#tours" onclick="filterTours('maldives')">جزر المالديف الفاخرة</a></li>
+                        <li><a href="#tours" onclick="filterTours('swiss')">سويسرا وجبال الألب</a></li>
+                        <li><a href="#tours" onclick="filterTours('turkey')">كابادوكيا وإسطنبول</a></li>
+                        <li><a href="#tours" onclick="filterTours('egypt')">الأهرامات وكروز النيل</a></li>
+                        <li><a href="#tours" onclick="filterTours('all')">سفاري وكامبر فان</a></li>
                     </ul>
                 </div>
 
                 <div class="tour-footer-col">
-                    <h3 class="tour-footer-title">روابط تهمك</h3>
-                    <ul class="tour-footer-links">
-                        <li><a href="admin/index.html"><i class="fa-solid fa-lock" style="color:#38bdf8;"></i> دخول لوحة الإدارة (Admin PIN: 1234)</a></li>
-                        <li><a href="tours.html"><i class="fa-solid fa-angle-left"></i> كافة باقات السفر المتاحة</a></li>
-                        <li><a href="about.html"><i class="fa-solid fa-angle-left"></i> عن الوكالة وتراخيص السفر</a></li>
-                        <li><a href="contact.html"><i class="fa-solid fa-angle-left"></i> فروعنا وسياسة الحجز والإلغاء</a></li>
-                        <li><a href="tours.html?filter=vip"><i class="fa-solid fa-angle-left"></i> باقات كبار الشخصيات VIP</a></li>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الصفحة الرئيسية</a></li>
+                        <li><a href="#tours">عروض الموسم 2026</a></li>
+                        <li><a href="#vip">باقات VIP الخاصة</a></li>
+                        <li><a href="#reviews">آراء المسافرين</a></li>
+                        <li><a href="https://entejsites.com/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%85%d9%88%d8%a7%d9%82%d8%b9/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%85%d9%88%d8%a7%d9%82%d8%b9-%d8%a7%d9%84%d8%b3%d9%8a%d8%a7%d8%ad%d8%a9-%d9%88%d8%a7%d9%84%d8%b3%d9%81%d8%b1/">صفحة نماذج مواقع السياحة</a></li>
                     </ul>
                 </div>
 
                 <div class="tour-footer-col">
-                    <h3 class="tour-footer-title">خدمة العملاء والاتصال</h3>
-                    <p style="color:#94a3b8; font-size:13.5px; margin-bottom:12px;"><i class="fa-solid fa-location-dot" style="color:#38bdf8; margin-left:6px;"></i> الرياض: برج الفيصلية | القاهرة: شارع التسعين</p>
-                    <p style="color:#94a3b8; font-size:13.5px; margin-bottom:12px;"><i class="fa-solid fa-phone" style="color:#38bdf8; margin-left:6px;"></i> الرقم المجاني الموحد: <strong>9200 88 777</strong></p>
-                    <p style="color:#94a3b8; font-size:13.5px; margin-bottom:18px;"><i class="fa-solid fa-envelope" style="color:#38bdf8; margin-left:6px;"></i> booking@horizon-travel.com</p>
-                    <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20حجز%20رحلة" target="_blank" style="background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:6px; font-weight:800; font-size:13.5px; text-decoration:none;">
-                        <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i>
-                        <span>واتساب مباشر: 01027093535</span>
-                    </a>
+                    <h4>خدمة العملاء والاتصال</h4>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 10px;">
+                        <i class="fa-solid fa-phone" style="color: #0284c7; margin-left: 8px;"></i> 201027093535+
+                    </p>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 10px;">
+                        <i class="fa-solid fa-envelope" style="color: #0284c7; margin-left: 8px;"></i> concierge@horizontours.com
+                    </p>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: #0284c7; margin-left: 8px;"></i> برج هورايزون للأعمال - الرياض / القاهرة
+                    </p>
+                    <div style="background: #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 12px; color: #cbd5e1; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-shield-check" style="color: #38bdf8;"></i>
+                        <span>حجوزات مرخصة ومعتمدة رسمياً</span>
+                    </div>
                 </div>
             </div>
 
             <div class="tour-footer-bottom">
-                <p>© 2026 جميع الحقوق محفوظة - وكالة هورايزون تورز للسياحة والسفر | تم التطوير بأعلى معايير الاحترافية</p>
-                <div style="display:flex; align-items:center; gap:12px; font-size:22px; color:#64748b;">
-                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
-                    <i class="fa-brands fa-apple-pay" title="Apple Pay"></i>
-                    <span style="font-size:11px; font-weight:800; border:1px solid #475569; padding:2px 8px; border-radius:4px;">مدى MADA</span>
+                <div>جميع الحقوق محفوظة © 2026 لوكالة هورايزون لاكجري تورز | تصميم وبرمجة إنتج لتقنية المواقع السياحية</div>
+                <div style="display: flex; gap: 14px;">
+                    <a href="#" style="color: #64748b;">سياسة الخصوصية</a>
+                    <a href="#" style="color: #64748b;">شروط الحجز والإلغاء</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- BOOKING INQUIRY MODAL -->
-    <div class="tour-modal-overlay" id="bookingModal" onclick="if(event.target===this) closeBookingModal();">
-        <div class="tour-modal-card">
-            <div class="tour-modal-header">
-                <div class="tour-modal-title">
-                    <i class="fa-solid fa-plane-departure" style="color:var(--color-primary);"></i>
-                    <span id="modalTourTitle">طلب حجز باقة سياحية</span>
-                </div>
-                <button class="tour-modal-close" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="tour-modal-body">
-                <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:12px 16px; margin-bottom:18px; display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:13px; font-weight:700; color:#0369a1;">سعر الباقة التقديري للشخص:</span>
-                    <strong id="modalTourPrice" style="color:var(--color-primary); font-size:18px;">0 ر.س</strong>
-                </div>
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+    // 1. Filter Tours Function
+    function filterTours(category, btn) {
+        if (btn) {
+            document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        const cards = document.querySelectorAll('.tour-card');
+        cards.forEach(card => {
+            const dest = card.getAttribute('data-dest');
+            if (category === 'all' || dest === category) {
+                card.style.display = 'flex';
+                card.style.animation = 'fadeIn 0.4s ease';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
 
-                <form onsubmit="submitWhatsAppBooking(event)">
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">الاسم الكريم بالكامل *</label>
-                        <input type="text" id="bookName" class="tour-form-input" placeholder="مثال: فهد عبد الله" required>
-                    </div>
+    function scrollToTours() {
+        const el = document.getElementById('tours');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
 
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">رقم الجوال / الواتساب *</label>
-                        <input type="tel" id="bookPhone" class="tour-form-input" placeholder="مثال: 0501234567" required>
-                    </div>
+    // 2. Custom Search Handler
+    function handleCustomSearch() {
+        const dest = document.getElementById('formDest').value;
+        filterTours(dest);
+        scrollToTours();
+    }
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">تاريخ السفر التقريبي</label>
-                            <input type="date" id="bookDate" class="tour-form-input">
-                        </div>
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">عدد المسافرين</label>
-                            <select id="bookGuests" class="tour-form-select">
-                                <option value="مسافر واحد (فردي)">مسافر واحد</option>
-                                <option value="مسافران (شخصين / زوجين)" selected>مسافران (شخصين)</option>
-                                <option value="عائلة (3-4 أشخاص)">عائلة (3-4 أشخاص)</option>
-                                <option value="مجموعة عائلية (5+ أشخاص)">مجموعة (5+ أشخاص)</option>
-                            </select>
-                        </div>
-                    </div>
+    // 3. Search Bar Input
+    const searchInput = document.getElementById('searchDestinationInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.tour-card');
+            cards.forEach(card => {
+                const title = card.querySelector('.tour-card-title').innerText.toLowerCase();
+                const cat = card.querySelector('.tour-card-cat').innerText.toLowerCase();
+                if (title.includes(query) || cat.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
 
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">ملاحظات أو رغبات خاصة (اختياري)</label>
-                        <textarea id="bookNotes" class="tour-form-textarea" rows="2" placeholder="مثال: نرغب في إضافة طيران درجة رجال أعمال / مسبح خاص..."></textarea>
-                    </div>
+    // 4. FAQ Accordion
+    function toggleFaq(el) {
+        const item = el.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.tour-faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    }
 
-                    <button type="submit" class="tour-btn-submit">
-                        <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
-                        <span>تأكيد الطلب والتحدث مع مستشار السفر عبر واتساب</span>
-                    </button>
-                    <p style="text-align:center; font-size:11.5px; color:#64748b; margin-top:10px;">
-                        <i class="fa-solid fa-shield-halved" style="color:#0284c7;"></i> حجزكم مؤمن بدون أي رسوم إلغاء مبكرة
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- MOBILE MENU DRAWER (Slide-out Navigation) -->
-    <div class="mobile-menu-overlay" id="mobileDrawerOverlay" onclick="toggleMobileMenu()"></div>
-    <div class="mobile-menu-drawer" id="mobileMenuDrawer">
-        <div class="mob-drawer-header">
-            <div class="tour-logo" style="display:flex; align-items:center; gap:8px;">
-                <div class="tour-logo-icon" style="width:34px; height:34px; font-size:15px;"><i class="fa-solid fa-plane-departure"></i></div>
-                <div class="tour-logo-text">
-                    <span style="font-size:16px; font-weight:900; color:#0f172a; line-height:1; display:block;">HORIZON TOURS</span>
-                    <span style="font-size:9px; font-weight:800; color:var(--color-primary); letter-spacing:1px;">LUXURY TRAVEL</span>
-                </div>
-            </div>
-            <button class="mob-drawer-close" onclick="toggleMobileMenu()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-
-        <!-- Mobile Search Box -->
-        <div class="mob-drawer-search">
-            <form onsubmit="event.preventDefault(); triggerMobileSearch();">
-                <div style="position:relative; display:flex; align-items:center;">
-                    <input type="text" id="mobSearchInput" placeholder="ابحث عن باقة، دولة، أو رحلة..." style="width:100%; padding:10px 38px 10px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:13px; font-family:inherit;">
-                    <button type="submit" style="position:absolute; right:10px; border:none; background:none; color:var(--color-primary); font-size:15px; cursor:pointer;"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </form>
-        </div>
-
-        <div class="mob-drawer-body">
-            <!-- Section 1: All Destinations -->
-            <div class="mob-section-title"><i class="fa-solid fa-earth-americas" style="color:var(--color-primary); margin-left:6px;"></i> جميع الوجهات السياحية</div>
-            <div class="mob-cat-list">
-                <a href="destination.html?dest=maldives" class="mob-cat-item">
-                    <span><i class="fa-solid fa-umbrella-beach" style="color:var(--color-primary); width:20px; text-align:center; margin-left:8px;"></i> جزر المالديف الفاخرة</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=switzerland" class="mob-cat-item">
-                    <span><i class="fa-solid fa-mountain-sun" style="color:#0284c7; width:20px; text-align:center; margin-left:8px;"></i> سويسرا وجبال الألب</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=turkey" class="mob-cat-item">
-                    <span><i class="fa-solid fa-mosque" style="color:#06b6d4; width:20px; text-align:center; margin-left:8px;"></i> تركيا وكابادوكيا</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=egypt" class="mob-cat-item">
-                    <span><i class="fa-solid fa-monument" style="color:#d97706; width:20px; text-align:center; margin-left:8px;"></i> مصر وكروز النيل الملكي</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=alula" class="mob-cat-item">
-                    <span><i class="fa-solid fa-gem" style="color:#8b5cf6; width:20px; text-align:center; margin-left:8px;"></i> العلا والمملكة</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="tours.html?filter=deals" class="mob-cat-item" style="background:#fff8e1; color:#d84315; font-weight:800; border-radius:8px; margin:4px 0;">
-                    <span><i class="fa-solid fa-fire" style="color:#ea580c; width:20px; text-align:center; margin-left:8px;"></i> عروض الأسبوع التوفيرية</span>
-                    <span style="background:#d84315; color:#fff; font-size:10px; padding:2px 6px; border-radius:10px; font-weight:800;">خصومات</span>
-                </a>
-            </div>
-
-            <!-- Section 2: Agency Pages -->
-            <div class="mob-section-title" style="margin-top:18px;"><i class="fa-solid fa-compass" style="color:var(--color-primary); margin-left:6px;"></i> صفحات الموقع</div>
-            <div class="mob-cat-list">
-                <a href="index.html" class="mob-cat-item"><span><i class="fa-solid fa-house" style="width:20px; text-align:center; margin-left:8px;"></i> الرئيسية</span></a>
-                <a href="tours.html" class="mob-cat-item"><span><i class="fa-solid fa-plane-departure" style="width:20px; text-align:center; margin-left:8px;"></i> كافة باقات السفر</span></a>
-                <a href="destination.html" class="mob-cat-item"><span><i class="fa-solid fa-map-location-dot" style="width:20px; text-align:center; margin-left:8px;"></i> الوجهات السياحية</span></a>
-                <a href="about.html" class="mob-cat-item"><span><i class="fa-solid fa-building" style="width:20px; text-align:center; margin-left:8px;"></i> عن الوكالة ورؤيتنا</span></a>
-                <a href="contact.html" class="mob-cat-item"><span><i class="fa-solid fa-phone" style="width:20px; text-align:center; margin-left:8px;"></i> اتصل بنا وفروعنا</span></a>
-                <a href="admin/index.html" class="mob-cat-item" style="color:#0284c7; font-weight:800;"><span><i class="fa-solid fa-lock" style="width:20px; text-align:center; margin-left:8px;"></i> دخول الإدارة (Admin PIN: 1234)</span></a>
-            </div>
-
-            <!-- Quick WhatsApp Contact -->
-            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:14px; margin-top:20px; text-align:center;">
-                <p style="font-size:12.5px; font-weight:700; color:#15803d; margin-bottom:8px;">خدمة الكونسيرج ومستشار السفر 24/7</p>
-                <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20استشارة%20حجز%20سفر" target="_blank" style="background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; padding:9px 12px; border-radius:6px; font-size:13.5px; font-weight:800; text-decoration:none;">
-                    <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i> 01027093535
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- MOBILE BOTTOM BAR (Fixed 5 Items) -->
-    <div class="mobile-bottom-nav">
-        <div class="mob-nav-grid">
-            <a href="index.html" class="mob-nav-item">
-                <i class="fa-solid fa-house"></i>
-                <span>الرئيسية</span>
-            </a>
-            <a href="javascript:void(0)" onclick="toggleMobileMenu()" class="mob-nav-item">
-                <i class="fa-solid fa-bars"></i>
-                <span>الوجهات</span>
-            </a>
-            <a href="tours.html" class="mob-nav-item">
-                <i class="fa-solid fa-plane-departure"></i>
-                <span>الباقات</span>
-            </a>
-            <a href="contact.html" class="mob-nav-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>تواصل</span>
-            </a>
-            <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز" target="_blank" class="mob-nav-item" style="color:#25d366;">
-                <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
-                <span>واتساب</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20باقات%20السفر" target="_blank" class="tour-floating-whatsapp" title="تواصل عبر واتساب">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script src="js/store.js"></script>
+    // 5. Countdown Timer
+    setInterval(function() {
+        const sEl = document.getElementById('cd-secs');
+        const mEl = document.getElementById('cd-mins');
+        if (!sEl || !mEl) return;
+        let s = parseInt(sEl.innerText);
+        let m = parseInt(mEl.innerText);
+        s--;
+        if (s < 0) {
+            s = 59;
+            m--;
+            if (m < 0) m = 59;
+        }
+        sEl.innerText = s < 10 ? '0' + s : s;
+        mEl.innerText = m < 10 ? '0' + m : m;
+    }, 1000);
+    </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"bbcadc53fd2b42ecb2fb7edb038b25f4","r":1,"spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
