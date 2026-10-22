@@ -3,30 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا وفروعنا | هورايزون تورز</title>
-    <meta name="description" content="تواصل مع مستشاري السفر في هورايزون تورز في فروع الرياض والقاهرة أو عبر واتساب والهاتف الموحد 920088777.">
+    <title>اتصل بنا ومكاتبنا | وكالة هورايزون تورز</title>
+    <meta name="description" content="تواصل مع مستشاري السفر وخدمة العملاء في وكالة هورايزون لاكجري تورز عبر واتساب، الهاتف، أو زيارة فروعنا.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        function toggleMobileMenu() {
-            var d = document.getElementById('mobileMenuDrawer');
-            var o = document.getElementById('mobileDrawerOverlay');
-            if (!d) return;
-            d.classList.toggle('active');
-            if (o) o.classList.toggle('active');
-            document.body.style.overflow = d.classList.contains('active') ? 'hidden' : '';
-        }
-        function closeMobileMenu() {
-            var d = document.getElementById('mobileMenuDrawer');
-            var o = document.getElementById('mobileDrawerOverlay');
-            if (d) d.classList.remove('active');
-            if (o) o.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    </script>
 </head>
 <body>
     <!-- 1. TOP ANNOUNCEMENT BAR -->
@@ -37,469 +20,295 @@
                 <span>خصومات تصل إلى 35% على باقات المالديف وأوروبا عند الحجز المبكر هذا الأسبوع!</span>
             </div>
             <div class="tour-top-links">
-                <a href="admin/index.html" style="color:#38bdf8; font-weight:800; text-decoration:none;"><i class="fa-solid fa-lock"></i> لوحة الإدارة (Admin)</a>
-                <span><i class="fa-solid fa-phone"></i> 01027093535</span>
+                <span><i class="fa-solid fa-phone"></i> 201027093535+</span>
                 <span><i class="fa-solid fa-headset"></i> خدمة الكونسيرج 24/7</span>
                 <span><i class="fa-solid fa-money-bill-wave"></i> العملة: ريال سعودي (SAR)</span>
+                <a href="admin/index.html" style="color: #38bdf8; font-weight: 800; text-decoration: none; margin-left: 14px;"><i class="fa-solid fa-lock"></i> لوحة الإدارة (Admin)</a>
             </div>
         </div>
     </div>
 
     <!-- 2. EXECUTIVE MODERN LIGHT HEADER -->
-    <header class="tour-header">
-        <div class="tour-container tour-header-inner">
-            <a href="index.html" class="tour-logo" style="text-decoration:none;">
-                <div class="tour-logo-icon"><i class="fa-solid fa-plane-departure"></i></div>
+    <header class="tour-header" id="home">
+        <div class="tour-container tour-header-main">
+            <!-- Brand Logo -->
+            <a href="index.html" class="tour-logo-link">
+                <div class="tour-logo-icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
                 <div class="tour-logo-text">
-                    <h1>HORIZON TOURS</h1>
-                    <span>LUXURY TRAVEL & VACATIONS</span>
+                    <span class="tour-logo-title">هورايزون تورز</span>
+                    <span class="tour-logo-sub">HORIZON LUXURY ESCAPES</span>
                 </div>
             </a>
 
-            <!-- Search Bar in Header -->
-            <form class="tour-search-header-box" onsubmit="event.preventDefault(); handleCustomSearch();" style="display:flex; align-items:center; background:#f1f5f9; border-radius:30px; padding:4px 6px; border:1px solid #cbd5e1; width:380px;">
-                <select id="formDest" style="background:none; border:none; font-size:13px; font-weight:700; color:#334155; padding:6px 10px; outline:none; font-family:inherit;">
-                    <option value="all">كافة الوجهات</option>
-                    <option value="maldives">جزر المالديف</option>
-                    <option value="switzerland">سويسرا والألب</option>
-                    <option value="turkey">تركيا وكابادوكيا</option>
-                    <option value="egypt">مصر وسحر النيل</option>
-                    <option value="alula">العلا والمملكة</option>
-                </select>
-                <input type="text" id="searchDestinationInput" placeholder="ابحث عن باقة، دولة، أو نشاط..." style="background:none; border:none; padding:6px 10px; font-size:13px; width:100%; outline:none; font-family:inherit;">
-                <button type="submit" style="background:var(--color-primary); color:#fff; border:none; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i class="fa-solid fa-magnifying-glass" style="font-size:12px;"></i></button>
+            <!-- Search Form -->
+            <form action="tours.html" method="GET" class="tour-search-form" style="display:flex; align-items:center;">
+                <i class="fa-solid fa-magnifying-glass" style="color: #64748b;"></i>
+                <input type="text" name="q" class="tour-search-input" placeholder="ابحث عن وجهتك أو برنامجك المفضل (المالديف، سويسرا، مصر، تركيا)...">
+                <button type="submit" class="tour-search-btn">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>بحث عن رحلة</span>
+                </button>
             </form>
 
+            <!-- Action Buttons -->
             <div class="tour-header-actions">
-                <div class="tour-nav-hotline">
-                    <div class="tour-hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
-                    <div>
-                        <div class="tour-hotline-label">استشارة سفر فورية مجانية</div>
-                        <div class="tour-hotline-num">9200 88 777</div>
-                    </div>
-                </div>
-                <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20باقات%20السفر%20المتاحة" target="_blank" class="tour-btn tour-btn-primary" style="text-decoration:none;">
-                    <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i>
-                    <span>احجز عبر واتساب</span>
+                <a href="tours.html" class="tour-btn-hub">
+                    <i class="fa-solid fa-layer-group" style="color: #38bdf8;"></i>
+                    <span>كافة البرامج</span>
                 </a>
+                <a href="https://wa.me/201027093535?text=مرحباً%D8%8C%20أود%20الاستفسار%20عن%20باقات%20وعروض%20السياحة%20المتاحة" target="_blank" rel="noopener" class="tour-action-btn">
+                    <i class="fa-brands fa-whatsapp" style="color: #0284c7; font-size: 16px;"></i>
+                    <span>واتساب مباشر</span>
+                </a>
+                <a href="tours.html" class="btn-tour-primary" style="padding: 10px 20px; font-size: 13.5px;">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>احجز رحلتك</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Secondary Navigation Bar -->
+        <div class="tour-navbar">
+            <div class="tour-container tour-navbar-inner">
+                <ul class="tour-nav-menu">
+                    <li class="tour-nav-item">
+                        <a href="destination.html" class="tour-nav-mega-btn">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                            <span>كافة الوجهات السياحية</span>
+                        </a>
+                    </li>
+                    <li class="tour-nav-item "><a href="index.html">الرئيسية</a></li>
+                    <li class="tour-nav-item "><a href="tours.html">باقات وعروض السفر</a></li>
+                    <li class="tour-nav-item "><a href="destination.html">الوجهات العالمية</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=maldives">جزر المالديف</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=swiss">سويسرا والألب</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=egypt">مصر والأقصر</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=turkey">تركيا وكابادوكيا</a></li>
+                    <li class="tour-nav-item"><a href="destination.html?dest=alula">العلا والمملكة</a></li>
+                    <li class="tour-nav-item "><a href="about.html">من نحن</a></li>
+                    <li class="tour-nav-item active"><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="tour-nav-hotline">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>الرقم الموحد المباشر: <strong>800-HORIZON</strong></span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE HEADER BAR (Sticky on Mobile) -->
-    <div class="mobile-header-bar">
-        <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <a href="index.html" class="tour-logo" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
-            <div class="tour-logo-icon" style="width:36px; height:36px; font-size:16px;"><i class="fa-solid fa-plane-departure"></i></div>
-            <div class="tour-logo-text">
-                <span style="font-size:18px; font-weight:900; color:#0f172a; line-height:1; display:block;">HORIZON</span>
-                <span style="font-size:9px; font-weight:800; color:var(--color-primary); letter-spacing:1px;">LUXURY TOURS</span>
-            </div>
-        </a>
-        <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20حجز%20رحلة" target="_blank" style="width:38px; height:38px; background:#25d366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:18px;" title="محادثة واتساب">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- MOBILE SUB-BAR (Direct Mobile Menu Strip) -->
-    <div class="mobile-sub-bar">
-        <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
-            <i class="fa-solid fa-bars"></i>
-            <span>الوجهات</span>
-        </button>
-        <div class="mob-sub-links-scroll">
-            <a href="index.html" class="">الرئيسية</a>
-            <a href="tours.html" class="">كافة الباقات</a>
-            <a href="destination.html?dest=maldives">المالديف</a>
-            <a href="destination.html?dest=switzerland">سويسرا</a>
-            <a href="destination.html?dest=turkey">تركيا</a>
-            <a href="destination.html?dest=egypt">مصر</a>
-            <a href="destination.html?dest=alula">العلا</a>
-            <a href="tours.html?filter=vip" class="mob-deal-chip"><i class="fa-solid fa-crown"></i> باقات VIP</a>
+    <!-- HERO TITLE -->
+    <div style="position: relative; background: #0f172a; min-height: 280px; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 50px 20px; overflow: hidden; border-bottom: 3px solid var(--color-primary);">
+        <img src="images/banner_beach.jpg" alt="اتصل بنا" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.35;">
+        <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+            <span style="display: inline-block; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 800; padding: 5px 16px; border-radius: 50px; margin-bottom: 12px; letter-spacing: 1px;">CONTACT HORIZON CONCIERGE</span>
+            <h1 style="font-size: 36px; font-weight: 900; color: #ffffff; margin-bottom: 12px;">اتصل بنا.. مستشارو السفر في خدمتك 24/7</h1>
+            <p style="font-size: 16px; color: #e2e8f0; line-height: 1.8; margin: 0 auto; max-width: 680px;">
+                يسعدنا الإجابة عن كافة استفساراتك وتصميم برنامجك السياحي المخصص بدقة متناهية وسرعة فائقة.
+            </p>
         </div>
     </div>
 
-    <!-- 3. NAVIGATION BAR (Desktop) -->
-    <nav class="tour-navbar">
-        <div class="tour-container tour-navbar-inner">
-            <!-- All Destinations Dropdown -->
-            <div class="dept-dropdown-wrapper" style="position:relative;">
-                <button class="dept-btn" type="button" onclick="this.parentElement.classList.toggle('open');" style="background:var(--color-primary); color:#fff; border:none; padding:12px 20px; font-weight:800; font-size:13.5px; border-radius:8px; display:flex; align-items:center; gap:10px; cursor:pointer;">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>جميع الوجهات السياحية</span>
-                    <i class="fa-solid fa-chevron-down" style="font-size:11px; margin-right:6px;"></i>
-                </button>
-                <div class="dept-menu" style="position:absolute; top:100%; right:0; width:260px; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.1); display:none; flex-direction:column; z-index:200; overflow:hidden;">
-                    <a href="destination.html?dest=maldives" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-umbrella-beach" style="color:var(--color-primary); margin-left:8px;"></i> جزر المالديف <span>›</span></a>
-                    <a href="destination.html?dest=switzerland" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-mountain-sun" style="color:#0284c7; margin-left:8px;"></i> سويسرا والألب <span>›</span></a>
-                    <a href="destination.html?dest=turkey" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-mosque" style="color:#06b6d4; margin-left:8px;"></i> تركيا وكابادوكيا <span>›</span></a>
-                    <a href="destination.html?dest=egypt" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-monument" style="color:#d97706; margin-left:8px;"></i> مصر وسحر النيل <span>›</span></a>
-                    <a href="destination.html?dest=alula" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:700; color:#1e293b; text-decoration:none; border-bottom:1px solid #f1f5f9;"><i class="fa-solid fa-gem" style="color:#8b5cf6; margin-left:8px;"></i> العلا والمملكة <span>›</span></a>
-                    <a href="tours.html?filter=deals" style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; font-size:13.5px; font-weight:800; color:#d84315; background:#fff8e1; text-decoration:none;"><i class="fa-solid fa-fire" style="color:#ea580c; margin-left:8px;"></i> عروض الأسبوع التوفيرية <span>%</span></a>
+    <!-- CONTACT GRID -->
+    <section style="padding: 60px 0 80px; background: var(--color-bg);">
+        <div class="tour-container">
+            <div class="contact-grid" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start;">
+                <!-- Contact Form -->
+                <div style="background: #ffffff; border-radius: 20px; padding: 36px; border: 1px solid var(--color-border); box-shadow: var(--shadow-card);">
+                    <h2 style="font-size: 22px; font-weight: 900; color: var(--color-navy); margin-bottom: 8px;">أرسل استفسارك أو اطلب برنامجاً مخصصاً</h2>
+                    <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">املأ النموذج أدناه وسيقوم مستشار السفر بالتواصل معك في غضون 15 دقيقة:</p>
+
+                    <form onsubmit="handleContactSubmit(event)">
+                        <div class="contact-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 6px;">الاسم الكريم *</label>
+                                <input type="text" id="contactName" required placeholder="مثال: عبدالله السعدون" style="width: 100%; padding: 11px 14px; border: 1.5px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 13.5px; outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 6px;">رقم الجوال / واتساب *</label>
+                                <input type="tel" id="contactPhone" required placeholder="05XXXXXXXX" style="width: 100%; padding: 11px 14px; border: 1.5px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 13.5px; outline: none;">
+                            </div>
+                        </div>
+
+                        <div class="contact-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 6px;">الوجهة المفضلة</label>
+                                <select id="contactDest" style="width: 100%; padding: 11px 14px; border: 1.5px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 13.5px; outline: none; background: #fff;">
+                                    <option value="المالديف">جزر المالديف</option>
+                                    <option value="سويسرا">سويسرا والألب</option>
+                                    <option value="تركيا">تركيا وكابادوكيا</option>
+                                    <option value="مصر">مصر وسحر النيل</option>
+                                    <option value="العلا">العلا والمملكة</option>
+                                    <option value="أخرى">وجهة أخرى مخصصة</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 6px;">تاريخ السفر التقريبي</label>
+                                <input type="month" id="contactDate" value="2026-11" style="width: 100%; padding: 11px 14px; border: 1.5px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 13.5px; outline: none;">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 22px;">
+                            <label style="display: block; font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 6px;">ملاحظات خاصة أو عدد المسافرين</label>
+                            <textarea id="contactNotes" rows="4" placeholder="مثال: رحلة شهر عسل، نريد فيلا عائمة مع مسبح خاص وخدمات استقبال VIP..." style="width: 100%; padding: 11px 14px; border: 1.5px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 13.5px; outline: none; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-tour-primary" style="width: 100%; justify-content: center; padding: 13px; font-size: 15px;">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i>
+                            <span>إرسال الطلب والتواصل الفوري عبر واتساب</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Cards -->
+                <div>
+                    <div style="background: #ffffff; border-radius: 20px; padding: 30px; border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle); margin-bottom: 24px;">
+                        <h3 style="font-size: 18px; font-weight: 900; color: var(--color-navy); margin-bottom: 18px;">مكاتبنا وفروع الاستقبال</h3>
+                        
+                        <div style="display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;">
+                            <div style="width: 44px; height: 44px; background: #e0f2fe; color: var(--color-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 4px;">المقر الرئيسي - الرياض</h4>
+                                <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">برج المملكة، طريق الملك فهد، حي العليا، الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;">
+                            <div style="width: 44px; height: 44px; background: #e0f2fe; color: var(--color-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"><i class="fa-solid fa-building"></i></div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 4px;">فرع القاهرة</h4>
+                                <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">شارع التسعين الشمالي، مجمع الأعمال، التجمع الخامس، القاهرة الجديدة</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 14px; align-items: flex-start;">
+                            <div style="width: 44px; height: 44px; background: #e0f2fe; color: var(--color-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 4px;">الخط الساخن الموحد</h4>
+                                <p style="font-size: 15px; font-weight: 900; color: var(--color-primary); margin: 0;">800-HORIZON (9200 88 777)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #0284c7, #0369a1); border-radius: 20px; padding: 26px; color: #ffffff;">
+                        <h4 style="font-size: 17px; font-weight: 900; margin-bottom: 8px;"><i class="fa-solid fa-headset" style="margin-left: 8px;"></i> خدمة الكونسيرج والطوارئ 24/7</h4>
+                        <p style="font-size: 13px; color: #e0f2fe; line-height: 1.7; margin-bottom: 16px;">
+                            فريق خدمة العملاء متواجد على مدار الساعة لخدمة عملائنا المسافرين وتأكيد الحجوزات الطارئة.
+                        </p>
+                        <a href="https://wa.me/201027093535" target="_blank" style="background: #25d366; color: #fff; font-weight: 800; font-size: 14px; padding: 10px 18px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i>
+                            <span>تحدث مع الكونسيرج الآن</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Horizontal Links -->
-            <ul class="tour-nav-links">
-                <li><a href="index.html" class="">الرئيسية</a></li>
-                <li><a href="tours.html" class="">باقات وعروض السفر</a></li>
-                <li><a href="destination.html" class="">الوجهات العالمية</a></li>
-                <li><a href="tours.html?filter=vip" class="">باقات VIP الخاصة</a></li>
-                <li><a href="about.html" class="">عن الوكالة</a></li>
-                <li><a href="contact.html" class="active">اتصل بنا</a></li>
-            </ul>
-
-            <div class="tour-flash-deal-pill">
-                <i class="fa-solid fa-bolt" style="color:#f59e0b;"></i>
-                <span>عروض الموسم 2026</span>
-            </div>
-        </div>
-    </nav>
-
-    <section class="page-hero-banner">
-        <img src="images/cappadocia.jpg" alt="اتصل بنا" class="page-hero-banner-bg">
-        <div class="page-hero-content">
-            <span class="page-badge-pill">GET IN TOUCH</span>
-            <h1 class="page-hero-title">تواصل مع مستشار السفر الخاص بك</h1>
-            <p class="page-hero-subtitle">فريقنا متواجد على مدار 24 ساعة للرد على استفساراتكم وترتيب رحلاتكم الفاخرة.</p>
         </div>
     </section>
 
-    <main class="tour-container" style="margin-bottom:70px;">
-        <div class="tour-breadcrumbs">
-            <a href="index.html">الرئيسية</a>
-            <span>/</span>
-            <span style="color:#0f172a;">اتصل بنا</span>
-        </div>
+    <script>
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value.trim();
+        const phone = document.getElementById('contactPhone').value.trim();
+        const dest = document.getElementById('contactDest').value;
+        const date = document.getElementById('contactDate').value;
+        const notes = document.getElementById('contactNotes').value.trim();
 
-        <div style="display:grid; grid-template-columns:1fr 1.3fr; gap:40px;">
-            <!-- Branches & Contact Info -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:30px;">
-                <h2 style="font-size:22px; font-weight:900; color:#0f172a; margin-bottom:20px;">بيانات التواصل المباشر</h2>
+        // Save inquiry in localStorage for admin panel
+        try {
+            const raw = localStorage.getItem('horizon_bookings');
+            const list = raw ? JSON.parse(raw) : [];
+            list.unshift({
+                id: Date.now(),
+                name: name,
+                phone: phone,
+                tourName: 'استفسار وجهة ' + dest,
+                guests: 2,
+                date: date,
+                notes: notes,
+                created: new Date().toISOString().split('T')[0]
+            });
+            localStorage.setItem('horizon_bookings', JSON.stringify(list));
+        } catch(err) {
+            console.error(err);
+        }
 
-                <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:24px;">
-                    <div style="width:46px; height:46px; background:#e0f2fe; color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;"><i class="fa-solid fa-phone"></i></div>
-                    <div>
-                        <div style="font-size:12px; font-weight:700; color:#64748b;">الرقم الموحد المجاني</div>
-                        <strong style="font-size:18px; color:#0f172a;">9200 88 777</strong>
-                    </div>
-                </div>
-
-                <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:24px;">
-                    <div style="width:46px; height:46px; background:#f0fdf4; color:#22c55e; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div>
-                        <div style="font-size:12px; font-weight:700; color:#64748b;">واتساب خدمة العملاء والـ VIP</div>
-                        <strong style="font-size:18px; color:#0f172a;">01027093535</strong>
-                    </div>
-                </div>
-
-                <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:24px;">
-                    <div style="width:46px; height:46px; background:#e0f2fe; color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;"><i class="fa-solid fa-envelope"></i></div>
-                    <div>
-                        <div style="font-size:12px; font-weight:700; color:#64748b;">البريد الإلكتروني الرسمي</div>
-                        <strong style="font-size:15px; color:#0f172a;">booking@horizon-travel.com</strong>
-                    </div>
-                </div>
-
-                <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:24px;">
-                    <div style="width:46px; height:46px; background:#f1f5f9; color:#475569; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;"><i class="fa-solid fa-location-dot"></i></div>
-                    <div>
-                        <div style="font-size:12px; font-weight:700; color:#64748b;">الفروع والمكاتب</div>
-                        <p style="font-size:13.5px; color:#334155; margin:4px 0;"><strong>فرع المملكة:</strong> الرياض - طريق الملك فهد، برج الفيصلية، الدور 18</p>
-                        <p style="font-size:13.5px; color:#334155; margin:0;"><strong>فرع مصر:</strong> القاهرة - التجمع الخامس، شارع التسعين الشمالي، مجمع الـ VIP</p>
-                    </div>
-                </div>
-
-                <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز" target="_blank" style="background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; padding:12px; border-radius:8px; font-weight:800; font-size:14px; text-decoration:none; margin-top:10px;">
-                    <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
-                    <span>محادثة فورية عبر واتساب</span>
-                </a>
-            </div>
-
-            <!-- Inquiry Form -->
-            <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:35px; box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-                <h2 style="font-size:22px; font-weight:900; color:#0f172a; margin-bottom:10px;">أرسل استفسارك وسنعاود الاتصال بك</h2>
-                <p style="font-size:13.5px; color:#64748b; margin-bottom:24px;">يتواصل معكم مستشار السفر خلال أقل من 15 دقيقة بتفاصيل الباقات والأسعار.</p>
-
-                <form onsubmit="event.preventDefault(); showToast('تم استلام رسالتكم بنجاح! سيتواصل معكم مستشار السفر قريباً.'); this.reset();">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">الاسم الكريم *</label>
-                            <input type="text" class="tour-form-input" placeholder="اسمك بالكامل" required>
-                        </div>
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">رقم الهاتف / الواتساب *</label>
-                            <input type="tel" class="tour-form-input" placeholder="رقم الجوال مع مفتاح الدولة" required>
-                        </div>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">الوجهة المفضلة</label>
-                            <select class="tour-form-select">
-                                <option>جزر المالديف</option>
-                                <option>سويسرا والألب</option>
-                                <option>تركيا وكابادوكيا</option>
-                                <option>مصر وكروز النيل</option>
-                                <option>العلا الفاخرة</option>
-                                <option>وجهة أخرى مخصصة</option>
-                            </select>
-                        </div>
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">عدد المسافرين التقريبي</label>
-                            <input type="text" class="tour-form-input" placeholder="مثال: 2 كبار + 2 أطفال">
-                        </div>
-                    </div>
-
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">تفاصيل الرحلة أو رغباتكم الخاصة</label>
-                        <textarea class="tour-form-textarea" rows="4" placeholder="اذكر تاريخ السفر المفضل، الميزانية التقريبية، أو أي متطلبات خاصة..."></textarea>
-                    </div>
-
-                    <button type="submit" class="tour-btn tour-btn-primary" style="width:100%; padding:14px; font-size:15px; font-weight:800;">
-                        <i class="fa-solid fa-paper-plane"></i> إرسال الاستفسار
-                    </button>
-                </form>
-            </div>
-        </div>
-    </main>
+        const msg = `مرحباً هورايزون تورز، أود الاستفسار عن باقة سياحية:%0Aالاسم: ${encodeURIComponent(name)}%0Aالهاتف: ${encodeURIComponent(phone)}%0Aالوجهة: ${encodeURIComponent(dest)}%0Aالتاريخ: ${encodeURIComponent(date)}%0Aملاحظات: ${encodeURIComponent(notes)}`;
+        window.open('https://wa.me/201027093535?text=' + msg, '_blank');
+    }
+    </script>
     <!-- FOOTER -->
     <footer class="tour-footer">
         <div class="tour-container">
             <div class="tour-footer-grid">
                 <div class="tour-footer-col">
-                    <div class="tour-logo" style="margin-bottom:18px;">
-                        <div class="tour-logo-icon" style="background:#0284c7; color:#fff;"><i class="fa-solid fa-plane-departure"></i></div>
-                        <div class="tour-logo-text">
-                            <span style="font-size:22px; font-weight:900; color:#ffffff; line-height:1; display:block;">HORIZON TOURS</span>
-                            <span style="font-size:9.5px; font-weight:800; color:#38bdf8; letter-spacing:1px;">LUXURY TRAVEL & VIP SERVICES</span>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                        <div class="tour-logo-icon" style="width: 38px; height: 38px; font-size: 18px;">
+                            <i class="fa-solid fa-compass"></i>
                         </div>
+                        <span style="font-size: 20px; font-weight: 900; color: #ffffff;">هورايزون تورز</span>
                     </div>
-                    <p style="color:#94a3b8; font-size:14px; line-height:1.8; margin-bottom:20px;">
-                        وكالة هورايزون تورز الرائدة في تصميم برامج السفر الفاخرة وشهر العسل والرحلات العائلية بأعلى معايير الرفاهية والخصوصية مع كونسيرج شخصي على مدار الساعة.
+                    <p style="font-size: 13.5px; color: #94a3b8; line-height: 1.8; margin-bottom: 20px;">
+                        وكالة هورايزون لاكجري تورز العالمية، بوابتك لتجارب سفر لا تُنسى في أرقى وجهات العالم، مصممة بأعلى معايير الرفاهية والأمان وخدمة الكونسيرج الخاصة.
                     </p>
-                    <div style="display:flex; gap:10px; font-size:16px;">
-                        <a href="https://wa.me/201027093535" target="_blank" style="width:38px; height:38px; background:#1e293b; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" style="width:38px; height:38px; background:#1e293b; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" style="width:38px; height:38px; background:#1e293b; color:#38bdf8; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none;"><i class="fa-brands fa-x-twitter"></i></a>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://wa.me/201027093535" target="_blank" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #ffffff; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
                 <div class="tour-footer-col">
-                    <h3 class="tour-footer-title">أشهر الوجهات السياحية</h3>
-                    <ul class="tour-footer-links">
-                        <li><a href="destination.html?dest=maldives"><i class="fa-solid fa-angle-left"></i> جزر المالديف الفاخرة</a></li>
-                        <li><a href="destination.html?dest=switzerland"><i class="fa-solid fa-angle-left"></i> سويسرا وجبال الألب</a></li>
-                        <li><a href="destination.html?dest=turkey"><i class="fa-solid fa-angle-left"></i> كابادوكيا وإسطنبول</a></li>
-                        <li><a href="destination.html?dest=egypt"><i class="fa-solid fa-angle-left"></i> الأهرامات وكروز النيل الملكي</a></li>
-                        <li><a href="destination.html?dest=alula"><i class="fa-solid fa-angle-left"></i> واحة العلا ومنتجعات بانيان تري</a></li>
+                    <h4>أشهر الوجهات</h4>
+                    <ul>
+                        <li><a href="destination.html?dest=maldives">جزر المالديف الفاخرة</a></li>
+                        <li><a href="destination.html?dest=swiss">سويسرا وجبال الألب</a></li>
+                        <li><a href="destination.html?dest=turkey">كابادوكيا وإسطنبول</a></li>
+                        <li><a href="destination.html?dest=egypt">الأهرامات وكروز النيل</a></li>
+                        <li><a href="destination.html?dest=alula">واحة العلا التاريخية</a></li>
                     </ul>
                 </div>
 
                 <div class="tour-footer-col">
-                    <h3 class="tour-footer-title">روابط تهمك</h3>
-                    <ul class="tour-footer-links">
-                        <li><a href="admin/index.html"><i class="fa-solid fa-lock" style="color:#38bdf8;"></i> دخول لوحة الإدارة (Admin PIN: 1234)</a></li>
-                        <li><a href="tours.html"><i class="fa-solid fa-angle-left"></i> كافة باقات السفر المتاحة</a></li>
-                        <li><a href="about.html"><i class="fa-solid fa-angle-left"></i> عن الوكالة وتراخيص السفر</a></li>
-                        <li><a href="contact.html"><i class="fa-solid fa-angle-left"></i> فروعنا وسياسة الحجز والإلغاء</a></li>
-                        <li><a href="tours.html?filter=vip"><i class="fa-solid fa-angle-left"></i> باقات كبار الشخصيات VIP</a></li>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="tours.html">كافة الباقات السياحية</a></li>
+                        <li><a href="destination.html">الوجهات العالمية</a></li>
+                        <li><a href="about.html">من نحن وعن الوكالة</a></li>
+                        <li><a href="contact.html">اتصل بنا ومكاتبنا</a></li>
+                        <li><a href="admin/index.html">لوحة الإدارة (Admin PIN: 1234)</a></li>
                     </ul>
                 </div>
 
                 <div class="tour-footer-col">
-                    <h3 class="tour-footer-title">خدمة العملاء والاتصال</h3>
-                    <p style="color:#94a3b8; font-size:13.5px; margin-bottom:12px;"><i class="fa-solid fa-location-dot" style="color:#38bdf8; margin-left:6px;"></i> الرياض: برج الفيصلية | القاهرة: شارع التسعين</p>
-                    <p style="color:#94a3b8; font-size:13.5px; margin-bottom:12px;"><i class="fa-solid fa-phone" style="color:#38bdf8; margin-left:6px;"></i> الرقم المجاني الموحد: <strong>9200 88 777</strong></p>
-                    <p style="color:#94a3b8; font-size:13.5px; margin-bottom:18px;"><i class="fa-solid fa-envelope" style="color:#38bdf8; margin-left:6px;"></i> booking@horizon-travel.com</p>
-                    <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20حجز%20رحلة" target="_blank" style="background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:6px; font-weight:800; font-size:13.5px; text-decoration:none;">
-                        <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i>
-                        <span>واتساب مباشر: 01027093535</span>
-                    </a>
+                    <h4>خدمة العملاء والاتصال</h4>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 10px;">
+                        <i class="fa-solid fa-phone" style="color: #0284c7; margin-left: 8px;"></i> 201027093535+
+                    </p>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 10px;">
+                        <i class="fa-solid fa-envelope" style="color: #0284c7; margin-left: 8px;"></i> concierge@horizontours.com
+                    </p>
+                    <p style="font-size: 13.5px; color: #94a3b8; margin-bottom: 16px;">
+                        <i class="fa-solid fa-location-dot" style="color: #0284c7; margin-left: 8px;"></i> برج المملكة - الرياض / شارع التسعين - القاهرة
+                    </p>
+                    <div style="background: #1e293b; padding: 10px 14px; border-radius: 10px; font-size: 12px; color: #cbd5e1; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-shield-halved" style="color: #38bdf8;"></i>
+                        <span>حجوزات مرخصة ومعتمدة رسمياً | عضو منظمة IATA</span>
+                    </div>
                 </div>
             </div>
 
             <div class="tour-footer-bottom">
-                <p>© 2026 جميع الحقوق محفوظة - وكالة هورايزون تورز للسياحة والسفر | تم التطوير بأعلى معايير الاحترافية</p>
-                <div style="display:flex; align-items:center; gap:12px; font-size:22px; color:#64748b;">
-                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
-                    <i class="fa-brands fa-apple-pay" title="Apple Pay"></i>
-                    <span style="font-size:11px; font-weight:800; border:1px solid #475569; padding:2px 8px; border-radius:4px;">مدى MADA</span>
+                <div>جميع الحقوق محفوظة © 2026 لوكالة هورايزون لاكجري تورز للسياحة والسفر</div>
+                <div style="display: flex; gap: 14px;">
+                    <a href="about.html" style="color: #64748b;">عن الوكالة</a>
+                    <a href="contact.html" style="color: #64748b;">خدمة العملاء</a>
+                    <a href="admin/index.html" style="color: #38bdf8; font-weight:800;">لوحة التحكم</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- BOOKING INQUIRY MODAL -->
-    <div class="tour-modal-overlay" id="bookingModal" onclick="if(event.target===this) closeBookingModal();">
-        <div class="tour-modal-card">
-            <div class="tour-modal-header">
-                <div class="tour-modal-title">
-                    <i class="fa-solid fa-plane-departure" style="color:var(--color-primary);"></i>
-                    <span id="modalTourTitle">طلب حجز باقة سياحية</span>
-                </div>
-                <button class="tour-modal-close" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="tour-modal-body">
-                <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:12px 16px; margin-bottom:18px; display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:13px; font-weight:700; color:#0369a1;">سعر الباقة التقديري للشخص:</span>
-                    <strong id="modalTourPrice" style="color:var(--color-primary); font-size:18px;">0 ر.س</strong>
-                </div>
-
-                <form onsubmit="submitWhatsAppBooking(event)">
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">الاسم الكريم بالكامل *</label>
-                        <input type="text" id="bookName" class="tour-form-input" placeholder="مثال: فهد عبد الله" required>
-                    </div>
-
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">رقم الجوال / الواتساب *</label>
-                        <input type="tel" id="bookPhone" class="tour-form-input" placeholder="مثال: 0501234567" required>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">تاريخ السفر التقريبي</label>
-                            <input type="date" id="bookDate" class="tour-form-input">
-                        </div>
-                        <div class="tour-form-group">
-                            <label class="tour-form-label">عدد المسافرين</label>
-                            <select id="bookGuests" class="tour-form-select">
-                                <option value="مسافر واحد (فردي)">مسافر واحد</option>
-                                <option value="مسافران (شخصين / زوجين)" selected>مسافران (شخصين)</option>
-                                <option value="عائلة (3-4 أشخاص)">عائلة (3-4 أشخاص)</option>
-                                <option value="مجموعة عائلية (5+ أشخاص)">مجموعة (5+ أشخاص)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="tour-form-group">
-                        <label class="tour-form-label">ملاحظات أو رغبات خاصة (اختياري)</label>
-                        <textarea id="bookNotes" class="tour-form-textarea" rows="2" placeholder="مثال: نرغب في إضافة طيران درجة رجال أعمال / مسبح خاص..."></textarea>
-                    </div>
-
-                    <button type="submit" class="tour-btn-submit">
-                        <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
-                        <span>تأكيد الطلب والتحدث مع مستشار السفر عبر واتساب</span>
-                    </button>
-                    <p style="text-align:center; font-size:11.5px; color:#64748b; margin-top:10px;">
-                        <i class="fa-solid fa-shield-halved" style="color:#0284c7;"></i> حجزكم مؤمن بدون أي رسوم إلغاء مبكرة
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- MOBILE MENU DRAWER (Slide-out Navigation) -->
-    <div class="mobile-menu-overlay" id="mobileDrawerOverlay" onclick="toggleMobileMenu()"></div>
-    <div class="mobile-menu-drawer" id="mobileMenuDrawer">
-        <div class="mob-drawer-header">
-            <div class="tour-logo" style="display:flex; align-items:center; gap:8px;">
-                <div class="tour-logo-icon" style="width:34px; height:34px; font-size:15px;"><i class="fa-solid fa-plane-departure"></i></div>
-                <div class="tour-logo-text">
-                    <span style="font-size:16px; font-weight:900; color:#0f172a; line-height:1; display:block;">HORIZON TOURS</span>
-                    <span style="font-size:9px; font-weight:800; color:var(--color-primary); letter-spacing:1px;">LUXURY TRAVEL</span>
-                </div>
-            </div>
-            <button class="mob-drawer-close" onclick="toggleMobileMenu()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-
-        <!-- Mobile Search Box -->
-        <div class="mob-drawer-search">
-            <form onsubmit="event.preventDefault(); triggerMobileSearch();">
-                <div style="position:relative; display:flex; align-items:center;">
-                    <input type="text" id="mobSearchInput" placeholder="ابحث عن باقة، دولة، أو رحلة..." style="width:100%; padding:10px 38px 10px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:13px; font-family:inherit;">
-                    <button type="submit" style="position:absolute; right:10px; border:none; background:none; color:var(--color-primary); font-size:15px; cursor:pointer;"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </form>
-        </div>
-
-        <div class="mob-drawer-body">
-            <!-- Section 1: All Destinations -->
-            <div class="mob-section-title"><i class="fa-solid fa-earth-americas" style="color:var(--color-primary); margin-left:6px;"></i> جميع الوجهات السياحية</div>
-            <div class="mob-cat-list">
-                <a href="destination.html?dest=maldives" class="mob-cat-item">
-                    <span><i class="fa-solid fa-umbrella-beach" style="color:var(--color-primary); width:20px; text-align:center; margin-left:8px;"></i> جزر المالديف الفاخرة</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=switzerland" class="mob-cat-item">
-                    <span><i class="fa-solid fa-mountain-sun" style="color:#0284c7; width:20px; text-align:center; margin-left:8px;"></i> سويسرا وجبال الألب</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=turkey" class="mob-cat-item">
-                    <span><i class="fa-solid fa-mosque" style="color:#06b6d4; width:20px; text-align:center; margin-left:8px;"></i> تركيا وكابادوكيا</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=egypt" class="mob-cat-item">
-                    <span><i class="fa-solid fa-monument" style="color:#d97706; width:20px; text-align:center; margin-left:8px;"></i> مصر وكروز النيل الملكي</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="destination.html?dest=alula" class="mob-cat-item">
-                    <span><i class="fa-solid fa-gem" style="color:#8b5cf6; width:20px; text-align:center; margin-left:8px;"></i> العلا والمملكة</span>
-                    <i class="fa-solid fa-chevron-left" style="font-size:11px; color:#94a3b8;"></i>
-                </a>
-                <a href="tours.html?filter=deals" class="mob-cat-item" style="background:#fff8e1; color:#d84315; font-weight:800; border-radius:8px; margin:4px 0;">
-                    <span><i class="fa-solid fa-fire" style="color:#ea580c; width:20px; text-align:center; margin-left:8px;"></i> عروض الأسبوع التوفيرية</span>
-                    <span style="background:#d84315; color:#fff; font-size:10px; padding:2px 6px; border-radius:10px; font-weight:800;">خصومات</span>
-                </a>
-            </div>
-
-            <!-- Section 2: Agency Pages -->
-            <div class="mob-section-title" style="margin-top:18px;"><i class="fa-solid fa-compass" style="color:var(--color-primary); margin-left:6px;"></i> صفحات الموقع</div>
-            <div class="mob-cat-list">
-                <a href="index.html" class="mob-cat-item"><span><i class="fa-solid fa-house" style="width:20px; text-align:center; margin-left:8px;"></i> الرئيسية</span></a>
-                <a href="tours.html" class="mob-cat-item"><span><i class="fa-solid fa-plane-departure" style="width:20px; text-align:center; margin-left:8px;"></i> كافة باقات السفر</span></a>
-                <a href="destination.html" class="mob-cat-item"><span><i class="fa-solid fa-map-location-dot" style="width:20px; text-align:center; margin-left:8px;"></i> الوجهات السياحية</span></a>
-                <a href="about.html" class="mob-cat-item"><span><i class="fa-solid fa-building" style="width:20px; text-align:center; margin-left:8px;"></i> عن الوكالة ورؤيتنا</span></a>
-                <a href="contact.html" class="mob-cat-item"><span><i class="fa-solid fa-phone" style="width:20px; text-align:center; margin-left:8px;"></i> اتصل بنا وفروعنا</span></a>
-                <a href="admin/index.html" class="mob-cat-item" style="color:#0284c7; font-weight:800;"><span><i class="fa-solid fa-lock" style="width:20px; text-align:center; margin-left:8px;"></i> دخول الإدارة (Admin PIN: 1234)</span></a>
-            </div>
-
-            <!-- Quick WhatsApp Contact -->
-            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:14px; margin-top:20px; text-align:center;">
-                <p style="font-size:12.5px; font-weight:700; color:#15803d; margin-bottom:8px;">خدمة الكونسيرج ومستشار السفر 24/7</p>
-                <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20استشارة%20حجز%20سفر" target="_blank" style="background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; padding:9px 12px; border-radius:6px; font-size:13.5px; font-weight:800; text-decoration:none;">
-                    <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i> 01027093535
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- MOBILE BOTTOM BAR (Fixed 5 Items) -->
-    <div class="mobile-bottom-nav">
-        <div class="mob-nav-grid">
-            <a href="index.html" class="mob-nav-item">
-                <i class="fa-solid fa-house"></i>
-                <span>الرئيسية</span>
-            </a>
-            <a href="javascript:void(0)" onclick="toggleMobileMenu()" class="mob-nav-item">
-                <i class="fa-solid fa-bars"></i>
-                <span>الوجهات</span>
-            </a>
-            <a href="tours.html" class="mob-nav-item">
-                <i class="fa-solid fa-plane-departure"></i>
-                <span>الباقات</span>
-            </a>
-            <a href="contact.html" class="mob-nav-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>تواصل</span>
-            </a>
-            <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز" target="_blank" class="mob-nav-item" style="color:#25d366;">
-                <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
-                <span>واتساب</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20باقات%20السفر" target="_blank" class="tour-floating-whatsapp" title="تواصل عبر واتساب">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script src="js/store.js"></script>
 </body>
 </html>

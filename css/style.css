@@ -1216,3 +1216,15 @@
         .tour-header-main { flex-wrap: wrap; }
         .tour-search-form { order: 3; width: 100%; max-width: 100%; }
     }
+
+/* Multi-page Responsive Enhancements */
+@media (max-width: 900px) {
+    .tour-detail-grid { grid-template-columns: 1fr !important; }
+    .about-main-grid { grid-template-columns: 1fr !important; }
+    .about-values-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .contact-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 600px) {
+    .about-values-grid { grid-template-columns: 1fr !important; }
+    .contact-form-row { grid-template-columns: 1fr !important; }
+}
