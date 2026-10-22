@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لوحة التحكم الإدارية | هورايزون تورز للسياحة والسفر</title>
+  <title>لوحة التحكم الشاملة | هورايزون تورز للسياحة والسفر</title>
   <!-- Google Fonts: Cairo -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
     :root {
-      --primary: #0088cc;
-      --primary-hover: #006da3;
-      --dark-sidebar: #0f172a;
-      --dark-header: #1e293b;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-light: #e0f2fe;
+      --sidebar-bg: #0f172a;
+      --sidebar-hover: #1e293b;
       --bg: #f8fafc;
       --card-bg: #ffffff;
       --border: #e2e8f0;
-      --border-focus: #0088cc;
       --text-main: #0f172a;
       --text-muted: #64748b;
       --success: #16a34a;
       --danger: #dc2626;
       --warning: #d97706;
-      --font-cairo: 'Cairo', sans-serif;
+      --radius: 14px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     body {
       font-family: 'Cairo', sans-serif;
-      font-size: 15px;
+      font-size: 14.5px;
       direction: rtl;
       text-align: right;
       background: var(--bg);
@@ -43,12 +43,12 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Auth Overlay */
+    /* Auth Screen */
     .auth-overlay {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(8px);
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
       z-index: 99999;
       display: flex;
       align-items: center;
@@ -57,49 +57,59 @@
     }
     .auth-card {
       background: #ffffff;
-      border-radius: 20px;
-      padding: 45px 40px;
+      border-radius: 24px;
+      padding: 44px 36px;
       width: 100%;
       max-width: 440px;
       text-align: center;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
       border: 1px solid var(--border);
     }
     .auth-icon {
       width: 76px;
       height: 76px;
-      background: linear-gradient(135deg, #0088cc, #034f77);
+      background: linear-gradient(135deg, #0284c7, #075985);
       color: #ffffff;
-      border-radius: 20px;
+      border-radius: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 34px;
       margin: 0 auto 20px;
-      box-shadow: 0 10px 25px rgba(0, 136, 204, 0.35);
+      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.35);
     }
-    .auth-title { font-size: 24px; font-weight: 900; margin-bottom: 8px; color: var(--text-main); }
-    .auth-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+    .auth-title { font-size: 23px; font-weight: 900; margin-bottom: 8px; color: var(--text-main); }
+    .auth-desc { font-size: 13.5px; color: var(--text-muted); margin-bottom: 22px; line-height: 1.6; }
     .auth-pin-input {
       width: 100%;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
-      letter-spacing: 10px;
+      letter-spacing: 12px;
       text-align: center;
       padding: 14px;
       border: 2px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       outline: none;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       transition: all 0.25s;
       font-family: inherit;
     }
-    .auth-pin-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(0, 136, 204, 0.2); }
+    .auth-pin-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.18); }
+    .auth-hint {
+      font-size: 13px;
+      color: #0284c7;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: var(--primary-light);
+      padding: 8px 14px;
+      border-radius: 10px;
+      display: inline-block;
+    }
 
     /* Sidebar */
     .admin-sidebar {
       width: 270px;
-      background: var(--dark-sidebar);
+      background: var(--sidebar-bg);
       color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -112,7 +122,7 @@
       transition: transform 0.3s ease;
     }
     .sidebar-brand {
-      padding: 26px 22px;
+      padding: 24px 20px;
       border-bottom: 1px solid #1e293b;
       display: flex;
       align-items: center;
@@ -129,12 +139,12 @@
       font-size: 22px;
       color: #fff;
     }
-    .brand-text h2 { font-size: 17px; font-weight: 900; color: #ffffff; margin-bottom: 2px; }
+    .brand-text h2 { font-size: 16.5px; font-weight: 900; color: #ffffff; margin-bottom: 2px; }
     .brand-text span { font-size: 11px; color: #94a3b8; font-weight: 700; letter-spacing: 1px; }
 
     .sidebar-menu {
       list-style: none;
-      padding: 20px 14px;
+      padding: 18px 12px;
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -145,22 +155,22 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 13px 18px;
+      padding: 12px 16px;
       color: #cbd5e1;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: 700;
       font-size: 14px;
       transition: all 0.2s ease;
       cursor: pointer;
     }
     .menu-link i { font-size: 17px; width: 22px; text-align: center; color: #94a3b8; }
-    .menu-link:hover { background: #1e293b; color: #ffffff; }
-    .menu-link:hover i { color: var(--primary); }
+    .menu-link:hover { background: var(--sidebar-hover); color: #ffffff; }
+    .menu-link:hover i { color: #38bdf8; }
     .menu-link.active {
       background: var(--primary);
       color: #ffffff;
-      box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
     }
     .menu-link.active i { color: #ffffff; }
 
@@ -185,13 +195,13 @@
       background: transparent;
       border: none;
       color: #94a3b8;
-      font-size: 16px;
+      font-size: 17px;
       cursor: pointer;
       padding: 8px;
-      border-radius: 6px;
-      transition: color 0.2s;
+      border-radius: 8px;
+      transition: all 0.2s;
     }
-    .logout-btn:hover { color: #f87171; }
+    .logout-btn:hover { color: #f87171; background: rgba(239, 68, 68, 0.1); }
 
     /* Main Content */
     .admin-main {
@@ -207,7 +217,7 @@
     .admin-header {
       background: #ffffff;
       height: 72px;
-      padding: 0 32px;
+      padding: 0 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -217,16 +227,16 @@
       z-index: 90;
       flex-shrink: 0;
     }
-    .header-title-box h1 { font-size: 20px; font-weight: 900; color: var(--text-main); }
+    .header-title-box h1 { font-size: 19px; font-weight: 900; color: var(--text-main); }
     .header-title-box p { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: 2px; }
-    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
     
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 10px 18px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-family: inherit;
       font-size: 13.5px;
       font-weight: 800;
@@ -242,35 +252,35 @@
     .btn-danger { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
     .btn-danger:hover { background: #fee2e2; }
     .btn-success { background: #f0fdf4; border-color: #bbf7d0; color: #16a34a; }
-    .btn-sm { padding: 6px 12px; font-size: 12.5px; }
+    .btn-sm { padding: 7px 14px; font-size: 12.5px; }
 
     /* Content Area */
     .admin-body {
-      padding: 32px;
+      padding: 28px;
       flex-grow: 1;
     }
 
     /* Stat Cards */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-bottom: 26px;
     }
     .stat-card {
       background: #ffffff;
       border-radius: 16px;
-      padding: 24px;
+      padding: 22px;
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+    .stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
     .stat-icon {
-      width: 58px; height: 58px;
+      width: 54px; height: 54px;
       border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
       font-size: 24px; flex-shrink: 0;
@@ -279,27 +289,44 @@
     .stat-green { background: #dcfce7; color: #16a34a; }
     .stat-purple { background: #f3e8ff; color: #9333ea; }
     .stat-amber { background: #fef3c7; color: #d97706; }
-    .stat-val { font-size: 26px; font-weight: 900; line-height: 1.1; margin-bottom: 4px; }
-    .stat-lbl { font-size: 12.5px; color: var(--text-muted); font-weight: 700; }
+    .stat-val { font-size: 24px; font-weight: 900; line-height: 1.1; margin-bottom: 4px; }
+    .stat-lbl { font-size: 12px; color: var(--text-muted); font-weight: 700; }
+
+    /* Quick Action Banner */
+    .quick-actions-bar {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+    .quick-actions-bar h3 { font-size: 18px; font-weight: 900; margin-bottom: 4px; color: #fff; }
+    .quick-actions-bar p { font-size: 13px; color: #94a3b8; }
+    .quick-actions-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
     /* Tables & Cards */
     .card-panel {
       background: #ffffff;
       border-radius: 16px;
       border: 1px solid var(--border);
-      padding: 26px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
       margin-bottom: 24px;
     }
     .card-panel-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       flex-wrap: wrap;
       gap: 14px;
     }
-    .card-panel-title { font-size: 18px; font-weight: 900; display: flex; align-items: center; gap: 10px; }
+    .card-panel-title { font-size: 17.5px; font-weight: 900; display: flex; align-items: center; gap: 10px; }
     
     .table-responsive { width: 100%; overflow-x: auto; }
     table.data-table {
@@ -308,15 +335,16 @@
       text-align: right;
     }
     table.data-table th {
-      padding: 14px 16px;
+      padding: 13px 16px;
       background: #f8fafc;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
       color: var(--text-muted);
       border-bottom: 1px solid var(--border);
+      white-space: nowrap;
     }
     table.data-table td {
-      padding: 14px 16px;
+      padding: 13px 16px;
       border-bottom: 1px solid var(--border);
       font-size: 13.5px;
       vertical-align: middle;
@@ -324,11 +352,12 @@
     table.data-table tbody tr:hover { background: #f8fafc; }
 
     .tour-thumb {
-      width: 52px;
-      height: 52px;
+      width: 58px;
+      height: 48px;
       border-radius: 8px;
       object-fit: cover;
       border: 1px solid var(--border);
+      display: block;
     }
 
     .badge {
@@ -337,6 +366,7 @@
       border-radius: 6px;
       font-size: 11.5px;
       font-weight: 800;
+      white-space: nowrap;
     }
     .badge-primary { background: #e0f2fe; color: #0284c7; }
     .badge-success { background: #dcfce7; color: #16a34a; }
@@ -352,24 +382,60 @@
       font-family: inherit;
       font-size: 13.5px;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       background: #ffffff;
       outline: none;
       transition: border 0.2s, box-shadow 0.2s;
     }
     .form-control:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.15);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
     }
     .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* Image Upload UI */
+    .image-uploader-box {
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      background: #f8fafc;
+      transition: border-color 0.2s;
+      cursor: pointer;
+      position: relative;
+    }
+    .image-uploader-box:hover { border-color: var(--primary); }
+    .image-preview-thumb {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      display: none;
+    }
+    .preset-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      margin: 2px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+    .preset-pill:hover { background: #e0f2fe; color: #0284c7; border-color: #38bdf8; }
 
     /* Modal */
     .modal-backdrop {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(5px);
       z-index: 1000;
       display: none;
       align-items: center;
@@ -378,13 +444,13 @@
     }
     .modal-card {
       background: #ffffff;
-      border-radius: 18px;
+      border-radius: 20px;
       width: 100%;
-      max-width: 650px;
+      max-width: 680px;
       max-height: 90vh;
       overflow-y: auto;
       border: 1px solid var(--border);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
     .modal-header {
       padding: 20px 24px;
@@ -398,7 +464,7 @@
       z-index: 2;
     }
     .modal-header h3 { font-size: 18px; font-weight: 900; }
-    .modal-close { background: none; border: none; font-size: 18px; color: var(--text-muted); cursor: pointer; }
+    .modal-close { background: none; border: none; font-size: 18px; color: var(--text-muted); cursor: pointer; padding: 4px; }
     .modal-body { padding: 24px; }
     .modal-footer {
       padding: 16px 24px;
@@ -421,15 +487,16 @@
       background: #0f172a;
       color: #ffffff;
       padding: 14px 22px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       display: none;
       align-items: center;
       gap: 12px;
       z-index: 9999;
       animation: toastIn 0.3s ease;
+      border-right: 4px solid var(--primary);
     }
     @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -439,7 +506,7 @@
       .admin-sidebar {
         position: fixed;
         left: auto;
-        right: -270px;
+        right: -280px;
         top: 0;
         bottom: 0;
         z-index: 9999;
@@ -455,7 +522,7 @@
         color: var(--text-main);
         cursor: pointer;
       }
-      .admin-body { padding: 20px 16px; }
+      .admin-body { padding: 18px 14px; }
       .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
     }
   </style>
@@ -469,14 +536,19 @@
         <i class="fa-solid fa-plane-departure"></i>
       </div>
       <h2 class="auth-title">لوحة تحكم هورايزون تورز</h2>
-      <p class="auth-desc">يرجى إدخال رمز الأمان (PIN) للمتابعة إلى إدارة باقات السفر، الوجهات، واستفسارات الحجز.</p>
+      <p class="auth-desc">يرجى إدخال رمز الأمان (PIN) للمتابعة إلى إدارة باقات السفر، الأقسام، الصور، والإعدادات.</p>
+      
+      <div class="auth-hint">
+        <i class="fa-solid fa-key"></i> الرمز الافتراضي للدخول: <strong>1234</strong>
+      </div>
+
       <form onsubmit="handleAuth(event)">
         <input type="password" id="pinInput" class="auth-pin-input" placeholder="••••" maxlength="6" autofocus autocomplete="off">
         <div id="authError" style="display:none; color:#dc2626; font-size:13px; font-weight:800; margin-bottom:14px;">
           <i class="fa-solid fa-circle-exclamation"></i> رمز الأمان غير صحيح، حاول ثانية (الافتراضي: 1234)
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:12px; font-size:15px;">
-          <i class="fa-solid fa-lock-open"></i> تسجيل الدخول
+          <i class="fa-solid fa-lock-open"></i> الدخول إلى لوحة التحكم
         </button>
       </form>
     </div>
@@ -490,7 +562,7 @@
       </div>
       <div class="brand-text">
         <h2>هورايزون تورز</h2>
-        <span>HORIZON TOURS CMS</span>
+        <span>لوحة الإدارة والتحكم</span>
       </div>
     </div>
 
@@ -504,13 +576,19 @@
       <li>
         <a class="menu-link" onclick="switchTab('tabTours', this)">
           <i class="fa-solid fa-plane-up"></i>
-          <span>إدارة الباقات السياحية</span>
+          <span>إدارة الباقات والمنتجات</span>
         </a>
       </li>
       <li>
         <a class="menu-link" onclick="switchTab('tabDestinations', this)">
           <i class="fa-solid fa-earth-americas"></i>
-          <span>الوجهات والدول</span>
+          <span>إدارة الأقسام والوجهات</span>
+        </a>
+      </li>
+      <li>
+        <a class="menu-link" onclick="switchTab('tabCMS', this)">
+          <i class="fa-solid fa-sliders"></i>
+          <span>إعدادات الموقع والصفحات</span>
         </a>
       </li>
       <li>
@@ -520,15 +598,15 @@
         </a>
       </li>
       <li>
-        <a class="menu-link" onclick="switchTab('tabCMS', this)">
-          <i class="fa-solid fa-sliders"></i>
-          <span>إعدادات الوكالة والتواصل</span>
+        <a class="menu-link" onclick="switchTab('tabBackup', this)">
+          <i class="fa-solid fa-database"></i>
+          <span>النسخ الاحتياطي والاستعادة</span>
         </a>
       </li>
       <li>
-        <a href="../index.html" target="_blank" class="menu-link">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          <span>زيارة الموقع المباشر</span>
+        <a href="../index.html" target="_blank" class="menu-link" style="color:#38bdf8; background:rgba(56,189,248,0.08);">
+          <i class="fa-solid fa-arrow-up-right-from-square" style="color:#38bdf8;"></i>
+          <span>عرض الموقع المباشر ↗</span>
         </a>
       </li>
     </ul>
@@ -556,15 +634,15 @@
         </button>
         <div class="header-title-box">
           <h1 id="headerTitle">لوحة التحكم الشاملة</h1>
-          <p>مرحباً بك، إدارة محتوى وحجوزات وكالة هورايزون تورز</p>
+          <p>إدارة كافة المنتجات والرحلات، الأقسام، الصور، والتواصل المباشر</p>
         </div>
       </div>
 
       <div class="header-actions">
         <button class="btn btn-primary btn-sm" onclick="openAddTourModal()">
-          <i class="fa-solid fa-plus"></i> إضافة باقة جديدة
+          <i class="fa-solid fa-plus"></i> إضافة رحلة جديدة
         </button>
-        <button class="btn btn-outline btn-sm" onclick="exportDataJSON()" title="تحميل ملف البيانات المحدث">
+        <button class="btn btn-outline btn-sm" onclick="exportDataJSON()" title="تنزيل نسخة احتياطية من البيانات">
           <i class="fa-solid fa-download"></i> تصدير JSON
         </button>
       </div>
@@ -573,33 +651,46 @@
     <div class="admin-body">
       <!-- 1. OVERVIEW TAB -->
       <section id="tabOverview" class="admin-tab-pane">
+        <!-- Quick Action Bar -->
+        <div class="quick-actions-bar">
+          <div>
+            <h3>مرحباً بك في لوحة تحكم وكالة هورايزون تورز!</h3>
+            <p>يمكنك من هنا إضافة وتعديل الباقات، الأقسام، الصور، وأسعار الرحلات وتنعكس فوراً على المتجر مباشرة.</p>
+          </div>
+          <div class="quick-actions-btns">
+            <button class="btn btn-primary btn-sm" onclick="openAddTourModal()"><i class="fa-solid fa-plus"></i> إضافة باقة</button>
+            <button class="btn btn-outline btn-sm" onclick="openAddDestModal()"><i class="fa-solid fa-folder-plus"></i> إضافة قسم/وجهة</button>
+            <button class="btn btn-outline btn-sm" onclick="switchTab('tabCMS')"><i class="fa-solid fa-pen"></i> إعدادات الموقع</button>
+          </div>
+        </div>
+
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-icon stat-blue"><i class="fa-solid fa-plane"></i></div>
             <div>
-              <div class="stat-val" id="statToursCount">0</div>
+              <div class="stat-val" id="statToursCount">8</div>
               <div class="stat-lbl">إجمالي الباقات السياحية</div>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon stat-green"><i class="fa-solid fa-calendar-check"></i></div>
-            <div>
-              <div class="stat-val" id="statInquiriesCount">0</div>
-              <div class="stat-lbl">طلبات الحجز الواردة</div>
             </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon stat-purple"><i class="fa-solid fa-map-location-dot"></i></div>
             <div>
               <div class="stat-val" id="statDestsCount">5</div>
-              <div class="stat-lbl">الوجهات العالمية النشطة</div>
+              <div class="stat-lbl">الأقسام والوجهات النشطة</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-green"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <div class="stat-val" id="statInquiriesCount">0</div>
+              <div class="stat-lbl">طلبات الحجز والاستفسارات</div>
             </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon stat-amber"><i class="fa-brands fa-whatsapp"></i></div>
             <div>
               <div class="stat-val" id="statWhatsApp">01027093535</div>
-              <div class="stat-lbl">واتساب الاستفسارات والحجوزات</div>
+              <div class="stat-lbl">رقم واتساب الحجوزات</div>
             </div>
           </div>
         </div>
@@ -618,7 +709,7 @@
                 <tr>
                   <th>#</th>
                   <th>العميل</th>
-                  <th>رقم الهاتف</th>
+                  <th>الهاتف</th>
                   <th>الباقة المطلوبة</th>
                   <th>عدد المسافرين</th>
                   <th>تاريخ السفر</th>
@@ -626,9 +717,7 @@
                   <th>الإجراء</th>
                 </tr>
               </thead>
-              <tbody id="overviewRecentInquiries">
-                <!-- Injected via JS -->
-              </tbody>
+              <tbody id="overviewRecentInquiries"></tbody>
             </table>
           </div>
         </div>
@@ -640,12 +729,12 @@
           <div class="card-panel-header">
             <div class="card-panel-title">
               <i class="fa-solid fa-plane-up" style="color:var(--primary);"></i>
-              <span>قائمة الباقات السياحية الفاخرة</span>
+              <span>إدارة الباقات والمنتجات السياحية</span>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <input type="text" id="tourSearchInput" class="form-control" placeholder="بحث باسم الباقة أو الوجهة..." style="width:240px;" oninput="filterAdminTours()">
+              <input type="text" id="tourSearchInput" class="form-control" placeholder="بحث باسم الباقة أو الوجهة..." style="width:230px;" oninput="filterAdminTours()">
               <button class="btn btn-primary btn-sm" onclick="openAddTourModal()">
-                <i class="fa-solid fa-plus"></i> إضافة باقة
+                <i class="fa-solid fa-plus"></i> إضافة باقة جديدة
               </button>
             </div>
           </div>
@@ -655,18 +744,16 @@
               <thead>
                 <tr>
                   <th>الصورة</th>
-                  <th>اسم الباقة</th>
-                  <th>الوجهة</th>
+                  <th>اسم الباقة / الرحلة</th>
+                  <th>القسم / الوجهة</th>
                   <th>المدة</th>
                   <th>السعر (ر.س)</th>
                   <th>الشارة</th>
-                  <th>مميزة</th>
+                  <th>الرئيسية</th>
                   <th>الإجراءات</th>
                 </tr>
               </thead>
-              <tbody id="toursTableBody">
-                <!-- Injected via JS -->
-              </tbody>
+              <tbody id="toursTableBody"></tbody>
             </table>
           </div>
         </div>
@@ -678,10 +765,10 @@
           <div class="card-panel-header">
             <div class="card-panel-title">
               <i class="fa-solid fa-earth-americas" style="color:var(--primary);"></i>
-              <span>الوجهات السياحية المعتمدة</span>
+              <span>إدارة الأقسام والوجهات السياحية</span>
             </div>
             <button class="btn btn-primary btn-sm" onclick="openAddDestModal()">
-              <i class="fa-solid fa-plus"></i> إضافة وجهة
+              <i class="fa-solid fa-plus"></i> إضافة قسم / وجهة جديدة
             </button>
           </div>
 
@@ -690,71 +777,52 @@
               <thead>
                 <tr>
                   <th>الصورة</th>
-                  <th>اسم الوجهة</th>
+                  <th>اسم الوجهة / القسم</th>
                   <th>المعرف (Slug)</th>
                   <th>الشارة الترويجية</th>
                   <th>الوصف المختصر</th>
                   <th>الإجراءات</th>
                 </tr>
               </thead>
-              <tbody id="destinationsTableBody">
-                <!-- Injected via JS -->
-              </tbody>
+              <tbody id="destinationsTableBody"></tbody>
             </table>
           </div>
         </div>
       </section>
 
-      <!-- 4. INQUIRIES TAB -->
-      <section id="tabInquiries" class="admin-tab-pane" style="display:none;">
-        <div class="card-panel">
-          <div class="card-panel-header">
-            <div class="card-panel-title">
-              <i class="fa-solid fa-calendar-check" style="color:var(--primary);"></i>
-              <span>سجل طلبات الحجز والاستفسارات</span>
-            </div>
-            <button class="btn btn-danger btn-sm" onclick="clearAllInquiries()">
-              <i class="fa-solid fa-trash"></i> مسح السجل
-            </button>
-          </div>
-
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>الاسم</th>
-                  <th>الهاتف</th>
-                  <th>البريد الإلكتروني</th>
-                  <th>الباقة</th>
-                  <th>التاريخ</th>
-                  <th>الأفراد</th>
-                  <th>ملاحظات</th>
-                  <th>الإجراء</th>
-                </tr>
-              </thead>
-              <tbody id="inquiriesTableBody">
-                <!-- Injected via JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. CMS TAB -->
+      <!-- 4. CMS TAB -->
       <section id="tabCMS" class="admin-tab-pane" style="display:none;">
         <div class="card-panel">
           <div class="card-panel-header">
             <div class="card-panel-title">
               <i class="fa-solid fa-sliders" style="color:var(--primary);"></i>
-              <span>بيانات الوكالة والتواصل المباشر</span>
+              <span>إعدادات الموقع ونصوص الصفحات</span>
             </div>
             <button class="btn btn-primary btn-sm" onclick="saveCMSData()">
-              <i class="fa-solid fa-floppy-disk"></i> حفظ التعديلات
+              <i class="fa-solid fa-floppy-disk"></i> حفظ كافة الإعدادات
             </button>
           </div>
 
           <form id="cmsForm" onsubmit="event.preventDefault(); saveCMSData();">
+            <h4 style="font-size:15px; font-weight:800; margin-bottom:14px; color:var(--primary);"><i class="fa-solid fa-bullhorn"></i> نصوص الصفحة الرئيسية والترويج</h4>
+            <div class="form-group">
+              <label class="form-label">نص شريط الإعلانات أعلى الموقع (Top Announcement)</label>
+              <input type="text" id="cmsTopbarAnnouncement" class="form-control" value="عروض حصرية تصل إلى 35% على باقات المالديف وسويسرا عند الحجز المبكر هذا الأسبوع!">
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">العنوان الرئيسي للبانر (Hero Headline)</label>
+                <input type="text" id="cmsHeroTitle" class="form-control" value="اكتشف روعة العالم مع برامج هورايزون السياحية الفاخرة">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الوصف الترويجي أسفل العنوان الرئيسي</label>
+                <input type="text" id="cmsHeroDesc" class="form-control" value="أفخم الرحلات المنظمة وحجوزات الفنادق والمنتجعات حول العالم مع أفضل تجربة عملاء وخدمات كونسيرج متكاملة 24/7.">
+              </div>
+            </div>
+
+            <hr style="margin:24px 0; border:0; border-top:1px solid var(--border);">
+
+            <h4 style="font-size:15px; font-weight:800; margin-bottom:14px; color:var(--primary);"><i class="fa-solid fa-building"></i> بيانات الوكالة والتواصل المباشر</h4>
             <div class="form-grid-2">
               <div class="form-group">
                 <label class="form-label">اسم الوكالة بالعربية</label>
@@ -762,14 +830,15 @@
               </div>
               <div class="form-group">
                 <label class="form-label">اسم الوكالة بالإنجليزية</label>
-                <input type="text" id="cmsAgencyEn" class="form-control" value="HORIZON LUXURY TOURS">
+                <input type="text" id="cmsAgencyEn" class="form-control" value="HORIZON LUXURY ESCAPES">
               </div>
             </div>
 
             <div class="form-grid-3">
               <div class="form-group">
-                <label class="form-label">رقم واتساب الحجوزات</label>
+                <label class="form-label">رقم واتساب الحجوزات المباشر *</label>
                 <input type="text" id="cmsWhatsApp" class="form-control" value="01027093535">
+                <small style="color:var(--text-muted); font-size:11.5px;">يستخدم تلقائياً في أزرار الحجز عبر الواتساب</small>
               </div>
               <div class="form-group">
                 <label class="form-label">الخط الساخن الموحد</label>
@@ -777,7 +846,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label">البريد الإلكتروني الرسمي</label>
-                <input type="email" id="cmsEmail" class="form-control" value="concierge@horizon-tours.com">
+                <input type="email" id="cmsEmail" class="form-control" value="booking@horizon-travel.com">
               </div>
             </div>
 
@@ -798,15 +867,85 @@
                 <input type="text" id="cmsAdminPin" class="form-control" value="1234" maxlength="6">
               </div>
               <div class="form-group">
-                <label class="form-label">رقم الترخيص السياحي والاعتماد الدولي</label>
+                <label class="form-label">رقم الترخيص والاعتماد الدولي</label>
                 <input type="text" id="cmsLicense" class="form-control" value="ترخيص وزارة السياحة رقم 73491/ت | عضو منظمة IATA المعتمد">
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="margin-top:10px;">
-              <i class="fa-solid fa-check"></i> تطبيق وحفظ الإعدادات
+            <button type="submit" class="btn btn-primary" style="margin-top:10px; padding:12px 24px;">
+              <i class="fa-solid fa-check"></i> حفظ وتطبيق الإعدادات
             </button>
           </form>
+        </div>
+      </section>
+
+      <!-- 5. INQUIRIES TAB -->
+      <section id="tabInquiries" class="admin-tab-pane" style="display:none;">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div class="card-panel-title">
+              <i class="fa-solid fa-calendar-check" style="color:var(--primary);"></i>
+              <span>سجل طلبات الحجز والاستفسارات</span>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="clearAllInquiries()">
+              <i class="fa-solid fa-trash"></i> مسح السجل
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>الاسم</th>
+                  <th>الهاتف</th>
+                  <th>البريد</th>
+                  <th>الباقة</th>
+                  <th>التاريخ</th>
+                  <th>الأفراد</th>
+                  <th>ملاحظات</th>
+                  <th>الإجراء</th>
+                </tr>
+              </thead>
+              <tbody id="inquiriesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. BACKUP TAB -->
+      <section id="tabBackup" class="admin-tab-pane" style="display:none;">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div class="card-panel-title">
+              <i class="fa-solid fa-database" style="color:var(--primary);"></i>
+              <span>النسخ الاحتياطي وإدارة البيانات</span>
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div style="background:#f8fafc; border:1px solid var(--border); border-radius:14px; padding:20px; text-align:center;">
+              <i class="fa-solid fa-download" style="font-size:32px; color:var(--primary); margin-bottom:12px;"></i>
+              <h4 style="font-size:15px; font-weight:800; margin-bottom:6px;">تصدير نسخة احتياطية</h4>
+              <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:16px;">حفظ كافة الباقات والوجهات والإعدادات في ملف JSON على جهازك.</p>
+              <button class="btn btn-primary btn-sm" onclick="exportDataJSON()" style="width:100%; justify-content:center;">تصدير ملف tours.json</button>
+            </div>
+
+            <div style="background:#f8fafc; border:1px solid var(--border); border-radius:14px; padding:20px; text-align:center;">
+              <i class="fa-solid fa-upload" style="font-size:32px; color:#16a34a; margin-bottom:12px;"></i>
+              <h4 style="font-size:15px; font-weight:800; margin-bottom:6px;">استيراد بيانات من ملف</h4>
+              <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:16px;">استعادة أو تحميل باقات من ملف JSON خارجي.</p>
+              <input type="file" id="importJsonInput" accept=".json" style="display:none;" onchange="importDataJSON(event)">
+              <button class="btn btn-success btn-sm" onclick="document.getElementById('importJsonInput').click()" style="width:100%; justify-content:center;">اختيار ملف JSON</button>
+            </div>
+
+            <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:14px; padding:20px; text-align:center;">
+              <i class="fa-solid fa-rotate-left" style="font-size:32px; color:#dc2626; margin-bottom:12px;"></i>
+              <h4 style="font-size:15px; font-weight:800; margin-bottom:6px; color:#dc2626;">إعادة تعيين للبيانات الأصلية</h4>
+              <p style="font-size:12.5px; color:#991b1b; margin-bottom:16px;">استعادة الباقات والبيانات النموذجية الأصلية وإلغاء التعديلات.</p>
+              <button class="btn btn-danger btn-sm" onclick="resetDefaultData()" style="width:100%; justify-content:center;">إعادة ضبط المصنع</button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -823,18 +962,14 @@
         <div class="modal-body">
           <input type="hidden" id="modalTourId">
           <div class="form-group">
-            <label class="form-label">عنوان الباقة *</label>
-            <input type="text" id="modalTourName" class="form-control" required placeholder="مثال: رحلة المالديف الفاخرة">
+            <label class="form-label">اسم الباقة / الرحلة *</label>
+            <input type="text" id="modalTourName" class="form-control" required placeholder="مثال: باقة المالديف الملكية - فيلات عائمة فوق الماء">
           </div>
           <div class="form-grid-2">
             <div class="form-group">
-              <label class="form-label">الوجهة *</label>
+              <label class="form-label">القسم / الوجهة *</label>
               <select id="modalTourDest" class="form-control" required>
-                <option value="maldives">جزر المالديف</option>
-                <option value="switzerland">سويسرا والألب</option>
-                <option value="turkey">تركيا وكابادوكيا</option>
-                <option value="egypt">مصر والأهرامات</option>
-                <option value="alula">العلا التاريخية</option>
+                <!-- Populated dynamically via JS -->
               </select>
             </div>
             <div class="form-group">
@@ -858,18 +993,111 @@
               <input type="text" id="modalTourBadge" class="form-control" placeholder="خصم 22% أو الأكثر طلباً">
             </div>
             <div class="form-group">
-              <label class="form-label">مسار صورة الباقة *</label>
-              <input type="text" id="modalTourImage" class="form-control" required placeholder="images/maldives.jpg">
+              <label class="form-label">ظهور في الرئيسية؟</label>
+              <select id="modalTourFeatured" class="form-control">
+                <option value="true">نعم - مميزة في الصفحة الرئيسية</option>
+                <option value="false">لا - في صفحة الباقات فقط</option>
+              </select>
             </div>
           </div>
+
+          <!-- Image Upload / Link Section -->
           <div class="form-group">
-            <label class="form-label">وصف الباقة المختصر *</label>
-            <textarea id="modalTourDesc" class="form-control" rows="3" required placeholder="شرح موجز عن الإقامة والخدمات..."></textarea>
+            <label class="form-label">صورة الباقة (رابط أو رفع من جهازك) *</label>
+            <div class="image-uploader-box">
+              <div style="margin-bottom:8px;">
+                <input type="text" id="modalTourImage" class="form-control" placeholder="images/maldives.jpg أو رابط مباشر" style="margin-bottom:10px;" oninput="updateTourImgPreview(this.value)">
+                <div style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('modalTourFile').click()">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> رفع صورة من جهازك / هاتفك
+                  </button>
+                  <input type="file" id="modalTourFile" accept="image/*" style="display:none;" onchange="handleTourImageFile(event)">
+                </div>
+              </div>
+              <div style="margin-top:6px; font-size:12px; color:var(--text-muted);">
+                أو اختر صورة جاهزة:
+                <span class="preset-pill" onclick="setTourPresetImg('images/maldives.jpg')">المالديف</span>
+                <span class="preset-pill" onclick="setTourPresetImg('images/swiss_alps.jpg')">سويسرا</span>
+                <span class="preset-pill" onclick="setTourPresetImg('images/cappadocia.jpg')">تركيا</span>
+                <span class="preset-pill" onclick="setTourPresetImg('images/egypt_pyramids.jpg')">مصر</span>
+                <span class="preset-pill" onclick="setTourPresetImg('images/alula.jpg')">العلا</span>
+              </div>
+              <img id="modalTourImgPreview" src="" class="image-preview-thumb" alt="معاينة الصورة">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">المميزات والخدمات المشمولة (مفصولة بفاصلة)</label>
+            <input type="text" id="modalTourInclusions" class="form-control" placeholder="طيران دولي، فندق 5 نجوم، إفطار يومي، مواصلات خاصة">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">وصف الباقة وتفاصيل الإقامة *</label>
+            <textarea id="modalTourDesc" class="form-control" rows="3" required placeholder="عش تجربة الفخامة المطلقة في أفضل منتجعات..."></textarea>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" onclick="closeTourModal()">إلغاء</button>
           <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ الباقة</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add / Edit Destination -->
+  <div class="modal-backdrop" id="destModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="destModalTitle">إضافة وجهة / قسم جديد</h3>
+        <button class="modal-close" onclick="closeDestModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="destForm" onsubmit="handleSaveDest(event)">
+        <div class="modal-body">
+          <input type="hidden" id="modalDestOriginalSlug">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">اسم الوجهة / القسم بالعربية *</label>
+              <input type="text" id="modalDestName" class="form-control" required placeholder="مثال: جزر المالديف الفاخرة">
+            </div>
+            <div class="form-group">
+              <label class="form-label">المعرف بالإنجليزية (Slug) *</label>
+              <input type="text" id="modalDestSlug" class="form-control" required placeholder="مثال: maldives">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">الشارة الترويجية (Badge) *</label>
+              <input type="text" id="modalDestBadge" class="form-control" required placeholder="MALDIVES LUXURY ESCAPES">
+            </div>
+            <div class="form-group">
+              <label class="form-label">عدد الرحلات المعروضة</label>
+              <input type="text" id="modalDestCount" class="form-control" placeholder="3 باقات مميزة">
+            </div>
+          </div>
+
+          <!-- Destination Image Upload / Link -->
+          <div class="form-group">
+            <label class="form-label">صورة الوجهة (رابط أو رفع من جهازك) *</label>
+            <div class="image-uploader-box">
+              <input type="text" id="modalDestImage" class="form-control" placeholder="images/maldives.jpg أو رابط مباشر" style="margin-bottom:10px;" oninput="updateDestImgPreview(this.value)">
+              <div style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('modalDestFile').click()">
+                  <i class="fa-solid fa-cloud-arrow-up"></i> رفع صورة من جهازك
+                </button>
+                <input type="file" id="modalDestFile" accept="image/*" style="display:none;" onchange="handleDestImageFile(event)">
+              </div>
+              <img id="modalDestImgPreview" src="" class="image-preview-thumb" alt="معاينة الصورة">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">الوصف الترويجي للوجهة *</label>
+            <textarea id="modalDestDesc" class="form-control" rows="3" required placeholder="فيلات عائمة فوق المياه الفيروزية مع خصوصية ملكية كاملة..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeDestModal()">إلغاء</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ الوجهة</button>
         </div>
       </form>
     </div>
