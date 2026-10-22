@@ -86,16 +86,10 @@
             </div>
         </div>
 
-        <!-- Secondary Navigation Bar (Desktop) -->
+        <!-- Clean Centered Secondary Navigation Bar (Without Mega-btn or Hotline) -->
         <div class="tour-navbar">
-            <div class="tour-container tour-navbar-inner">
-                <ul class="tour-nav-menu">
-                    <li class="tour-nav-item">
-                        <a href="destination.html" class="tour-nav-mega-btn">
-                            <i class="fa-solid fa-bars-staggered"></i>
-                            <span>كافة الوجهات السياحية</span>
-                        </a>
-                    </li>
+            <div class="tour-container tour-navbar-inner" style="justify-content: center;">
+                <ul class="tour-nav-menu" style="justify-content: center; gap: 8px;">
                     <li class="tour-nav-item "><a href="index.html">الرئيسية</a></li>
                     <li class="tour-nav-item "><a href="tours.html">باقات وعروض السفر</a></li>
                     <li class="tour-nav-item active"><a href="destination.html">الوجهات العالمية</a></li>
@@ -107,15 +101,11 @@
                     <li class="tour-nav-item "><a href="about.html">من نحن</a></li>
                     <li class="tour-nav-item "><a href="contact.html">اتصل بنا</a></li>
                 </ul>
-                <div class="tour-nav-hotline">
-                    <i class="fa-solid fa-headset"></i>
-                    <span>الرقم الموحد المباشر: <strong>800-HORIZON</strong></span>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE STICKY HEADER (Visible ONLY on Mobile) -->
+    <!-- MOBILE STICKY HEADER -->
     <div class="mobile-header-bar">
         <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
             <i class="fa-solid fa-bars"></i>
@@ -134,7 +124,7 @@
         </a>
     </div>
 
-    <!-- MOBILE SUB-BAR (Direct Horizontal Scrollable Strip for Mobile) -->
+    <!-- MOBILE SUB-BAR -->
     <div class="mobile-sub-bar">
         <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
             <i class="fa-solid fa-bars"></i>
@@ -154,14 +144,14 @@
         </div>
     </div>
 
-    <!-- DYNAMIC DESTINATION HERO BANNER -->
-    <section id="destHero" style="position: relative; min-height: 380px; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; overflow: hidden; background: #0f172a;">
-        <img id="destBannerImg" src="images/swiss_alps.jpg" alt="سياحة فاخرة" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.55;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(180deg, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.85) 100%);"></div>
-        <div class="tour-container" style="position: relative; z-index: 2; padding: 40px 16px;">
-            <span class="tour-badge-pill" id="destBadge" style="background: rgba(2, 132, 199, 0.9); color: #ffffff; border:none; padding: 6px 18px;">SWISS ALPS & LAKES</span>
-            <h1 id="destTitle" style="font-size: 38px; font-weight: 900; margin: 14px 0 12px; color: #ffffff;">سويسرا وقمم جبال الألب</h1>
-            <p id="destDesc" style="font-size: 16px; color: #e2e8f0; max-width: 700px; margin: 0 auto; line-height: 1.8;">بحيرات نقية، قطار بانورامي فاخر، ومروج خضراء وشلالات أسطورية في إنترلاكن ولوسيرن.</p>
+    <!-- DYNAMIC DESTINATION HERO BANNER (PERFECTLY CENTERED & LUXURY STYLING) -->
+    <section id="destHero" style="position: relative; min-height: 420px; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; overflow: hidden; background: #0f172a;">
+        <img id="destBannerImg" src="images/swiss_alps.jpg" alt="سياحة فاخرة" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.6;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.85) 100%);"></div>
+        <div class="tour-container" style="position: relative; z-index: 2; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 0 auto; max-width: 900px;">
+            <span class="tour-badge-pill" id="destBadge" style="background: rgba(2, 132, 199, 0.95); color: #ffffff; border:none; padding: 8px 24px; font-size: 13.5px; font-weight: 800; border-radius: 50px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);">SWISS ALPS & LAKES</span>
+            <h1 id="destTitle" style="font-size: 44px; font-weight: 900; margin: 0 0 16px; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); letter-spacing: -0.5px; text-align: center;">سويسرا وقمم جبال الألب</h1>
+            <p id="destDesc" style="font-size: 18px; color: #f1f5f9; max-width: 750px; margin: 0 auto; line-height: 1.8; text-shadow: 0 1px 6px rgba(0,0,0,0.4); text-align: center;">بحيرات نقية، قطار بانورامي فاخر، ومروج خضراء وشلالات أسطورية في إنترلاكن ولوسيرن.</p>
         </div>
     </section>
 

@@ -64,16 +64,36 @@ function triggerMobileSearch() {
 }
 
 // 3. TOURS FILTERING
+function normalizeDest(d) {
+    if (!d) return 'all';
+    d = d.toLowerCase().trim();
+    if (d === 'swiss' || d === 'switzerland') return 'swiss';
+    if (d === 'cappadocia' || d === 'turkey') return 'cappadocia';
+    if (d === 'sharm') return 'egypt';
+    return d;
+}
+
+function normalizeDest(d) {
+    if (!d) return 'all';
+    d = d.toLowerCase().trim();
+    if (d === 'swiss' || d === 'switzerland') return 'swiss';
+    if (d === 'cappadocia' || d === 'turkey') return 'cappadocia';
+    if (d === 'sharm') return 'egypt';
+    return d;
+}
+
 function filterTours(category, btn) {
+    const targetNorm = normalizeDest(category);
     if (btn) {
         document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
     }
-    const cards = document.querySelectorAll('.tour-card');
+    const cards = document.querySelectorAll('#toursGrid .tour-card, .tour-grid .tour-card');
     cards.forEach(card => {
-        const dest = card.getAttribute('data-dest');
-        if (category === 'all' || dest === category) {
+        const dest = normalizeDest(card.getAttribute('data-dest'));
+        if (targetNorm === 'all' || dest === targetNorm) {
             card.style.display = 'flex';
+            card.style.animation = 'fadeIn 0.35s ease';
         } else {
             card.style.display = 'none';
         }

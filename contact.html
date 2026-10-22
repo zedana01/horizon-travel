@@ -86,16 +86,10 @@
             </div>
         </div>
 
-        <!-- Secondary Navigation Bar (Desktop) -->
+        <!-- Clean Centered Secondary Navigation Bar (Without Mega-btn or Hotline) -->
         <div class="tour-navbar">
-            <div class="tour-container tour-navbar-inner">
-                <ul class="tour-nav-menu">
-                    <li class="tour-nav-item">
-                        <a href="destination.html" class="tour-nav-mega-btn">
-                            <i class="fa-solid fa-bars-staggered"></i>
-                            <span>كافة الوجهات السياحية</span>
-                        </a>
-                    </li>
+            <div class="tour-container tour-navbar-inner" style="justify-content: center;">
+                <ul class="tour-nav-menu" style="justify-content: center; gap: 8px;">
                     <li class="tour-nav-item "><a href="index.html">الرئيسية</a></li>
                     <li class="tour-nav-item "><a href="tours.html">باقات وعروض السفر</a></li>
                     <li class="tour-nav-item "><a href="destination.html">الوجهات العالمية</a></li>
@@ -107,15 +101,11 @@
                     <li class="tour-nav-item "><a href="about.html">من نحن</a></li>
                     <li class="tour-nav-item active"><a href="contact.html">اتصل بنا</a></li>
                 </ul>
-                <div class="tour-nav-hotline">
-                    <i class="fa-solid fa-headset"></i>
-                    <span>الرقم الموحد المباشر: <strong>800-HORIZON</strong></span>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE STICKY HEADER (Visible ONLY on Mobile) -->
+    <!-- MOBILE STICKY HEADER -->
     <div class="mobile-header-bar">
         <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
             <i class="fa-solid fa-bars"></i>
@@ -134,7 +124,7 @@
         </a>
     </div>
 
-    <!-- MOBILE SUB-BAR (Direct Horizontal Scrollable Strip for Mobile) -->
+    <!-- MOBILE SUB-BAR -->
     <div class="mobile-sub-bar">
         <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
             <i class="fa-solid fa-bars"></i>
@@ -156,9 +146,9 @@
 
     <!-- HERO CONTACT -->
     <section style="background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%); padding: 50px 0; color: #ffffff; text-align: center;">
-        <div class="tour-container">
-            <span class="tour-badge-pill" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.3);">تواصل معنا على مدار الساعة</span>
-            <h1 style="font-size: 36px; font-weight: 900; margin: 14px 0 10px; color: #ffffff;">نحن هنا لمساعدتك في التخطيط لرحلتك القادمة</h1>
+        <div class="tour-container" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+            <span class="tour-badge-pill" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.3); margin-bottom:12px;">تواصل معنا على مدار الساعة</span>
+            <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 10px; color: #ffffff;">نحن هنا لمساعدتك في التخطيط لرحلتك القادمة</h1>
             <p style="font-size: 15px; color: #cbd5e1; max-width: 650px; margin: 0 auto;">فريق خبراء السفر في هورايزون مستعد لتصميم برنامج سياحي مخصص يلبي رغباتك بأدق التفاصيل.</p>
         </div>
     </section>

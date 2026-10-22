@@ -275,12 +275,13 @@
     .tour-navbar-inner {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
     .tour-nav-menu {
         display: flex;
         align-items: center;
-        gap: 4px;
+        justify-content: center;
+        gap: 8px;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -1193,15 +1194,20 @@
         }
         .tour-navbar::-webkit-scrollbar { display: none; }
         .tour-navbar-inner {
-            display: flex !important;
-            width: max-content !important;
-            padding: 0 16px !important;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
         .tour-nav-menu {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            gap: 6px !important;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: nowrap;
+    }
         .tour-nav-item a {
             white-space: nowrap !important;
             font-size: 13px !important;

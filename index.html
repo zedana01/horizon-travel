@@ -121,6 +121,33 @@ gtag("config", "GT-W62LZ9T");
             if (o) o.classList.remove('active');
             document.body.style.overflow = '';
         }
+
+        function normalizeDest(d) {
+            if (!d) return 'all';
+            d = d.toLowerCase().trim();
+            if (d === 'swiss' || d === 'switzerland') return 'swiss';
+            if (d === 'cappadocia' || d === 'turkey') return 'cappadocia';
+            if (d === 'sharm') return 'egypt';
+            return d;
+        }
+
+        function filterTours(category, btn) {
+            const targetNorm = normalizeDest(category);
+            if (btn) {
+                document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+            const cards = document.querySelectorAll('#toursGrid .tour-card, .tour-grid .tour-card');
+            cards.forEach(card => {
+                const dest = normalizeDest(card.getAttribute('data-dest'));
+                if (targetNorm === 'all' || dest === targetNorm) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeIn 0.35s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
 
 </head>
@@ -1347,6 +1374,33 @@ gtag("config", "GT-W62LZ9T");
             if (o) o.classList.remove('active');
             document.body.style.overflow = '';
         }
+
+        function normalizeDest(d) {
+            if (!d) return 'all';
+            d = d.toLowerCase().trim();
+            if (d === 'swiss' || d === 'switzerland') return 'swiss';
+            if (d === 'cappadocia' || d === 'turkey') return 'cappadocia';
+            if (d === 'sharm') return 'egypt';
+            return d;
+        }
+
+        function filterTours(category, btn) {
+            const targetNorm = normalizeDest(category);
+            if (btn) {
+                document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+            const cards = document.querySelectorAll('#toursGrid .tour-card, .tour-grid .tour-card');
+            cards.forEach(card => {
+                const dest = normalizeDest(card.getAttribute('data-dest'));
+                if (targetNorm === 'all' || dest === targetNorm) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeIn 0.35s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
 
 </head>
@@ -1410,16 +1464,10 @@ gtag("config", "GT-W62LZ9T");
             </div>
         </div>
 
-        <!-- Secondary Navigation Bar (Desktop) -->
+        <!-- Clean Centered Secondary Navigation Bar (Without Mega-btn or Hotline) -->
         <div class="tour-navbar">
-            <div class="tour-container tour-navbar-inner">
-                <ul class="tour-nav-menu">
-                    <li class="tour-nav-item">
-                        <a href="destination.html" class="tour-nav-mega-btn">
-                            <i class="fa-solid fa-bars-staggered"></i>
-                            <span>كافة الوجهات السياحية</span>
-                        </a>
-                    </li>
+            <div class="tour-container tour-navbar-inner" style="justify-content: center;">
+                <ul class="tour-nav-menu" style="justify-content: center; gap: 8px;">
                     <li class="tour-nav-item active"><a href="index.html">الرئيسية</a></li>
                     <li class="tour-nav-item "><a href="tours.html">باقات وعروض السفر</a></li>
                     <li class="tour-nav-item "><a href="destination.html">الوجهات العالمية</a></li>
@@ -1431,15 +1479,11 @@ gtag("config", "GT-W62LZ9T");
                     <li class="tour-nav-item "><a href="about.html">من نحن</a></li>
                     <li class="tour-nav-item "><a href="contact.html">اتصل بنا</a></li>
                 </ul>
-                <div class="tour-nav-hotline">
-                    <i class="fa-solid fa-headset"></i>
-                    <span>الرقم الموحد المباشر: <strong>800-HORIZON</strong></span>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE STICKY HEADER (Visible ONLY on Mobile) -->
+    <!-- MOBILE STICKY HEADER -->
     <div class="mobile-header-bar">
         <button class="mob-menu-toggle-btn" onclick="toggleMobileMenu()" aria-label="القائمة الرئيسية" title="القائمة الرئيسية">
             <i class="fa-solid fa-bars"></i>
@@ -1458,7 +1502,7 @@ gtag("config", "GT-W62LZ9T");
         </a>
     </div>
 
-    <!-- MOBILE SUB-BAR (Direct Horizontal Scrollable Strip for Mobile) -->
+    <!-- MOBILE SUB-BAR -->
     <div class="mobile-sub-bar">
         <button class="mob-sub-dept-btn" onclick="toggleMobileMenu()" type="button">
             <i class="fa-solid fa-bars"></i>
@@ -1521,7 +1565,7 @@ gtag("config", "GT-W62LZ9T");
                     </div>
                 </div>
                 <div class="tour-hero-image-wrapper">
-                    <img decoding="async" src="https://blogs.entej.com/wp-content/uploads/2026/10/tropical-maldives-luxury.jpg" alt="رحلات المالديف الفاخرة" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
+                    <img decoding="async" src="images/maldives.jpg" alt="رحلات المالديف الفاخرة" title="وكالة هورايزون تورز للسياحة والسفر | نموذج موقع سياحي وحجز رحلات">
                 </div>
                 <div class="tour-float-badge bottom-left">
                     <div class="tour-badge-icon" style="background: #ecfeff; color: #0284c7;"><i class="fa-solid fa-percent"></i></div>
@@ -1613,7 +1657,7 @@ gtag("config", "GT-W62LZ9T");
                     <div class="tour-cat-name">رحلات شهر العسل VIP</div>
                     <span class="tour-cat-count">10 منتجعات خاصة</span>
                 </a>
-            </div>
+            </div></div>
         </div>
     </section>
 
@@ -1685,7 +1729,7 @@ gtag("config", "GT-W62LZ9T");
                 <button type="button" class="tour-filter-btn" onclick="filterTours('maldives', this)">جزر المالديف</button>
                 <button type="button" class="tour-filter-btn" onclick="filterTours('swiss', this)">سويسرا والألب</button>
                 <button type="button" class="tour-filter-btn" onclick="filterTours('egypt', this)">مصر الفرعونية</button>
-                <button type="button" class="tour-filter-btn" onclick="filterTours('turkey', this)">تركيا وكابادوكيا</button>
+                <button type="button" class="tour-filter-btn" onclick="filterTours('cappadocia', this)">تركيا وكابادوكيا</button>
             </div>
 
             <!-- Tour Cards Grid -->
@@ -2181,58 +2225,7 @@ gtag("config", "GT-W62LZ9T");
     </section>
 
     <!-- 10. FAQ SECTION -->
-    <section class="tour-faq-section" id="faq">
-        <div class="tour-container">
-            <div class="tour-section-header" style="justify-content: center; text-align: center;">
-                <div class="tour-section-title-box" style="text-align: center;">
-                    <span class="tour-section-subtitle" style="text-align: center;">إجابات واضحة</span>
-                    <h2 class="tour-section-title" style="text-align: center;">الأسئلة الشائعة حول حجز الرحلات السياحية</h2>
-                </div>
-            </div>
-
-            <div class="tour-faq-list">
-                <div class="tour-faq-item active">
-                    <div class="tour-faq-question" onclick="toggleFaq(this)">
-                        <span>كيف تتم عملية تأكيد الحجز واستلام قسائم الفنادق والطيران؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="tour-faq-answer">
-                        بمجرد اختيار الباقة وإتمام الدفع أو التواصل عبر واتساب، يتم إصدار تذاكر الطيران الإلكترونية وقسائم الفنادق (Hotel Vouchers) فوراً بصيغة PDF وإرسالها إلى بريدك الإلكتروني ورقم الواتساب مع جدول الرحلة اليومي المفصل.
-                    </div>
-                </div>
-
-                <div class="tour-faq-item">
-                    <div class="tour-faq-question" onclick="toggleFaq(this)">
-                        <span>هل يمكنني تعديل مواعيد الرحلة أو إضافة ليالٍ إضافية؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="tour-faq-answer">
-                        نعم بكل سهولة! نوفر مرونة كاملة في تعديل تواريخ السفر أو ترقية الفنادق والغرف، كما يمكنك إضافة أنشطة وجولات حصرية وفقاً لرغبتك الشخصية قبل موعد الرحلة بوقت كافٍ.
-                    </div>
-                </div>
-
-                <div class="tour-faq-item">
-                    <div class="tour-faq-question" onclick="toggleFaq(this)">
-                        <span>ما هي طرق الدفع المتاحة لحجز الباقات؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="tour-faq-answer">
-                        نوفر بوابات دفع إلكترونية آمنة ومعتمدة 100%: بطاقات الائتمان (Visa / Mastercard)، بطاقات مدى، Apple Pay، والتحويل البنكي المباشر، بالإضافة إلى إمكانية تقسيط تكلفة الرحلة على 4 دفعات بدون فوائد عبر تابي وتمارا.
-                    </div>
-                </div>
-
-                <div class="tour-faq-item">
-                    <div class="tour-faq-question" onclick="toggleFaq(this)">
-                        <span>هل تشمل البرامج السياحية تأشيرة الدخول (الفيزا)؟</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="tour-faq-answer">
-                        نقدم خدمة المساعدة الكاملة وإصدار خطابات الحجز المعتمدة المطلوبة للشنغن والتأشيرات الأوروبية وتأشيرات المالديف وتركيا، لمساعدتك في استخراج التأشيرة بأسرع وأيسر الإجراءات.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- 11. MODERN FOOTER -->
     <footer class="tour-footer">
@@ -2308,32 +2301,7 @@ gtag("config", "GT-W62LZ9T");
     <!-- INTERACTIVE JAVASCRIPT -->
     <script>
     // 1. Filter Tours Function
-    function normalizeDest(d) {
-        if (!d) return 'all';
-        d = d.toLowerCase();
-        if (d === 'swiss' || d === 'switzerland') return 'swiss';
-        if (d === 'cappadocia' || d === 'turkey') return 'cappadocia';
-        if (d === 'sharm') return 'egypt';
-        return d;
-    }
-
     function filterTours(category, btn) {
-        const normCat = normalizeDest(category);
-        if (btn) {
-            document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
-        const cards = document.querySelectorAll('.tour-card');
-        cards.forEach(card => {
-            const dest = normalizeDest(card.getAttribute('data-dest'));
-            if (normCat === 'all' || dest === normCat) {
-                card.style.display = 'flex';
-                card.style.animation = 'fadeIn 0.4s ease';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
         if (btn) {
             document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
