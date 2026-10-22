@@ -1,7 +1,11 @@
 /**
  * Horizon Travel Live Client-Side Synchronization Engine
- * Automatically reflects all Admin changes (Tours, Destinations, Prices, Images, WhatsApp, CMS)
- * across index.html, tours.html, destination.html, and tour-detail.html in real time.
+ * Automatically reflects all Admin changes:
+ * - Tours & Destinations CRUD
+ * - Home Page Hero Title, Description, Image, Badges, Announcement
+ * - About Us Page Title, Subtitle, Story, Paragraphs, Image
+ * - Contact Us Page Title, Subtitle, WhatsApp, Phone, Email, Address
+ * - WhatsApp booking numbers across all buttons
  */
 
 (function() {
@@ -10,7 +14,7 @@
             const raw = localStorage.getItem('horizon_tours_data');
             if (raw) {
                 const parsed = JSON.parse(raw);
-                if (parsed && Array.isArray(parsed.tours) && parsed.tours.length > 0) {
+                if (parsed && (Array.isArray(parsed.tours) || parsed.pages || parsed.agency)) {
                     return parsed;
                 }
             }
@@ -87,40 +91,108 @@
 
         const tours = data.tours || [];
         const agency = data.agency || {};
+        const pages = data.pages || {};
         const agencyWa = agency.phone ? agency.phone.replace(/[^0-9]/g, '') : '201027093535';
 
-        // 1. Update WhatsApp links across the page
+        // 1. Update Global WhatsApp links across any page
         document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
             const currentHref = a.getAttribute('href');
-            a.setAttribute('href', currentHref.replace(/wa\.me\/[0-9]+/, `wa.me/${agencyWa}`));
+            if (currentHref && agencyWa) {
+                a.setAttribute('href', currentHref.replace(/wa\.me\/[0-9]+/, `wa.me/${agencyWa}`));
+            }
         });
 
-        // 2. Update Topbar Announcement if element exists
-        const topbarAnnounceEl = document.querySelector('.tour-topbar-notice span, .topbar-announcement');
-        if (topbarAnnounceEl && agency.topbarAnnouncement) {
-            topbarAnnounceEl.textContent = agency.topbarAnnouncement;
+        // 2. HOME PAGE SYNC (index.html)
+        if (pages.home) {
+            const h = pages.home;
+            const heroTitle = document.getElementById('heroTitle');
+            if (heroTitle && h.heroTitle) heroTitle.textContent = h.heroTitle;
+
+            const heroDesc = document.getElementById('heroDesc');
+            if (heroDesc && h.heroDesc) heroDesc.textContent = h.heroDesc;
+
+            const heroImg = document.getElementById('heroImg');
+            if (heroImg && h.heroImg) heroImg.src = h.heroImg;
+
+            const b1t = document.getElementById('heroBadge1Title');
+            if (b1t && h.badge1Title) b1t.textContent = h.badge1Title;
+
+            const b1s = document.getElementById('heroBadge1Sub');
+            if (b1s && h.badge1Sub) b1s.textContent = h.badge1Sub;
+
+            const b2t = document.getElementById('heroBadge2Title');
+            if (b2t && h.badge2Title) b2t.textContent = h.badge2Title;
+
+            const b2s = document.getElementById('heroBadge2Sub');
+            if (b2s && h.badge2Sub) b2s.textContent = h.badge2Sub;
+
+            const topAnnounce = document.querySelector('.tour-topbar-notice span, .topbar-announcement');
+            if (topAnnounce && h.announcement) topAnnounce.textContent = h.announcement;
         }
 
-        // 3. Update Hero Title & Description if customized
-        const heroTitleEl = document.querySelector('.tour-hero-title');
-        if (heroTitleEl && agency.heroTitle) {
-            heroTitleEl.textContent = agency.heroTitle;
-        }
-        const heroDescEl = document.querySelector('.tour-hero-desc');
-        if (heroDescEl && agency.heroDesc) {
-            heroDescEl.textContent = agency.heroDesc;
+        // 3. ABOUT US PAGE SYNC (about.html)
+        if (pages.about) {
+            const ab = pages.about;
+            const abTitle = document.getElementById('aboutHeroTitle');
+            if (abTitle && ab.heroTitle) abTitle.textContent = ab.heroTitle;
+
+            const abSub = document.getElementById('aboutHeroSub');
+            if (abSub && ab.heroSubtitle) abSub.textContent = ab.heroSubtitle;
+
+            const abStoryTitle = document.getElementById('aboutStoryTitle');
+            if (abStoryTitle && ab.storyTitle) abStoryTitle.textContent = ab.storyTitle;
+
+            const abP1 = document.getElementById('aboutStoryP1');
+            if (abP1 && ab.storyP1) abP1.textContent = ab.storyP1;
+
+            const abP2 = document.getElementById('aboutStoryP2');
+            if (abP2 && ab.storyP2) abP2.textContent = ab.storyP2;
+
+            const abImg = document.getElementById('aboutMainImg');
+            if (abImg && ab.image) abImg.src = ab.image;
         }
 
-        // 4. Update Tours Grid on Homepage (index.html) or Tours Page (tours.html)
+        // 4. CONTACT US PAGE SYNC (contact.html)
+        if (pages.contact) {
+            const ct = pages.contact;
+            const ctTitle = document.getElementById('contactHeroTitle');
+            if (ctTitle && ct.heroTitle) ctTitle.textContent = ct.heroTitle;
+
+            const ctSub = document.getElementById('contactHeroSub');
+            if (ctSub && ct.heroSubtitle) ctSub.textContent = ct.heroSubtitle;
+
+            const ctWaLink = document.getElementById('contactWaLink');
+            if (ctWaLink && ct.whatsapp) {
+                const clean = ct.whatsapp.replace(/[^0-9]/g, '');
+                ctWaLink.href = `https://wa.me/${clean}`;
+                ctWaLink.textContent = ct.whatsapp;
+            }
+
+            const ctPhoneLink = document.getElementById('contactPhoneLink');
+            if (ctPhoneLink && ct.phone) {
+                ctPhoneLink.href = `tel:${ct.phone}`;
+                ctPhoneLink.textContent = ct.phone;
+            }
+
+            const ctEmailLink = document.getElementById('contactEmailLink');
+            if (ctEmailLink && ct.email) {
+                ctEmailLink.href = `mailto:${ct.email}`;
+                ctEmailLink.textContent = ct.email;
+            }
+
+            const ctAddr = document.getElementById('contactAddressText');
+            if (ctAddr && ct.address) ctAddr.textContent = ct.address;
+        }
+
+        // 5. TOURS GRID SYNC (#toursGrid)
         const toursGrid = document.getElementById('toursGrid');
         if (toursGrid && tours.length > 0) {
-            // Check if we are on index.html (filter by featured) or tours.html (all)
             const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/horizon-travel/');
             const visibleTours = isHomePage ? tours.filter(t => t.featured !== false) : tours;
             
             toursGrid.innerHTML = (visibleTours.length > 0 ? visibleTours : tours).map(t => renderCard(t, agencyWa)).join('');
 
-            // If a destination filter was previously selected, re-apply it
+            // If a filter was previously active, reapply
             if (typeof window.filterTours === 'function') {
                 const activeFilterBtn = document.querySelector('.tour-filter-btn.active');
                 if (activeFilterBtn) {
@@ -133,7 +205,7 @@
             }
         }
 
-        // 5. Update Destination Page Grid (#destToursGrid)
+        // 6. DESTINATION PAGE TOURS GRID (#destToursGrid)
         const destToursGrid = document.getElementById('destToursGrid');
         if (destToursGrid && tours.length > 0) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -153,7 +225,7 @@
             destToursGrid.innerHTML = filtered.map(t => renderCard(t, agencyWa)).join('');
         }
 
-        // 6. Update Tour Detail Page (tour-detail.html / product.html)
+        // 7. TOUR DETAIL PAGE (tour-detail.html / product.html)
         const detailTitle = document.getElementById('detailTitle');
         if (detailTitle) {
             const urlParams = new URLSearchParams(window.location.search);

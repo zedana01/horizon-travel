@@ -586,6 +586,12 @@
         </a>
       </li>
       <li>
+        <a class="menu-link" onclick="switchTab('tabPages', this)">
+          <i class="fa-solid fa-file-pen" style="color:#38bdf8;"></i>
+          <span>تعديل محتوى الصفحات والبانرات</span>
+        </a>
+      </li>
+      <li>
         <a class="menu-link" onclick="switchTab('tabCMS', this)">
           <i class="fa-solid fa-sliders"></i>
           <span>إعدادات الموقع والصفحات</span>
@@ -786,6 +792,212 @@
               </thead>
               <tbody id="destinationsTableBody"></tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- 7. PAGES EDITOR TAB -->
+      <section id="tabPages" class="admin-tab-pane" style="display:none;">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div class="card-panel-title">
+              <i class="fa-solid fa-file-pen" style="color:var(--primary);"></i>
+              <span>محرر وتعديل محتوى الصفحات والصور (الصفحة الرئيسية، من نحن، اتصل بنا)</span>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="saveAllPagesData()">
+              <i class="fa-solid fa-floppy-disk"></i> حفظ كافة تعديلات الصفحات
+            </button>
+          </div>
+
+          <!-- Page Selection Subtabs -->
+          <div style="display:flex; gap:10px; margin-bottom:24px; border-bottom:1px solid var(--border); padding-bottom:14px; flex-wrap:wrap;">
+            <button type="button" class="btn btn-primary btn-sm" id="btnPageSubHome" onclick="switchPageSubTab('pageSubHome')">
+              <i class="fa-solid fa-house"></i> الصفحة الرئيسية (Home)
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" id="btnPageSubAbout" onclick="switchPageSubTab('pageSubAbout')">
+              <i class="fa-solid fa-circle-info"></i> صفحة من نحن (About Us)
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" id="btnPageSubContact" onclick="switchPageSubTab('pageSubContact')">
+              <i class="fa-solid fa-headset"></i> صفحة اتصل بنا (Contact Us)
+            </button>
+          </div>
+
+          <!-- SUB-TAB 1: HOME PAGE -->
+          <div id="pageSubHome" class="page-sub-pane">
+            <h4 style="font-size:16px; font-weight:900; margin-bottom:16px; color:var(--primary); display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-panorama"></i> بانر الصفحة الرئيسية (Hero Showcase & Images)
+            </h4>
+
+            <div class="form-group">
+              <label class="form-label">العنوان الرئيسي للبانر (Hero Headline) *</label>
+              <input type="text" id="pageHomeHeroTitle" class="form-control" value="اكتشف روعة العالم مع برامج هورايزون السياحية الفاخرة">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">الوصف الترويجي في البانر (Hero Description) *</label>
+              <textarea id="pageHomeHeroDesc" class="form-control" rows="3">استمتع بتجارب سفر استثنائية مع وكالة هورايزون العالمية. باقات متكاملة تشمل تذاكر الطيران الدولي، أفخم الفنادق والمنتجعات 5 نجوم، مع خدمة كونسيرج خاص يرافقك خطوة بخطوة 24/7.</textarea>
+            </div>
+
+            <!-- Home Hero Image Upload Box -->
+            <div class="form-group">
+              <label class="form-label">صورة البانر الرئيسي في الصفحة الرئيسية (رابط أو رفع من جهازك) *</label>
+              <div class="image-uploader-box">
+                <input type="text" id="pageHomeHeroImg" class="form-control" value="images/maldives.jpg" style="margin-bottom:10px;" oninput="updateHomeHeroImgPreview(this.value)">
+                <div style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('fileHomeHeroImg').click()">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> رفع صورة بانر جديدة من جهازك
+                  </button>
+                  <input type="file" id="fileHomeHeroImg" accept="image/*" style="display:none;" onchange="handleHomeHeroImgFile(event)">
+                </div>
+                <div style="margin-top:6px; font-size:12px; color:var(--text-muted);">
+                  أو اختر صورة جاهزة:
+                  <span class="preset-pill" onclick="setHomeHeroPreset('images/maldives.jpg')">المالديف</span>
+                  <span class="preset-pill" onclick="setHomeHeroPreset('images/swiss_alps.jpg')">سويسرا</span>
+                  <span class="preset-pill" onclick="setHomeHeroPreset('images/cappadocia.jpg')">تركيا</span>
+                  <span class="preset-pill" onclick="setHomeHeroPreset('images/egypt_pyramids.jpg')">مصر</span>
+                  <span class="preset-pill" onclick="setHomeHeroPreset('images/alula.jpg')">العلا</span>
+                </div>
+                <img id="previewHomeHeroImg" src="../images/maldives.jpg" class="image-preview-thumb" style="display:block; max-height:220px;" alt="معاينة صورة البانر">
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">الشارة العائمة 1 (العنوان)</label>
+                <input type="text" id="pageHomeBadge1Title" class="form-control" value="فيلات عائمة 5 نجوم">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الشارة العائمة 1 (الوصف)</label>
+                <input type="text" id="pageHomeBadge1Sub" class="form-control" value="إطلالة بانورامية ومسبح خاص">
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">الشارة العائمة 2 (نسبة الخصم)</label>
+                <input type="text" id="pageHomeBadge2Title" class="form-control" value="خصم حصري 35%">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الشارة العائمة 2 (الوصف)</label>
+                <input type="text" id="pageHomeBadge2Sub" class="form-control" value="شامل الطيران والإقامة لشخصين">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">نص شريط الإعلانات أعلى الموقع (Top Announcement)</label>
+              <input type="text" id="pageHomeAnnouncement" class="form-control" value="عروض حصرية تصل إلى 35% على باقات المالديف وسويسرا عند الحجز المبكر هذا الأسبوع!">
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="saveAllPagesData()">
+              <i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات الصفحة الرئيسية
+            </button>
+          </div>
+
+          <!-- SUB-TAB 2: ABOUT US PAGE -->
+          <div id="pageSubAbout" class="page-sub-pane" style="display:none;">
+            <h4 style="font-size:16px; font-weight:900; margin-bottom:16px; color:var(--primary); display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-building"></i> محتوى صفحة من نحن (About Us Content & Images)
+            </h4>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">عنوان البانر العلوي (Page Title) *</label>
+                <input type="text" id="pageAboutHeroTitle" class="form-control" value="وكالة هورايزون لاكجري تورز العالمية">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الوصف الترويجي في البانر (Subtitle) *</label>
+                <input type="text" id="pageAboutHeroSub" class="form-control" value="رائدة صناعة السياحة الفاخرة وتصميم تجارب السفر الاستثنائية لرجال الأعمال والعائلات في أرقى وجهات العالم منذ أكثر من 15 عاماً.">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">عنوان قصة هورايزون ورؤيتنا (Story Headline) *</label>
+              <input type="text" id="pageAboutStoryTitle" class="form-control" value="نحن لا نبيع تذاكر سفر، بل نصنع ذكريات تدوم مدى الحياة">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">نص الفقرة الأولى من قصة الوكالة *</label>
+              <textarea id="pageAboutStoryP1" class="form-control" rows="3">تأسست وكالة هورايزون تورز لتكون الوجهة الأولى لعشاق الفخامة والخصوصية والتميز. نقدم باقات سياحية مصممة خصيصاً لتلبي تطلعات المسافر العربي الباحث عن أرقى المنتجعات العالمية وأفضل الخدمات اللوجستية المتكاملة.</textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">نص الفقرة الثانية من قصة الوكالة *</label>
+              <textarea id="pageAboutStoryP2" class="form-control" rows="3">بفضل شبكة علاقاتنا الحصرية مع أرقى سلاسل الفنادق والمنتجعات العالمية، نضمن لعملائنا ترقيات مجانية للغرف، خدمات استقبال كبار الشخصيات، وأسعاراً تفضيلية لا تتوفر على منصات الحجز العامة.</textarea>
+            </div>
+
+            <!-- About Image Upload Box -->
+            <div class="form-group">
+              <label class="form-label">صورة صفحة من نحن (رابط أو رفع من جهازك) *</label>
+              <div class="image-uploader-box">
+                <input type="text" id="pageAboutImg" class="form-control" value="images/hero_travel.jpg" style="margin-bottom:10px;" oninput="updateAboutImgPreview(this.value)">
+                <div style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('fileAboutImg').click()">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> رفع صورة من نحن من جهازك
+                  </button>
+                  <input type="file" id="fileAboutImg" accept="image/*" style="display:none;" onchange="handleAboutImgFile(event)">
+                </div>
+                <div style="margin-top:6px; font-size:12px; color:var(--text-muted);">
+                  أو اختر صورة جاهزة:
+                  <span class="preset-pill" onclick="setAboutPreset('images/hero_travel.jpg')">المسافر الفاخر</span>
+                  <span class="preset-pill" onclick="setAboutPreset('images/swiss_alps.jpg')">سويسرا</span>
+                  <span class="preset-pill" onclick="setAboutPreset('images/maldives.jpg')">المالديف</span>
+                </div>
+                <img id="previewAboutImg" src="../images/hero_travel.jpg" class="image-preview-thumb" style="display:block; max-height:220px;" alt="معاينة صورة من نحن">
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="saveAllPagesData()">
+              <i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات صفحة من نحن
+            </button>
+          </div>
+
+          <!-- SUB-TAB 3: CONTACT US PAGE -->
+          <div id="pageSubContact" class="page-sub-pane" style="display:none;">
+            <h4 style="font-size:16px; font-weight:900; margin-bottom:16px; color:var(--primary); display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-headset"></i> محتوى وبيانات صفحة اتصل بنا (Contact Us Page)
+            </h4>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">عنوان البانر العلوي (Contact Title) *</label>
+                <input type="text" id="pageContactHeroTitle" class="form-control" value="نحن هنا لمساعدتك في التخطيط لرحلتك القادمة">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الوصف الترويجي في البانر (Contact Subtitle) *</label>
+                <input type="text" id="pageContactHeroSub" class="form-control" value="فريق خبراء السفر في هورايزون جاهز للإجابة على استفساراتكم وتصميم برنامجكم السياحي المثالي على مدار الساعة.">
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label">رقم واتساب المباشر 24/7 *</label>
+                <input type="text" id="pageContactWhatsApp" class="form-control" value="01027093535">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الهاتف الموحد</label>
+                <input type="text" id="pageContactPhone" class="form-control" value="01027093535">
+              </div>
+              <div class="form-group">
+                <label class="form-label">البريد الإلكتروني للكونسيرج</label>
+                <input type="email" id="pageContactEmail" class="form-control" value="booking@horizon-travel.com">
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">المكاتب الرئيسية والمقرات</label>
+                <input type="text" id="pageContactAddress" class="form-control" value="برج المملكة - الرياض / شارع التسعين - القاهرة">
+              </div>
+              <div class="form-group">
+                <label class="form-label">أوقات العمل واستقبال العملاء</label>
+                <input type="text" id="pageContactWorkingHours" class="form-control" value="السبت إلى الخميس: 9:00 ص - 10:00 م (خدمة الطوارئ 24/7)">
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="saveAllPagesData()">
+              <i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات صفحة اتصل بنا
+            </button>
           </div>
         </div>
       </section>

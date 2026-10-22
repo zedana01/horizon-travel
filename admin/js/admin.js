@@ -19,6 +19,35 @@ const DEFAULT_DATA = {
     heroTitle: "اكتشف روعة العالم مع برامج هورايزون السياحية الفاخرة",
     heroDesc: "أفخم الرحلات المنظمة وحجوزات الفنادق والمنتجعات حول العالم مع أفضل تجربة عملاء وخدمات كونسيرج متكاملة 24/7."
   },
+  pages: {
+    home: {
+      heroTitle: "اكتشف روعة العالم مع برامج هورايزون السياحية الفاخرة",
+      heroDesc: "استمتع بتجارب سفر استثنائية مع وكالة هورايزون العالمية. باقات متكاملة تشمل تذاكر الطيران الدولي، أفخم الفنادق والمنتجعات 5 نجوم، مع خدمة كونسيرج خاص يرافقك خطوة بخطوة 24/7.",
+      heroImg: "images/maldives.jpg",
+      badge1Title: "فيلات عائمة 5 نجوم",
+      badge1Sub: "إطلالة بانورامية ومسبح خاص",
+      badge2Title: "خصم حصري 35%",
+      badge2Sub: "شامل الطيران والإقامة لشخصين",
+      announcement: "عروض حصرية تصل إلى 35% على باقات المالديف وسويسرا عند الحجز المبكر هذا الأسبوع!"
+    },
+    about: {
+      heroTitle: "وكالة هورايزون لاكجري تورز العالمية",
+      heroSubtitle: "رائدة صناعة السياحة الفاخرة وتصميم تجارب السفر الاستثنائية لرجال الأعمال والعائلات في أرقى وجهات العالم منذ أكثر من 15 عاماً.",
+      storyTitle: "نحن لا نبيع تذاكر سفر، بل نصنع ذكريات تدوم مدى الحياة",
+      storyP1: "تأسست وكالة هورايزون تورز لتكون الوجهة الأولى لعشاق الفخامة والخصوصية والتميز. نقدم باقات سياحية مصممة خصيصاً لتلبي تطلعات المسافر العربي الباحث عن أرقى المنتجعات العالمية وأفضل الخدمات اللوجستية المتكاملة.",
+      storyP2: "بفضل شبكة علاقاتنا الحصرية مع أرقى سلاسل الفنادق والمنتجعات العالمية، نضمن لعملائنا ترقيات مجانية للغرف، خدمات استقبال كبار الشخصيات، وأسعاراً تفضيلية لا تتوفر على منصات الحجز العامة.",
+      image: "images/hero_travel.jpg"
+    },
+    contact: {
+      heroTitle: "نحن هنا لمساعدتك في التخطيط لرحلتك القادمة",
+      heroSubtitle: "فريق خبراء السفر في هورايزون جاهز للإجابة على استفساراتكم وتصميم برنامجكم السياحي المثالي على مدار الساعة.",
+      whatsapp: "01027093535",
+      phone: "01027093535",
+      email: "booking@horizon-travel.com",
+      address: "برج المملكة - الرياض / شارع التسعين - القاهرة",
+      workingHours: "السبت إلى الخميس: 9:00 ص - 10:00 م (خدمة الطوارئ 24/7)"
+    }
+  },
   destinations: [
     {
       id: "maldives",
@@ -221,6 +250,7 @@ function initData() {
   // Ensure default agency info has all fields
   if (!appData.agency) appData.agency = { ...DEFAULT_DATA.agency };
   if (!appData.destinations) appData.destinations = [ ...DEFAULT_DATA.destinations ];
+  if (!appData.pages) appData.pages = JSON.parse(JSON.stringify(DEFAULT_DATA.pages));
 
   checkAuth();
 }
@@ -284,6 +314,7 @@ function switchTab(tabId, btn) {
     'tabOverview': 'نظرة عامة وإحصائيات الوكالة',
     'tabTours': 'إدارة وتحديث الباقات السياحية',
     'tabDestinations': 'إدارة الأقسام والوجهات السياحية',
+    'tabPages': 'محرر وتعديل محتوى الصفحات والبانرات والصور',
     'tabCMS': 'إعدادات الموقع ونصوص الصفحات',
     'tabInquiries': 'سجل طلبات الحجز والاستفسارات',
     'tabBackup': 'النسخ الاحتياطي واستعادة البيانات'
@@ -327,6 +358,7 @@ function renderDashboard() {
   renderDestinationsTable(dests);
   renderInquiriesTable(inquiries);
   populateCMSForm();
+  populatePagesForm();
 }
 
 function populateDestSelect() {
@@ -812,6 +844,177 @@ function resetDefaultData() {
   saveAppData();
   renderDashboard();
   showToast('تمت استعادة البيانات النموذجية بنجاح!');
+}
+
+
+
+// 11. PAGES EDITOR CONTROLLER (Home, About Us, Contact Us)
+function switchPageSubTab(subId) {
+  document.querySelectorAll('.page-sub-pane').forEach(p => p.style.display = 'none');
+  const target = document.getElementById(subId);
+  if (target) target.style.display = 'block';
+
+  // Toggle button styles
+  const btnHome = document.getElementById('btnPageSubHome');
+  const btnAbout = document.getElementById('btnPageSubAbout');
+  const btnContact = document.getElementById('btnPageSubContact');
+
+  if (btnHome) { btnHome.className = (subId === 'pageSubHome') ? 'btn btn-primary btn-sm' : 'btn btn-outline btn-sm'; }
+  if (btnAbout) { btnAbout.className = (subId === 'pageSubAbout') ? 'btn btn-primary btn-sm' : 'btn btn-outline btn-sm'; }
+  if (btnContact) { btnContact.className = (subId === 'pageSubContact') ? 'btn btn-primary btn-sm' : 'btn btn-outline btn-sm'; }
+}
+
+function updateHomeHeroImgPreview(src) {
+  const prev = document.getElementById('previewHomeHeroImg');
+  if (prev && src && src.trim()) {
+    const fixed = src.startsWith('data:') ? src : (src.startsWith('http') ? src : `../${src}`);
+    prev.src = fixed;
+    prev.style.display = 'block';
+  }
+}
+
+function handleHomeHeroImgFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const base64 = e.target.result;
+    document.getElementById('pageHomeHeroImg').value = base64;
+    updateHomeHeroImgPreview(base64);
+    showToast('تم تحميل صورة البانر من جهازك بنجاح!');
+  };
+  reader.readAsDataURL(file);
+}
+
+function setHomeHeroPreset(path) {
+  document.getElementById('pageHomeHeroImg').value = path;
+  updateHomeHeroImgPreview(path);
+}
+
+function updateAboutImgPreview(src) {
+  const prev = document.getElementById('previewAboutImg');
+  if (prev && src && src.trim()) {
+    const fixed = src.startsWith('data:') ? src : (src.startsWith('http') ? src : `../${src}`);
+    prev.src = fixed;
+    prev.style.display = 'block';
+  }
+}
+
+function handleAboutImgFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const base64 = e.target.result;
+    document.getElementById('pageAboutImg').value = base64;
+    updateAboutImgPreview(base64);
+    showToast('تم تحميل صورة من نحن من جهازك بنجاح!');
+  };
+  reader.readAsDataURL(file);
+}
+
+function setAboutPreset(path) {
+  document.getElementById('pageAboutImg').value = path;
+  updateAboutImgPreview(path);
+}
+
+function populatePagesForm() {
+  if (!appData) return;
+  if (!appData.pages) appData.pages = JSON.parse(JSON.stringify(DEFAULT_DATA.pages));
+  const p = appData.pages;
+
+  // Home
+  if (p.home) {
+    if (document.getElementById('pageHomeHeroTitle')) document.getElementById('pageHomeHeroTitle').value = p.home.heroTitle || '';
+    if (document.getElementById('pageHomeHeroDesc')) document.getElementById('pageHomeHeroDesc').value = p.home.heroDesc || '';
+    if (document.getElementById('pageHomeHeroImg')) {
+      document.getElementById('pageHomeHeroImg').value = p.home.heroImg || 'images/maldives.jpg';
+      updateHomeHeroImgPreview(p.home.heroImg || 'images/maldives.jpg');
+    }
+    if (document.getElementById('pageHomeBadge1Title')) document.getElementById('pageHomeBadge1Title').value = p.home.badge1Title || '';
+    if (document.getElementById('pageHomeBadge1Sub')) document.getElementById('pageHomeBadge1Sub').value = p.home.badge1Sub || '';
+    if (document.getElementById('pageHomeBadge2Title')) document.getElementById('pageHomeBadge2Title').value = p.home.badge2Title || '';
+    if (document.getElementById('pageHomeBadge2Sub')) document.getElementById('pageHomeBadge2Sub').value = p.home.badge2Sub || '';
+    if (document.getElementById('pageHomeAnnouncement')) document.getElementById('pageHomeAnnouncement').value = p.home.announcement || '';
+  }
+
+  // About
+  if (p.about) {
+    if (document.getElementById('pageAboutHeroTitle')) document.getElementById('pageAboutHeroTitle').value = p.about.heroTitle || '';
+    if (document.getElementById('pageAboutHeroSub')) document.getElementById('pageAboutHeroSub').value = p.about.heroSubtitle || '';
+    if (document.getElementById('pageAboutStoryTitle')) document.getElementById('pageAboutStoryTitle').value = p.about.storyTitle || '';
+    if (document.getElementById('pageAboutStoryP1')) document.getElementById('pageAboutStoryP1').value = p.about.storyP1 || '';
+    if (document.getElementById('pageAboutStoryP2')) document.getElementById('pageAboutStoryP2').value = p.about.storyP2 || '';
+    if (document.getElementById('pageAboutImg')) {
+      document.getElementById('pageAboutImg').value = p.about.image || 'images/hero_travel.jpg';
+      updateAboutImgPreview(p.about.image || 'images/hero_travel.jpg');
+    }
+  }
+
+  // Contact
+  if (p.contact) {
+    if (document.getElementById('pageContactHeroTitle')) document.getElementById('pageContactHeroTitle').value = p.contact.heroTitle || '';
+    if (document.getElementById('pageContactHeroSub')) document.getElementById('pageContactHeroSub').value = p.contact.heroSubtitle || '';
+    if (document.getElementById('pageContactWhatsApp')) document.getElementById('pageContactWhatsApp').value = p.contact.whatsapp || '01027093535';
+    if (document.getElementById('pageContactPhone')) document.getElementById('pageContactPhone').value = p.contact.phone || '01027093535';
+    if (document.getElementById('pageContactEmail')) document.getElementById('pageContactEmail').value = p.contact.email || '';
+    if (document.getElementById('pageContactAddress')) document.getElementById('pageContactAddress').value = p.contact.address || '';
+    if (document.getElementById('pageContactWorkingHours')) document.getElementById('pageContactWorkingHours').value = p.contact.workingHours || '';
+  }
+}
+
+function saveAllPagesData() {
+  if (!appData) return;
+  if (!appData.pages) appData.pages = {};
+
+  // Save Home
+  appData.pages.home = {
+    heroTitle: document.getElementById('pageHomeHeroTitle').value.trim(),
+    heroDesc: document.getElementById('pageHomeHeroDesc').value.trim(),
+    heroImg: document.getElementById('pageHomeHeroImg').value.trim() || 'images/maldives.jpg',
+    badge1Title: document.getElementById('pageHomeBadge1Title').value.trim(),
+    badge1Sub: document.getElementById('pageHomeBadge1Sub').value.trim(),
+    badge2Title: document.getElementById('pageHomeBadge2Title').value.trim(),
+    badge2Sub: document.getElementById('pageHomeBadge2Sub').value.trim(),
+    announcement: document.getElementById('pageHomeAnnouncement').value.trim()
+  };
+
+  // Also sync announcement to agency
+  if (appData.agency) {
+    appData.agency.topbarAnnouncement = appData.pages.home.announcement;
+    appData.agency.heroTitle = appData.pages.home.heroTitle;
+    appData.agency.heroDesc = appData.pages.home.heroDesc;
+  }
+
+  // Save About
+  appData.pages.about = {
+    heroTitle: document.getElementById('pageAboutHeroTitle').value.trim(),
+    heroSubtitle: document.getElementById('pageAboutHeroSub').value.trim(),
+    storyTitle: document.getElementById('pageAboutStoryTitle').value.trim(),
+    storyP1: document.getElementById('pageAboutStoryP1').value.trim(),
+    storyP2: document.getElementById('pageAboutStoryP2').value.trim(),
+    image: document.getElementById('pageAboutImg').value.trim() || 'images/hero_travel.jpg'
+  };
+
+  // Save Contact
+  appData.pages.contact = {
+    heroTitle: document.getElementById('pageContactHeroTitle').value.trim(),
+    heroSubtitle: document.getElementById('pageContactHeroSub').value.trim(),
+    whatsapp: document.getElementById('pageContactWhatsApp').value.trim(),
+    phone: document.getElementById('pageContactPhone').value.trim(),
+    email: document.getElementById('pageContactEmail').value.trim(),
+    address: document.getElementById('pageContactAddress').value.trim(),
+    workingHours: document.getElementById('pageContactWorkingHours').value.trim()
+  };
+
+  if (appData.agency) {
+    appData.agency.phone = appData.pages.contact.whatsapp;
+    appData.agency.email = appData.pages.contact.email;
+    appData.agency.address = appData.pages.contact.address;
+  }
+
+  saveAppData();
+  showToast('تم حفظ كافة تعديلات الصفحات والصور بنجاح! ستظهر فوراً على الموقع.');
 }
 
 // Launch
