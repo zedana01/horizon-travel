@@ -16,53 +16,48 @@
   "destinations": [
     {
       "id": "maldives",
-      "name": "جزر المالديف",
-      "enName": "Maldives Islands",
-      "icon": "fa-solid fa-umbrella-beach",
+      "slug": "maldives",
+      "name": "جزر المالديف الفاخرة",
+      "badge": "MALDIVES LUXURY ESCAPES",
       "image": "images/maldives.jpg",
-      "tourCount": "3 برامج",
-      "badge": "وجهة العشاق",
-      "desc": "منتجعات فاخرة وفيلات عائمة فوق المياه الفيروزية الساحرة مع خصوصية ملكية تامة."
+      "desc": "فيلات عائمة فوق المياه الفيروزية مع خصوصية ملكية تامة وشواطئ رملية بيضاء نقية.",
+      "count": "3 باقات"
     },
     {
-      "id": "switzerland",
-      "name": "سويسرا والألب",
-      "enName": "Swiss Alps & Lakes",
-      "icon": "fa-solid fa-mountain-sun",
+      "id": "swiss",
+      "slug": "swiss",
+      "name": "سويسرا وقمم جبال الألب",
+      "badge": "SWISS ALPS & LAKES",
       "image": "images/swiss_alps.jpg",
-      "tourCount": "4 برامج",
-      "badge": "سحر الطبيعة",
-      "desc": "قمم ثلجية شاهقة، بحيرات إنترلاكن النقية، ورحلات القطار البانورامي السويسري الفاخر."
+      "desc": "بحيرات نقية، قطار بانورامي فاخر، ومروج خضراء وشلالات أسطورية في إنترلاكن ولوسيرن.",
+      "count": "4 باقات"
     },
     {
-      "id": "turkey",
-      "name": "تركيا وكابادوكيا",
-      "enName": "Turkey & Cappadocia",
-      "icon": "fa-solid fa-mosque",
+      "id": "cappadocia",
+      "slug": "cappadocia",
+      "name": "تركيا ومناطيد كابادوكيا",
+      "badge": "TURKEY & CAPPADOCIA",
       "image": "images/cappadocia.jpg",
-      "tourCount": "3 برامج",
-      "badge": "أساطير الشرق",
-      "desc": "التحليق بالمناطيد فوق مداخن الجنيات وأجنحة الكهوف الصخرية الفاخرة وجولات البوسفور."
+      "desc": "التحليق بالمناطيد الهوائية وقت الشروق والإقامة في أجنحة الكهوف الفاخرة وسحر البوسفور.",
+      "count": "3 باقات"
     },
     {
       "id": "egypt",
-      "name": "مصر وسحر النيل",
-      "enName": "Egypt & Nile Cruise",
-      "icon": "fa-solid fa-monument",
+      "slug": "egypt",
+      "name": "مصر وكروز النيل الملكي",
+      "badge": "EGYPT & NILE CRUISE",
       "image": "images/egypt_pyramids.jpg",
-      "tourCount": "4 برامج",
-      "badge": "تاريخ وحضارة",
-      "desc": "كروز النيل 5 نجوم بين الأقصر وأسوان، الأهرامات، ومنتجعات البحر الأحمر الفاخرة."
+      "desc": "كروز نيلية 5 نجوم دي لوكس بين الأقصر وأسوان، أهرامات الجيزة، ومنتجعات شرم الشيخ الفاخرة.",
+      "count": "4 باقات"
     },
     {
       "id": "alula",
-      "name": "العلا والمملكة",
-      "enName": "AlUla & Saudi Luxury",
-      "icon": "fa-solid fa-gem",
+      "slug": "alula",
+      "name": "واحة العلا التاريخية",
+      "badge": "ALULA LUXURY OASIS",
       "image": "images/alula_resort.jpg",
-      "tourCount": "2 برامج",
-      "badge": "أعجوبة الصحراء",
-      "desc": "منتجعات بانيان تري الفاخرة بين الجبال المنحوتة وتجارب النجوم والمناطيد في مسار الحجر."
+      "desc": "إقامة أسطورية في منتجعات بانيان تري ومسار الحجر وجولات النجوم ومسرح مرايا العالمي.",
+      "count": "2 باقات"
     }
   ],
   "tours": [
@@ -126,7 +121,7 @@
     {
       "id": 2,
       "name": "سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري",
-      "destination": "switzerland",
+      "destination": "swiss",
       "destName": "سويسرا • SWITZERLAND",
       "price": 5600,
       "oldPrice": 7100,
@@ -173,7 +168,7 @@
     {
       "id": 3,
       "name": "مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة",
-      "destination": "turkey",
+      "destination": "cappadocia",
       "destName": "تركيا • TURKEY",
       "price": 3200,
       "oldPrice": 4100,
@@ -366,7 +361,7 @@
     {
       "id": 7,
       "name": "مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية",
-      "destination": "switzerland",
+      "destination": "swiss",
       "destName": "سويسرا • SWITZERLAND",
       "price": 3650,
       "oldPrice": 4600,

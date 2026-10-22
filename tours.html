@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كافة الباقات والبرامج السياحية 2026 | هورايزون تورز</title>
-    <meta name="description" content="استكشف كافة العروض والباقات السياحية الفاخرة للعام 2026 مع هورايزون تورز.">
+    <title>كافة برامج وباقات السفر الفاخرة 2026 | هورايزون تورز</title>
+    <meta name="description" content="وكالة هورايزون لاكجري تورز للسياحة والسفر الفاخرة، باقات المالديف وسويسرا وأوروبا شاملة الطيران والفنادق بأعلى معايير الـ VIP.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -154,45 +154,33 @@
         </div>
     </div>
 
-    <!-- HERO TITLE BAR -->
-    <div style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 50px 0 30px; border-bottom: 1px solid var(--color-border-light);">
-        <div class="tour-container" style="text-align: center;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 50px; font-size: 13px; font-weight: 800; margin-bottom: 14px;">
-                <i class="fa-solid fa-suitcase-rolling"></i>
-                <span>عطلات فاخرة متكاملة 2026</span>
-            </div>
-            <h1 style="font-size: 34px; font-weight: 900; color: var(--color-navy); margin-bottom: 12px;">كافة الباقات والبرامج السياحية الفاخرة</h1>
-            <p style="font-size: 15px; color: var(--color-muted); max-width: 650px; margin: 0 auto 24px; line-height: 1.8;">
-                اختر وجهتك المفضلة من بين أفخم البرامج السياحية حول العالم، شاملة تذاكر الطيران، الإقامة في أرقى المنتجعات 5 نجوم، والمساعد الشخصي 24/7.
-            </p>
-
-            <!-- Search in Page -->
-            <div style="max-width: 480px; margin: 0 auto; display: flex; align-items: center; background: #ffffff; border: 1.5px solid var(--color-border); border-radius: 50px; padding: 4px 6px 4px 18px; box-shadow: var(--shadow-card);">
-                <i class="fa-solid fa-magnifying-glass" style="color: #64748b;"></i>
-                <input type="text" id="toursSearchInput" placeholder="ابحث باسم الباقة، الدولة، أو الفندق..." style="flex: 1; border: none; background: transparent; padding: 10px 14px; font-size: 14px; outline: none; font-family: inherit;">
-            </div>
-        </div>
-    </div>
-
-    <!-- TOURS FILTER TABS & GRID -->
-    <section style="padding: 50px 0 80px; background: var(--color-bg);">
+    <!-- INNER BANNER -->
+    <section style="background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%); padding: 50px 0; color: #ffffff; text-align: center; position: relative;">
         <div class="tour-container">
-            <!-- Filter Tabs -->
-            <div class="tour-filter-tabs" style="margin-bottom: 35px; justify-content: center; flex-wrap: wrap;">
-                <button class="tour-filter-btn active" onclick="filterTours('all', this)">كافة البرامج</button>
-                <button class="tour-filter-btn" onclick="filterTours('maldives', this)">جزر المالديف</button>
-                <button class="tour-filter-btn" onclick="filterTours('swiss', this)">سويسرا والألب</button>
-                <button class="tour-filter-btn" onclick="filterTours('cappadocia', this)">تركيا وكابادوكيا</button>
-                <button class="tour-filter-btn" onclick="filterTours('egypt', this)">مصر وكروز النيل</button>
-                <button class="tour-filter-btn" onclick="filterTours('sharm', this)">شرم الشيخ</button>
-                <button class="tour-filter-btn" onclick="filterTours('alula', this)">العلا التاريخية</button>
+            <span class="tour-badge-pill" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.3);">عروض الموسم الحصرية 2026</span>
+            <h1 style="font-size: 34px; font-weight: 900; margin: 12px 0 10px; color: #ffffff;">كافة برامج وباقات السفر الفاخرة</h1>
+            <p style="font-size: 15px; color: #cbd5e1; max-width: 650px; margin: 0 auto;">اختر وجهتك المفضلة من بين أفخم البرامج السياحية المتكاملة شاملة تذاكر الطيران، الإقامة 5 نجوم، الجولات السياحية وخدمة الكونسيرج.</p>
+        </div>
+    </section>
+
+    <!-- TOURS & FILTER SECTION -->
+    <section style="padding: 40px 0 70px; background: #f8fafc;">
+        <div class="tour-container">
+            <!-- Filter Bar -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 35px;">
+                <button class="tour-tab-btn active" onclick="filterToursPage('all', this)" style="padding: 9px 20px; font-weight: 800; border-radius: 50px; font-size: 13.5px; border: 1.5px solid var(--color-border); background: #ffffff; cursor: pointer;">كافة البرامج (8)</button>
+                <button class="tour-tab-btn" onclick="filterToursPage('maldives', this)" style="padding: 9px 20px; font-weight: 800; border-radius: 50px; font-size: 13.5px; border: 1.5px solid var(--color-border); background: #ffffff; cursor: pointer;">🏝️ جزر المالديف</button>
+                <button class="tour-tab-btn" onclick="filterToursPage('swiss', this)" style="padding: 9px 20px; font-weight: 800; border-radius: 50px; font-size: 13.5px; border: 1.5px solid var(--color-border); background: #ffffff; cursor: pointer;">🏔️ سويسرا والألب</button>
+                <button class="tour-tab-btn" onclick="filterToursPage('cappadocia', this)" style="padding: 9px 20px; font-weight: 800; border-radius: 50px; font-size: 13.5px; border: 1.5px solid var(--color-border); background: #ffffff; cursor: pointer;">🎈 تركيا وكابادوكيا</button>
+                <button class="tour-tab-btn" onclick="filterToursPage('egypt', this)" style="padding: 9px 20px; font-weight: 800; border-radius: 50px; font-size: 13.5px; border: 1.5px solid var(--color-border); background: #ffffff; cursor: pointer;">🚢 مصر وسحر النيل</button>
+                <button class="tour-tab-btn" onclick="filterToursPage('alula', this)" style="padding: 9px 20px; font-weight: 800; border-radius: 50px; font-size: 13.5px; border: 1.5px solid var(--color-border); background: #ffffff; cursor: pointer;">🏛️ العلا والمملكة</button>
             </div>
 
             <!-- Tours Grid -->
-            <div class="tour-grid" id="allToursGrid">
+            <div class="tour-grid" id="toursGrid">
                 <div class="tour-card" data-dest="maldives">
                     <div class="tour-card-badge">خصم 22%</div>
-                    <a href="tour-detail.html?id=1" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=1" class="tour-card-img-box" style="display:block;">
                         <img src="images/maldives.jpg" alt="باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -222,9 +210,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    4,850 <span>ر.س / للفرد</span>
+                                    4850 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">6,200 ر.س</div>
+                                <div class="tour-price-old">6200</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=1" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -239,9 +227,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="tour-card" data-dest="switzerland">
+                <div class="tour-card" data-dest="swiss">
                     <div class="tour-card-badge">الأكثر طلباً</div>
-                    <a href="tour-detail.html?id=2" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=2" class="tour-card-img-box" style="display:block;">
                         <img src="images/swiss_alps.jpg" alt="سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -271,9 +259,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    5,600 <span>ر.س / للفرد</span>
+                                    5600 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">7,100 ر.س</div>
+                                <div class="tour-price-old">7100</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=2" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -288,9 +276,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="tour-card" data-dest="turkey">
+                <div class="tour-card" data-dest="cappadocia">
                     <div class="tour-card-badge">رحلة منطاد مجانية</div>
-                    <a href="tour-detail.html?id=3" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=3" class="tour-card-img-box" style="display:block;">
                         <img src="images/cappadocia.jpg" alt="مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -320,9 +308,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    3,200 <span>ر.س / للفرد</span>
+                                    3200 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">4,100 ر.س</div>
+                                <div class="tour-price-old">4100</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=3" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -339,7 +327,7 @@
                 </div>
                 <div class="tour-card" data-dest="egypt">
                     <div class="tour-card-badge">باقة شاملة VIP</div>
-                    <a href="tour-detail.html?id=4" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=4" class="tour-card-img-box" style="display:block;">
                         <img src="images/egypt_pyramids.jpg" alt="كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -369,9 +357,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    2,850 <span>ر.س / للفرد</span>
+                                    2850 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">3,600 ر.س</div>
+                                <div class="tour-price-old">3600</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=4" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -388,7 +376,7 @@
                 </div>
                 <div class="tour-card" data-dest="egypt">
                     <div class="tour-card-badge">الترا شامل كلياً</div>
-                    <a href="tour-detail.html?id=5" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=5" class="tour-card-img-box" style="display:block;">
                         <img src="images/sharm_resort.jpg" alt="منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -418,9 +406,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    2,150 <span>ر.س / للفرد</span>
+                                    2150 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">2,800 ر.س</div>
+                                <div class="tour-price-old">2800</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=5" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -437,7 +425,7 @@
                 </div>
                 <div class="tour-card" data-dest="alula">
                     <div class="tour-card-badge">تجربة استثنائية</div>
-                    <a href="tour-detail.html?id=6" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=6" class="tour-card-img-box" style="display:block;">
                         <img src="images/alula_resort.jpg" alt="واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -467,9 +455,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    4,200 <span>ر.س / للفرد</span>
+                                    4200 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">5,300 ر.س</div>
+                                <div class="tour-price-old">5300</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=6" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -484,9 +472,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="tour-card" data-dest="switzerland">
+                <div class="tour-card" data-dest="swiss">
                     <div class="tour-card-badge">حرية واستكشاف</div>
-                    <a href="tour-detail.html?id=7" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=7" class="tour-card-img-box" style="display:block;">
                         <img src="images/camper_van.jpg" alt="مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -516,9 +504,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    3,650 <span>ر.س / للفرد</span>
+                                    3650 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">4,600 ر.س</div>
+                                <div class="tour-price-old">4600</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=7" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -535,7 +523,7 @@
                 </div>
                 <div class="tour-card" data-dest="maldives">
                     <div class="tour-card-badge">شهر عسل ملكي</div>
-                    <a href="tour-detail.html?id=8" class="tour-card-img-box">
+                    <a href="tour-detail.html?id=8" class="tour-card-img-box" style="display:block;">
                         <img src="images/honeymoon.jpg" alt="باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص" loading="lazy">
                     </a>
                     <div class="tour-card-body">
@@ -565,9 +553,9 @@
                         <div>
                             <div class="tour-card-pricing">
                                 <div class="tour-price-current">
-                                    5,200 <span>ر.س / للفرد</span>
+                                    5200 <span>ر.س / للفرد</span>
                                 </div>
-                                <div class="tour-price-old">6,800 ر.س</div>
+                                <div class="tour-price-old">6800</div>
                             </div>
                             <div style="display:flex; gap:8px;">
                                 <a href="tour-detail.html?id=8" class="btn-tour-secondary" style="flex:1; padding:10px; font-size:13px; text-align:center; text-decoration:none; justify-content:center;">
@@ -587,15 +575,33 @@
     </section>
 
     <script>
-    function filterTours(category, btn) {
+    function normalizeSlug(s) {
+        if (!s) return 'all';
+        s = s.toLowerCase();
+        if (s === 'swiss' || s === 'switzerland') return 'swiss';
+        if (s === 'cappadocia' || s === 'turkey') return 'cappadocia';
+        if (s === 'sharm') return 'egypt';
+        return s;
+    }
+
+    function filterToursPage(cat, btn) {
         if (btn) {
-            document.querySelectorAll('.tour-filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tour-tab-btn').forEach(b => {
+                b.classList.remove('active');
+                b.style.background = '#ffffff';
+                b.style.color = 'inherit';
+                b.style.borderColor = 'var(--color-border)';
+            });
             btn.classList.add('active');
+            btn.style.background = 'var(--color-primary)';
+            btn.style.color = '#ffffff';
+            btn.style.borderColor = 'var(--color-primary)';
         }
-        const cards = document.querySelectorAll('#allToursGrid .tour-card');
+        const targetNorm = normalizeSlug(cat);
+        const cards = document.querySelectorAll('#toursGrid .tour-card');
         cards.forEach(card => {
-            const dest = card.getAttribute('data-dest');
-            if (category === 'all' || dest === category) {
+            const cardNorm = normalizeSlug(card.getAttribute('data-dest'));
+            if (targetNorm === 'all' || cardNorm === targetNorm) {
                 card.style.display = 'flex';
             } else {
                 card.style.display = 'none';
@@ -604,31 +610,23 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const q = urlParams.get('q');
-        const dest = urlParams.get('dest');
-
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get('q');
+        const dest = params.get('dest');
         if (dest) {
-            filterTours(dest);
-            document.querySelectorAll('.tour-filter-btn').forEach(b => {
-                if (b.getAttribute('onclick') && b.getAttribute('onclick').includes(dest)) {
-                    document.querySelectorAll('.tour-filter-btn').forEach(x => x.classList.remove('active'));
-                    b.classList.add('active');
+            const btn = Array.from(document.querySelectorAll('.tour-tab-btn')).find(b => b.textContent.includes(dest) || b.getAttribute('onclick').includes(dest));
+            filterToursPage(dest, btn);
+        } else if (q) {
+            const query = q.toLowerCase();
+            document.querySelectorAll('#toursGrid .tour-card').forEach(card => {
+                const title = card.querySelector('.tour-card-title').textContent.toLowerCase();
+                const cat = card.querySelector('.tour-card-cat').textContent.toLowerCase();
+                if (title.includes(query) || cat.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
                 }
             });
-        }
-
-        const inp = document.getElementById('toursSearchInput');
-        if (inp) {
-            if (q) inp.value = q;
-            inp.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                document.querySelectorAll('#allToursGrid .tour-card').forEach(card => {
-                    const txt = card.innerText.toLowerCase();
-                    card.style.display = txt.includes(query) ? 'flex' : 'none';
-                });
-            });
-            if (q) inp.dispatchEvent(new Event('input'));
         }
     });
     </script>
@@ -705,7 +703,7 @@
         </div>
     </footer>
 
-    <!-- SLIDE-OUT MOBILE MENU DRAWER (Exact standard as organic-food & modest-fashion) -->
+    <!-- SLIDE-OUT MOBILE MENU DRAWER -->
     <div class="mobile-menu-overlay" id="mobileDrawerOverlay" onclick="toggleMobileMenu()"></div>
     <div class="mobile-menu-drawer" id="mobileMenuDrawer">
         <div class="mob-drawer-header">
@@ -745,7 +743,6 @@
                 <a href="destination.html?dest=swiss" class="mob-cat-item"><span>🏔️ سويسرا وقمم الألب</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
                 <a href="destination.html?dest=cappadocia" class="mob-cat-item"><span>🎈 تركيا ومناطيد كابادوكيا</span> <span style="font-size:11.5px; color:#64748b;">3 باقات</span></a>
                 <a href="destination.html?dest=egypt" class="mob-cat-item"><span>🚢 مصر وكروز النيل الملكي</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
-                <a href="destination.html?dest=sharm" class="mob-cat-item"><span>🏖️ منتجعات شرم الشيخ</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
                 <a href="destination.html?dest=alula" class="mob-cat-item"><span>🏛️ واحة العلا التاريخية</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
             </div>
 
@@ -760,7 +757,7 @@
         </div>
     </div>
 
-    <!-- MOBILE BOTTOM NAVIGATION (Fixed at bottom on phones) -->
+    <!-- MOBILE BOTTOM NAVIGATION -->
     <div class="mobile-bottom-nav">
         <div class="mob-nav-grid">
             <a href="index.html" class="mob-nav-item">

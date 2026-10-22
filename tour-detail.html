@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الباقة السياحية | هورايزون تورز</title>
-    <meta name="description" content="تفاصيل البرنامج السياحي، خطة الرحلة يوماً بيوم، الفنادق المشمولة، والطيران مع هورايزون تورز.">
+    <title>تفاصيل البرنامج السياحي | هورايزون تورز</title>
+    <meta name="description" content="تفاصيل كاملة وجدول يومي شامل للرحلة مع إمكانية الحجز الفوري عبر واتساب.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -154,135 +154,137 @@
         </div>
     </div>
 
-    <main class="tour-container" style="padding-top:35px; margin-bottom:70px;">
-        <!-- Breadcrumbs -->
-        <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700; color:#64748b; margin-bottom:24px;">
-            <a href="index.html" style="color:#0284c7; text-decoration:none;">الرئيسية</a>
-            <span>/</span>
-            <a href="tours.html" style="color:#0284c7; text-decoration:none;">الباقات</a>
-            <span>/</span>
-            <span style="color:#0f172a;" id="detailCrumbTitle">تفاصيل الباقة</span>
-        </div>
-
-        <div class="tour-detail-grid" style="display:grid; grid-template-columns: 1.4fr 0.9fr; gap:36px; align-items:start;">
-            <!-- Left Side: Main Image, Description & Itinerary -->
-            <div>
-                <div style="position:relative; border-radius:20px; overflow:hidden; box-shadow:var(--shadow-card); margin-bottom:30px; border:1px solid var(--color-border-light);">
-                    <img src="images/maldives.jpg" alt="صورة الباقة" style="width:100%; height:460px; object-fit:cover; display:block;" id="detailMainImg">
-                    <span style="position:absolute; top:20px; right:20px; background:var(--color-primary); color:#fff; font-weight:800; font-size:13px; padding:6px 16px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.2);" id="detailBadge">خصم 22%</span>
-                    <span style="position:absolute; bottom:20px; right:20px; background:rgba(15,23,42,0.85); backdrop-filter:blur(6px); color:#fff; font-size:13.5px; font-weight:800; padding:8px 16px; border-radius:8px;" id="detailDuration"><i class="fa-regular fa-clock"></i> 6 أيام / 5 ليالٍ</span>
-                </div>
-
-                <div style="background:#ffffff; border:1px solid var(--color-border-light); border-radius:18px; padding:32px; margin-bottom:30px; box-shadow:var(--shadow-subtle);">
-                    <h2 style="font-size:22px; font-weight:900; color:var(--color-navy); margin-bottom:14px;">نبذة عن هذه التجربة السياحية</h2>
-                    <p style="font-size:15px; color:#475569; line-height:1.9; margin-bottom:26px;" id="detailDesc">
-                        عش تجربة الفخامة المطلقة في فيلا عائمة فوق مياه المحيط مع مسبح خاص لا متناهي وخدمة خادم شخصي على مدار 24 ساعة.
-                    </p>
-
-                    <h3 style="font-size:17px; font-weight:800; color:var(--color-navy); margin-bottom:16px;"><i class="fa-solid fa-circle-check" style="color:#22c55e;"></i> الميزات والخدمات المشمولة في الباقة:</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;" id="detailIncludes">
-                        <div style="font-size:13.5px; color:#334155;"><i class="fa-solid fa-check" style="color:var(--color-primary); margin-left:8px;"></i> تذاكر الطيران الدولي المباشر</div>
-                        <div style="font-size:13.5px; color:#334155;"><i class="fa-solid fa-check" style="color:var(--color-primary); margin-left:8px;"></i> الإقامة في فنادق ومنتجعات 5 نجوم دي لوكس</div>
-                        <div style="font-size:13.5px; color:#334155;"><i class="fa-solid fa-check" style="color:var(--color-primary); margin-left:8px;"></i> وجبات الإفطار والبوفيه اليومي الفاخر</div>
-                        <div style="font-size:13.5px; color:#334155;"><i class="fa-solid fa-check" style="color:var(--color-primary); margin-left:8px;"></i> الاستقبال والتوصيل بسيارات VIP خاصة</div>
-                    </div>
-                </div>
-
-                <!-- Day-by-Day Itinerary -->
-                <div style="background:#ffffff; border:1px solid var(--color-border-light); border-radius:18px; padding:32px; box-shadow:var(--shadow-subtle);">
-                    <h2 style="font-size:20px; font-weight:900; color:var(--color-navy); margin-bottom:24px;">
-                        <i class="fa-solid fa-map-location-dot" style="color:var(--color-primary); margin-left:8px;"></i> برنامج الرحلة يوماً بيوم (Itinerary)
-                    </h2>
-                    <div id="detailItineraryList">
-                        <!-- Injected via JS -->
-                    </div>
-                </div>
+    <!-- TOUR DETAIL CONTAINER -->
+    <div style="background: #f8fafc; padding: 40px 0 80px;">
+        <div class="tour-container">
+            <div style="margin-bottom: 20px;">
+                <a href="tours.html" style="display:inline-flex; align-items:center; gap:8px; color:var(--color-primary); font-weight:800; text-decoration:none; font-size:13.5px;">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>العودة لكافة البرامج السياحية</span>
+                </a>
             </div>
 
-            <!-- Right Side: Sticky Booking Card -->
-            <div>
-                <div style="background:#ffffff; border:1px solid var(--color-border); border-radius:20px; padding:30px; box-shadow:var(--shadow-hover); position:sticky; top:80px;">
-                    <span style="font-size:12.5px; color:var(--color-primary); font-weight:800; display:block; margin-bottom:6px;" id="detailDestTag">جزر المالديف • MALDIVES</span>
-                    <h1 style="font-size:23px; font-weight:900; color:var(--color-navy); line-height:1.4; margin-bottom:14px;" id="detailTitle">باقة المالديف الملكية</h1>
+            <div class="tour-detail-grid" style="display: grid; grid-template-columns: 1fr 380px; gap: 30px;">
+                <!-- Main Content Column -->
+                <div>
+                    <div style="background: #ffffff; border-radius: 18px; border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-subtle); margin-bottom: 30px;">
+                        <img id="detailHeroImg" src="images/maldives.jpg" alt="تفاصيل الرحلة" style="width: 100%; height: 420px; object-fit: cover;">
+                        <div style="padding: 30px;">
+                            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
+                                <span id="detailBadge" class="tour-badge-pill" style="font-size: 12px; padding: 4px 12px;">باقة VIP</span>
+                                <span id="detailCat" style="font-size: 13.5px; font-weight: 800; color: #64748b;"><i class="fa-solid fa-location-dot" style="color:var(--color-primary); margin-left:6px;"></i> جزر المالديف</span>
+                            </div>
+                            <h1 id="detailTitle" style="font-size: 28px; font-weight: 900; color: var(--color-navy); margin-bottom: 16px; line-height: 1.4;">باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص</h1>
+                            <p id="detailDesc" style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 24px;">استمتع بتجربة سفر فاخرة لا مثيل لها في أحضان الطبيعة الاستوائية الساحرة، مع إقامة ملكية شاملة الوجبات وخدمة كونسيرج خاصة وتذاكر طيران دولي على أرقى الخطوط.</p>
 
-                    <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:20px; padding-bottom:18px; border-bottom:1px solid var(--color-border-light);">
-                        <span style="font-size:32px; font-weight:900; color:var(--color-primary);" id="detailPrice">4,850</span>
-                        <span style="font-size:14px; font-weight:800; color:#64748b;">ر.س / للشخص</span>
-                        <span style="font-size:16px; color:#94a3b8; text-decoration:line-through;" id="detailOldPrice">6,200 ر.س</span>
-                    </div>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; background: #f8fafc; border: 1px solid var(--color-border); border-radius: 12px; padding: 18px; margin-bottom: 30px;">
+                                <div style="text-align: center;">
+                                    <i class="fa-solid fa-plane-departure" style="font-size: 22px; color: var(--color-primary); margin-bottom: 6px;"></i>
+                                    <div style="font-size: 12px; color: #64748b;">الطيران</div>
+                                    <div style="font-size: 14px; font-weight: 800; color: var(--color-navy);">شامل ذهاب وعودة</div>
+                                </div>
+                                <div style="text-align: center; border-right: 1px solid var(--color-border); border-left: 1px solid var(--color-border);">
+                                    <i class="fa-solid fa-hotel" style="font-size: 22px; color: var(--color-primary); margin-bottom: 6px;"></i>
+                                    <div style="font-size: 12px; color: #64748b;">الإقامة</div>
+                                    <div style="font-size: 14px; font-weight: 800; color: var(--color-navy);">منتجع 5 نجوم دي لوكس</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <i class="fa-solid fa-calendar-days" style="font-size: 22px; color: var(--color-primary); margin-bottom: 6px;"></i>
+                                    <div style="font-size: 12px; color: #64748b;">المدة</div>
+                                    <div id="detailDuration" style="font-size: 14px; font-weight: 800; color: var(--color-navy);">7 أيام / 6 ليالٍ</div>
+                                </div>
+                            </div>
 
-                    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:12px; margin-bottom:20px; font-size:13px; color:#15803d; display:flex; align-items:center; gap:8px;">
-                        <i class="fa-solid fa-bolt" style="font-size:16px;"></i>
-                        <span>عرض خاص متاح لفترة محدودة مع إمكانية التقسيط الميسر</span>
-                    </div>
-
-                    <a id="detailWhatsAppBtn" href="https://wa.me/201027093535?text=مرحباً%20هورايزون%20تورز،%20أود%20الاستفسار%20عن%20تفاصيل%20هذه%20الباقة" target="_blank" style="width:100%; background:#25d366; color:#fff; border-radius:10px; padding:14px; font-size:15px; font-weight:900; display:flex; align-items:center; justify-content:center; gap:10px; text-decoration:none; margin-bottom:14px; box-shadow:0 6px 20px rgba(37,211,102,0.35);">
-                        <i class="fa-brands fa-whatsapp" style="font-size:22px;"></i>
-                        <span>احجز الآن عبر واتساب</span>
-                    </a>
-
-                    <div style="border-top:1px solid var(--color-border-light); padding-top:20px; margin-top:10px;">
-                        <div style="font-size:13px; color:#475569; display:flex; align-items:center; gap:8px; margin-bottom:10px;">
-                            <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i>
-                            <span>ضمان أفضل سعر وجودة فندقية 5 نجوم دي لوكس</span>
-                        </div>
-                        <div style="font-size:13px; color:#475569; display:flex; align-items:center; gap:8px;">
-                            <i class="fa-solid fa-headset" style="color:var(--color-primary);"></i>
-                            <span>خدمة عملاء وكونسيرج 24/7: <strong>800-HORIZON</strong></span>
+                            <h3 style="font-size: 20px; font-weight: 900; color: var(--color-navy); margin-bottom: 16px;"><i class="fa-solid fa-clipboard-list" style="color:var(--color-primary); margin-left:8px;"></i> الجدول والبرنامج اليومي المقترح</h3>
+                            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px;">
+                                <div style="display:flex; gap:16px; padding:16px; background:#f8fafc; border-radius:12px; border:1px solid var(--color-border);">
+                                    <div style="width:40px; height:40px; border-radius:50%; background:var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">1</div>
+                                    <div>
+                                        <div style="font-weight:900; color:var(--color-navy); font-size:15px; margin-bottom:4px;">اليوم الأول: الوصول والاستقبال VIP</div>
+                                        <div style="font-size:13.5px; color:#475569; line-height:1.6;">الاستقبال في صالة كبار الشخصيات بالمطار والانتقال بالسيارة الفاخرة أو الطائرة المائية إلى المنتجع، تسجيل الدخول وعشاء ترحيبي فاخر.</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:16px; padding:16px; background:#f8fafc; border-radius:12px; border:1px solid var(--color-border);">
+                                    <div style="width:40px; height:40px; border-radius:50%; background:var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">2</div>
+                                    <div>
+                                        <div style="font-weight:900; color:var(--color-navy); font-size:15px; margin-bottom:4px;">اليوم الثاني: الجولة الاستكشافية والاسترخاء</div>
+                                        <div style="font-size:13.5px; color:#475569; line-height:1.6;">إفطار استوائي عائم، جولة سياحية خاصة لزيارة أهم معالم الوجهة مع مرشد سياحي خاص ناطق بالعربية.</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex; gap:16px; padding:16px; background:#f8fafc; border-radius:12px; border:1px solid var(--color-border);">
+                                    <div style="width:40px; height:40px; border-radius:50%; background:var(--color-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">3</div>
+                                    <div>
+                                        <div style="font-weight:900; color:var(--color-navy); font-size:15px; margin-bottom:4px;">اليوم الثالث: تجربة خاصة حصرية</div>
+                                        <div style="font-size:13.5px; color:#475569; line-height:1.6;">رحلة يخت خاصة لمشاهدة الغروب، عشاء رومانسي على الشاطئ، أو جلسة سبا ملكية متكاملة لشخصين.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Booking Sidebar Column -->
+                <div>
+                    <div style="background: #ffffff; border-radius: 18px; border: 1.5px solid var(--color-primary); padding: 26px; box-shadow: 0 10px 30px rgba(2,132,199,0.08); position: sticky; top: 90px;">
+                        <div style="font-size: 12px; font-weight: 800; color: #64748b; text-transform: uppercase;">السعر يبدأ من</div>
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin: 8px 0 16px;">
+                            <span id="detailPrice" style="font-size: 32px; font-weight: 900; color: var(--color-primary);">4,850</span>
+                            <span style="font-size: 15px; font-weight: 800; color: var(--color-navy);">ريال سعودي / للفرد</span>
+                        </div>
+                        <div style="padding: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; margin-bottom: 20px; font-size: 13px; color: #166534; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>أفضل سعر مضمون مع تأكيد الحجز الفوري</span>
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 13.5px; font-weight: 800; color: var(--color-navy); margin-bottom: 8px;">ماذا يشمل هذا البرنامج؟</div>
+                            <ul style="font-size: 13px; color: #475569; line-height: 2; padding-right: 18px; margin: 0;">
+                                <li>تذاكر الطيران الدولي المباشر (ذهاب وعودة).</li>
+                                <li>إقامة فندقية فاخرة 5 نجوم مع إفطار يومي.</li>
+                                <li>كافة التنقلات بسيارات VIP خاصة مع سائق.</li>
+                                <li>خدمة الكونسيرج ومتابعة مدار الساعة 24/7.</li>
+                                <li>تأمين سفر دولي شامل طوال مدة الرحلة.</li>
+                            </ul>
+                        </div>
+
+                        <a id="detailWaBtn" href="https://wa.me/201027093535" target="_blank" class="btn-tour-primary" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; font-size: 15px; font-weight: 900; text-decoration: none; border-radius: 10px; margin-bottom: 12px;">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+                            <span>احجز وتواصل عبر واتساب</span>
+                        </a>
+
+                        <a href="tel:01027093535" class="btn-tour-secondary" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; font-size: 13.5px; font-weight: 800; text-decoration: none; border-radius: 10px;">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>اتصل بنا هاتفياً: 01027093535</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
-<script>
-const allToursList = [{"id": 1, "name": "باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص", "destination": "maldives", "destName": "جزر المالديف • MALDIVES", "price": 4850, "oldPrice": 6200, "badge": "خصم 22%", "duration": "6 أيام / 5 ليالٍ", "rating": 5, "reviews": 48, "image": "images/maldives.jpg", "desc": "عش تجربة الفخامة المطلقة في فيلا عائمة فوق المحيط الهندي مع مسبح خاص لا متناهي وخدمة خادم شخصي على مدار 24 ساعة.", "flights": "شامل طيران دولي مباشر ذهاب وعودة", "hotel": "منتجع 5 نجوم دي لوكس (أوفرفيلا)", "meals": "إقامة كاملة شاملة جميع الوجبات والمشروبات", "includes": ["تذاكر الطيران الدولي المباشر ذهاب وعودة", "الإقامة في فيلا عائمة فوق الماء مع مسبح خاص", "التوصيل من وإلى المطار عبر الطائرة المائية (Seaplane)", "جميع الوجبات الرئيسية والمشروبات الفاخرة يومياً", "جلسة مساج وسبا مجانية للأزواج", "رحلة سنوركلينج بحرية مع السلاحف المائية"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول والانتقال بالطائرة المائية", "text": "استقبال VIP بمطار ماليه الدولي والانتقال بالطائرة المائية إلى المنتجع والاستقرار بالفيلا."}, {"day": "اليوم الثاني", "title": "استرخاء في المسبح الخاص والرياضات المائية", "text": "يوم حر للاستمتاع بأنشطة المنتجع والسباحة في مياه المحيط الصافية."}, {"day": "اليوم الثالث", "title": "رحلة سفاري الدلافين وسنوركلينج الشعاب المرجانية", "text": "جولة يخت بحرية لمشاهدة الدلافين والسباحة بين الشعاب المرجانية الساحرة."}, {"day": "اليوم الرابع", "title": "جلسة سبا فاخرة وعشاء على ضوء الشموع", "text": "جلسة علاج طبيعي متكاملة في السبا العائم وعشاء خاص لشخصين على الشاطئ."}, {"day": "اليوم الخامس", "title": "جلسة تصوير احترافية وأنشطة ترفيهية", "text": "جلسة تصوير تذكارية مجانية وشراء الهدايا التذكارية من بوتيك الجزيرة."}, {"day": "اليوم السادس", "title": "توديع المنتجع والعودة إلى الوطن", "text": "تناول وجبة الإفطار والانتقال للمطار للعودة بسلامة الله."}]}, {"id": 2, "name": "سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري", "destination": "switzerland", "destName": "سويسرا • SWITZERLAND", "price": 5600, "oldPrice": 7100, "badge": "الأكثر طلباً", "duration": "8 أيام / 7 ليالٍ", "rating": 5, "reviews": 62, "image": "images/swiss_alps.jpg", "desc": "رحلة خيالية تجمع بين قمم جبال الألب السويسرية الخضراء، بحيرة ثون، وزيارة قرى وادي لوتربرونن والشلالات المعلقة بالقطار البانورامي.", "flights": "شامل تذاكر الطيران المباشر ذهاب وعودة", "hotel": "فنادق ألبية فاخرة 5 نجوم مطلة على الطبيعة", "meals": "إفطار بوفيه فاخر يومياً + تذاكر القطار السويسري", "includes": ["تذاكر الطيران الدولي المباشر (زيورخ / جنيف)", "الإقامة في فنادق 5 نجوم بإطلالات بانورامية على بحيرات الألب", "بطاقة Swiss Travel Pass للتنقل غير المحدود بالقطارات والسفن", "رحلة صعود قمة يونغفراو (قمة أوروبا الثلجية)", "جولة بحرية بالسفينة في بحيرتي برينز وثون", "مرشد سياحي خاص ناطق بالعربية في الجولات الرئيسية"], "itinerary": [{"day": "اليوم 1-2", "title": "الوصول إلى زيورخ والانتقال لإنترلاكن", "text": "استقبال في مطار زيورخ واستقلال القطار البانورامي إلى عروس الريف السويسري إنترلاكن."}, {"day": "اليوم 3-4", "title": "صعود قمة يونغفراو وجولات الشلالات", "text": "ركوب التلفريك والقطار الجبلي وصولاً لأعلى محطة قطار في أوروبا وزيارة شلالات لوتربرونن."}, {"day": "اليوم 5-6", "title": "لوسيرن وجسر الشابل وبحيرة الفصول الأربعة", "text": "جولة ساحرة في مدينة لوسيرن وصعود جبل بيلاتوس والتسوق في المتاجر السويسرية."}, {"day": "اليوم 7-8", "title": "جنيف وبحيرة ليمان والعودة", "text": "زيارة نافورة جنيف الشهيرة والتسوق الختامي قبل التوجه للمطار للعودة إلى الوطن."}]}, {"id": 3, "name": "مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة", "destination": "turkey", "destName": "تركيا • TURKEY", "price": 3200, "oldPrice": 4100, "badge": "رحلة منطاد مجانية", "duration": "6 أيام / 5 ليالٍ", "rating": 5, "reviews": 39, "image": "images/cappadocia.jpg", "desc": "عش مغامرة ألف ليلة وليلة بالإقامة في أجنحة الكهوف الفاخرة المحفورة بالصخر والتحليق بمناطيد الهواء الساخن مع شروق الشمس.", "flights": "شامل الطيران الدولي والداخلي بين إسطنبول وكابادوكيا", "hotel": "منتجع كهوف فاخر 5 نجوم (Cave Resort)", "meals": "إفطار يومي + عشاء فاخر بالمطاعم الصخرية", "includes": ["تذاكر الطيران الدولي + الطيران الداخلي", "تذكرة طيران بالمنطاد الهوائي الساخن وقت الشروق مع شهادة طيران", "إقامة 3 ليالٍ في فندق كهفي فاخر + ليلتان في إسطنبول", "جولات سياحية كاملة في وادي ديفينت ومدينة الدير تحت الأرض", "سيارة خاصة مرسيدس فيتو مع سائق ومرشد خاص", "رحلة يخت خاص في مضيق البوسفور بإسطنبول"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول إلى إسطنبول والانتقال لكابادوكيا", "text": "الوصول والتوجه مباشرة عبر رحلة داخلية إلى كابادوكيا والاستقرار بالفندق الكهفي."}, {"day": "اليوم الثاني", "title": "رحلة المنطاد الهوائي الفجرية ووادي العشاق", "text": "التحليق الفجري الساحر فوق مداخن الجنيات والتقاط أجمل الصور من السماء."}, {"day": "اليوم الثالث", "title": "جولة المدن التحت أرضية ووادي إهلارا", "text": "استكشاف أسرار الحضارات التاريخية في مدينة ديرينكويو تحت الأرض."}, {"day": "اليوم 4-6", "title": "سحر إسطنبول والبسفور والعودة", "text": "الانتقال لإسطنبول وزيارة قصر دولمة بهجة والأسواق التاريخية وجولة البوسفور."}]}, {"id": 4, "name": "كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية", "destination": "egypt", "destName": "مصر • EGYPT", "price": 2850, "oldPrice": 3600, "badge": "باقة شاملة VIP", "duration": "7 أيام / 6 ليالٍ", "rating": 5, "reviews": 54, "image": "images/egypt_pyramids.jpg", "desc": "إبحار أسطوري على نهر النيل الخالد بين الأقصر وأسوان على متن باخرة عائمة 5 نجوم دي لوكس مع زيارة أهرامات الجيزة والمتحف المصري الكبير.", "flights": "شامل الطيران الداخلي القاهرة / الأقصر / أسوان / القاهرة", "hotel": "باخرة نيلية فاخرة + فندق 5 نجوم بالقاهرة مطل على النيل", "meals": "إقامة كاملة (Full Board) طوال رحلة الكروز", "includes": ["إقامة 4 ليالٍ على باخرة نيلية فاخرة بنظام الإقامة الكاملة", "إقامة ليلتين بفندق 5 نجوم بالقاهرة مطل على النيل", "زيارة معابد الكرنك، الأقصر، وادي الملوك، حتشبسوت، وإدفو", "زيارة أهرامات الجيزة وأبو الهول والمتحف المصري الكبير", "تذاكر الطيران الداخلي والانتقالات بسيارات VIP حديثة", "مرشد سياحي متخصص في علم المصريات (Egyptologist) مرافق"], "itinerary": [{"day": "اليوم 1-2", "title": "القاهرة وتاريخ الفراعنة", "text": "زيارة أهرامات الجيزة ومتحف الحضارة والمتحف الكبير وجولة في خان الخليلي."}, {"day": "اليوم 3-4", "title": "السفر للأقصر وبدء كروز النيل", "text": "صعود الباخرة النيلية وزيارة معبدي الأقصر والكرنك ووادي الملوك."}, {"day": "اليوم 5-6", "title": "الإبحار إلى إدفو وكوم أمبو وأسوان", "text": "مشاهدة ضفاف النيل الساحرة وزيارة السد العالي ومعبد فيلة وجزيرة النباتات."}, {"day": "اليوم السابع", "title": "العودة للقاهرة والمغادرة للوطن", "text": "الطيران الداخلي إلى القاهرة ثم رحلة العودة الدولية إلى الوطن."}]}, {"id": 5, "name": "منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد", "destination": "egypt", "destName": "شرم الشيخ • RED SEA", "price": 2150, "oldPrice": 2800, "badge": "الترا شامل كلياً", "duration": "5 أيام / 4 ليالٍ", "rating": 5, "reviews": 41, "image": "images/sharm_resort.jpg", "desc": "استجمام بحري فاخر في أرقى منتجعات البحر الأحمر بنظام الالترا الشامل (Ultra All Inclusive) مع رحلة بحرية بيخت خاص للغوص والسنوركلينج.", "flights": "شامل تذاكر الطيران المباشر لشرم الشيخ", "hotel": "منتجع ريكسوس شرم الشيخ 5 نجوم الترا", "meals": "شامل كلياً جميع الوجبات والمشروبات والسناكس 24/7", "includes": ["تذاكر الطيران المباشر ذهاب وعودة", "إقامة 5 نجوم الترا شامل كلياً (Ultra All Inclusive)", "رحلة يخت بحري خاص لمحمية رأس محمد وجزيرة تيران مع وجبة غداء بحرية", "معدات السنوركلينج والغوص مع مدرب محترف مجاناً", "سفاري صحراوي بسيارات الدفع الرباعي وعشاء بدوي تحت النجوم", "استقبال وتوديع بسيارات ليموزين VIP خاصة"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول والاستقبال في المنتجع", "text": "استقبال بمطار شرم والتوجه للمنتجع والاستمتاع بالمرافق والشواطئ الخاصة."}, {"day": "اليوم الثاني", "title": "رحلة اليخت الخاص ورأس محمد", "text": "إبحار بيخت خاص لأشهر محمية طبيعية بحرية في العالم والغوص بين الشعاب النادرة."}, {"day": "اليوم الثالث", "title": "سفاري بيتش باجي وعشاء بدوي", "text": "مغامرة قيادة سيارات الدفع الرباعي بين جبال سيناء وسهرة بدوية تراثية."}, {"day": "اليوم الرابع", "title": "يوم استرخاء كامل بالسبا والمسابح", "text": "يوم هادئ للاستمتاع بمسابح المنتجع والألعاب المائية والسبا."}, {"day": "اليوم الخامس", "title": "التسوق الختامي والعودة للوطن", "text": "جولة تسوق في سوهو سكوير وخليج نعمة ثم الانتقال للمطار للعودة."}]}, {"id": 6, "name": "واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر", "destination": "alula", "destName": "العلا • SAUDI ARABIA", "price": 4200, "oldPrice": 5300, "badge": "تجربة استثنائية", "duration": "4 أيام / 3 ليالٍ", "rating": 5, "reviews": 29, "image": "images/alula_resort.jpg", "desc": "رحلة خيالية عبر الزمن تجمع بين الفخامة المعمارية العالمية في وادي عشار وتاريخ الحضارات العريقة في الحجر وجبل الفيل.", "flights": "شامل تذاكر الطيران المباشر لمطار العلا الدولي", "hotel": "فيلا فاخرة في منتجع بانيان تري العلا (Banyan Tree)", "meals": "إفطار فاخر يومياً + عشاء في قمة حرة عويرض", "includes": ["تذاكر الطيران المباشر ذهاب وعودة", "إقامة 3 ليالٍ في فيلا خاصة بمنتجع بانيان تري الفاخر", "جولة خاصة بسيارات لاند روفر كلاسيكية في موقع الحجر (مدائن صالح)", "جولة هليكوبتر جوية لمشاهدة صخرة الفيل ومسرح مرايا من السماء", "سهرة تأمل النجوم في صحراء الغراميل مع عشاء فاخر", "سيارة دفع رباعي فارهة خاصة مع سائق طوال مدة الرحلة"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول إلى العلا وسحر جبل الفيل", "text": "استقبال VIP بمطار العلا والانتقال للفيلا وزيارة جبل الفيل وقت الغروب."}, {"day": "اليوم الثاني", "title": "عجائب الحجر ومسرح مرايا العالمي", "text": "جولة تراثية خاصة في المقابر النبطية ومسرح مرايا الأيقوني الأكبر في العالم."}, {"day": "اليوم الثالث", "title": "جولة الهليكوبتر وسهرة النجوم", "text": "التحليق فوق أودية العلا الساحرة وسهرة استكشاف النجوم مع فلكي متخصص."}, {"day": "اليوم الرابع", "title": "بلدة العلا القديمة والتوديع", "text": "جولة في البلدة القديمة وسوق الحرفيين التراثي ثم التوجه للمطار."}]}, {"id": 7, "name": "مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية", "destination": "switzerland", "destName": "سويسرا • SWITZERLAND", "price": 3650, "oldPrice": 4600, "badge": "حرية واستكشاف", "duration": "7 أيام / 6 ليالٍ", "rating": 5, "reviews": 33, "image": "images/camper_van.jpg", "desc": "اكتشف روعة جبال الألب بحرية تامة بقيادة كارفان كامبر فان حديث مجهز بالكامل للطهي والنوم والتنقل بين أجمل بحيرات وأرياف العالم.", "flights": "شامل الطيران المباشر ذهاب وعودة لمطار جنيف", "hotel": "كامبر فان مرسيدس / فولكسفاجن فاخر موديل 2026", "meals": "باقة تموين أولية فاخرة + تأمين شامل بدون اقتطاع", "includes": ["تذاكر الطيران الدولي المباشر لمطار جنيف", "استلام كامبر فان فاخر مجهز بمطبخ كامل، دورة مياه، وسرير مريح", "كيلومترات غير محدودة وتأمين شامل VIP ضد جميع الحوادث", "اشتراك في مخيمات الألب الـ 5 نجوم (Campsites) مع كهرباء وواي فاي", "نظام ملاحة GPS مزود بمسارات طبيعية حصرية وسياحية", "دعم فني ومساعد على الطريق 24 ساعة طوال أيام الأسبوع"], "itinerary": [{"day": "اليوم 1-2", "title": "استلام الكامبر فان والانطلاق لبحيرة جنيف", "text": "استلام المركبة بجنيف والتخييم على ضفاف بحيرة ليمان قرب قلعة شيون."}, {"day": "اليوم 3-4", "title": "عبور ممرات الألب ووادي لوتربرونن", "text": "القيادة عبر أروع المنعطفات الجبلية والتخييم تحت شلالات إنترلاكن العظيمة."}, {"day": "اليوم 5-6", "title": "بحيرات ثون وبرينز وريف غريندلفالد", "text": "استكشاف القرى المعلقة بالغيوم والاستيقاظ صباحاً وسط المروج الخضراء."}, {"day": "اليوم السابع", "title": "تسليم الكامبر فان والعودة للوطن", "text": "تسليم الكامبر فان بالمطار والعودة للوطن بأجمل الذكريات."}]}, {"id": 8, "name": "باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص", "destination": "maldives", "destName": "جزر المالديف • HONEYMOON", "price": 5200, "oldPrice": 6800, "badge": "شهر عسل ملكي", "duration": "7 أيام / 6 ليالٍ", "rating": 5, "reviews": 57, "image": "images/honeymoon.jpg", "desc": "الباقة الرومانسية الأكثر فخامة في المحيط الهندي صممت خصيصاً للمتزوجين الجدد لتوفير تجارب لا تنسى تشمل عشاء الشموع الخاص واليخت الفاخر.", "flights": "شامل الطيران الدولي ذهاب وعودة للمالديف", "hotel": "جناح ووتر بول مع مسبح خاص لا متناهي وممر زجاجي", "meals": "إقامة كاملة مع عشاء خاص رومانسي يومياً", "includes": ["تذاكر الطيران الدولي المباشر ذهاب وعودة", "فيلا مائية ملكية بمسبح خاص وأرضية زجاجية تطل على الأسماك المرجانية", "توصيل سريع بالطائرة المائية VIP مع كبار الشخصيات", "عشاء رومانسي فاخر على رمال الشاطئ على ضوء الشموع والمشاعل", "رحلة يخت بحري خاص وقت الغروب مع المشروبات والحلويات الفاخرة", "جلسة سبا ومساج متكاملة للأزواج لمدة ساعتين مع ورود ترحيبية"], "itinerary": [{"day": "اليوم 1-2", "title": "استقبال الورود في الجناح المائي", "text": "استقبال خاص بالورود وسلة فواكه وشوكولاتة فاخرة والاسترخاء بالفيلا."}, {"day": "اليوم 3-4", "title": "رحلة الغروب باليخت الخاص والعشاء الشاطئي", "text": "إبحار خاص لمشاهدة الغروب وعشاء المأكولات البحرية على ضوء النجوم."}, {"day": "اليوم 5-6", "title": "جلسة تصوير احترافية والسبا الملكي", "text": "جلسة تصوير رومانسية بالملابس التراثية أو العصرية والسبا الفاخر."}, {"day": "اليوم السابع", "title": "الإفطار العائم بالفيلا والتوديع", "text": "تجربة الإفطار العائم بالمسبح الخاص ثم الاستعداد لرحلة العودة للوطن."}]}];
-let currentTourData = allToursList[0];
+    </div>
+
+    <script>
+    const allTours = [{"id": 1, "name": "باقة المالديف الملكية - فيلات عائمة فوق الماء مع مسبح خاص", "destination": "maldives", "destName": "جزر المالديف • MALDIVES", "price": 4850, "oldPrice": 6200, "badge": "خصم 22%", "duration": "6 أيام / 5 ليالٍ", "rating": 5, "reviews": 48, "image": "images/maldives.jpg", "desc": "عش تجربة الفخامة المطلقة في فيلا عائمة فوق المحيط الهندي مع مسبح خاص لا متناهي وخدمة خادم شخصي على مدار 24 ساعة.", "flights": "شامل طيران دولي مباشر ذهاب وعودة", "hotel": "منتجع 5 نجوم دي لوكس (أوفرفيلا)", "meals": "إقامة كاملة شاملة جميع الوجبات والمشروبات", "includes": ["تذاكر الطيران الدولي المباشر ذهاب وعودة", "الإقامة في فيلا عائمة فوق الماء مع مسبح خاص", "التوصيل من وإلى المطار عبر الطائرة المائية (Seaplane)", "جميع الوجبات الرئيسية والمشروبات الفاخرة يومياً", "جلسة مساج وسبا مجانية للأزواج", "رحلة سنوركلينج بحرية مع السلاحف المائية"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول والانتقال بالطائرة المائية", "text": "استقبال VIP بمطار ماليه الدولي والانتقال بالطائرة المائية إلى المنتجع والاستقرار بالفيلا."}, {"day": "اليوم الثاني", "title": "استرخاء في المسبح الخاص والرياضات المائية", "text": "يوم حر للاستمتاع بأنشطة المنتجع والسباحة في مياه المحيط الصافية."}, {"day": "اليوم الثالث", "title": "رحلة سفاري الدلافين وسنوركلينج الشعاب المرجانية", "text": "جولة يخت بحرية لمشاهدة الدلافين والسباحة بين الشعاب المرجانية الساحرة."}, {"day": "اليوم الرابع", "title": "جلسة سبا فاخرة وعشاء على ضوء الشموع", "text": "جلسة علاج طبيعي متكاملة في السبا العائم وعشاء خاص لشخصين على الشاطئ."}, {"day": "اليوم الخامس", "title": "جلسة تصوير احترافية وأنشطة ترفيهية", "text": "جلسة تصوير تذكارية مجانية وشراء الهدايا التذكارية من بوتيك الجزيرة."}, {"day": "اليوم السادس", "title": "توديع المنتجع والعودة إلى الوطن", "text": "تناول وجبة الإفطار والانتقال للمطار للعودة بسلامة الله."}]}, {"id": 2, "name": "سحر الألب وبحيرات إنترلاكن بالقطار البانورامي السويسري", "destination": "swiss", "destName": "سويسرا • SWITZERLAND", "price": 5600, "oldPrice": 7100, "badge": "الأكثر طلباً", "duration": "8 أيام / 7 ليالٍ", "rating": 5, "reviews": 62, "image": "images/swiss_alps.jpg", "desc": "رحلة خيالية تجمع بين قمم جبال الألب السويسرية الخضراء، بحيرة ثون، وزيارة قرى وادي لوتربرونن والشلالات المعلقة بالقطار البانورامي.", "flights": "شامل تذاكر الطيران المباشر ذهاب وعودة", "hotel": "فنادق ألبية فاخرة 5 نجوم مطلة على الطبيعة", "meals": "إفطار بوفيه فاخر يومياً + تذاكر القطار السويسري", "includes": ["تذاكر الطيران الدولي المباشر (زيورخ / جنيف)", "الإقامة في فنادق 5 نجوم بإطلالات بانورامية على بحيرات الألب", "بطاقة Swiss Travel Pass للتنقل غير المحدود بالقطارات والسفن", "رحلة صعود قمة يونغفراو (قمة أوروبا الثلجية)", "جولة بحرية بالسفينة في بحيرتي برينز وثون", "مرشد سياحي خاص ناطق بالعربية في الجولات الرئيسية"], "itinerary": [{"day": "اليوم 1-2", "title": "الوصول إلى زيورخ والانتقال لإنترلاكن", "text": "استقبال في مطار زيورخ واستقلال القطار البانورامي إلى عروس الريف السويسري إنترلاكن."}, {"day": "اليوم 3-4", "title": "صعود قمة يونغفراو وجولات الشلالات", "text": "ركوب التلفريك والقطار الجبلي وصولاً لأعلى محطة قطار في أوروبا وزيارة شلالات لوتربرونن."}, {"day": "اليوم 5-6", "title": "لوسيرن وجسر الشابل وبحيرة الفصول الأربعة", "text": "جولة ساحرة في مدينة لوسيرن وصعود جبل بيلاتوس والتسوق في المتاجر السويسرية."}, {"day": "اليوم 7-8", "title": "جنيف وبحيرة ليمان والعودة", "text": "زيارة نافورة جنيف الشهيرة والتسوق الختامي قبل التوجه للمطار للعودة إلى الوطن."}]}, {"id": 3, "name": "مناطيد كابادوكيا الفجرية وأجنحة الكهوف التاريخية الفاخرة", "destination": "cappadocia", "destName": "تركيا • TURKEY", "price": 3200, "oldPrice": 4100, "badge": "رحلة منطاد مجانية", "duration": "6 أيام / 5 ليالٍ", "rating": 5, "reviews": 39, "image": "images/cappadocia.jpg", "desc": "عش مغامرة ألف ليلة وليلة بالإقامة في أجنحة الكهوف الفاخرة المحفورة بالصخر والتحليق بمناطيد الهواء الساخن مع شروق الشمس.", "flights": "شامل الطيران الدولي والداخلي بين إسطنبول وكابادوكيا", "hotel": "منتجع كهوف فاخر 5 نجوم (Cave Resort)", "meals": "إفطار يومي + عشاء فاخر بالمطاعم الصخرية", "includes": ["تذاكر الطيران الدولي + الطيران الداخلي", "تذكرة طيران بالمنطاد الهوائي الساخن وقت الشروق مع شهادة طيران", "إقامة 3 ليالٍ في فندق كهفي فاخر + ليلتان في إسطنبول", "جولات سياحية كاملة في وادي ديفينت ومدينة الدير تحت الأرض", "سيارة خاصة مرسيدس فيتو مع سائق ومرشد خاص", "رحلة يخت خاص في مضيق البوسفور بإسطنبول"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول إلى إسطنبول والانتقال لكابادوكيا", "text": "الوصول والتوجه مباشرة عبر رحلة داخلية إلى كابادوكيا والاستقرار بالفندق الكهفي."}, {"day": "اليوم الثاني", "title": "رحلة المنطاد الهوائي الفجرية ووادي العشاق", "text": "التحليق الفجري الساحر فوق مداخن الجنيات والتقاط أجمل الصور من السماء."}, {"day": "اليوم الثالث", "title": "جولة المدن التحت أرضية ووادي إهلارا", "text": "استكشاف أسرار الحضارات التاريخية في مدينة ديرينكويو تحت الأرض."}, {"day": "اليوم 4-6", "title": "سحر إسطنبول والبسفور والعودة", "text": "الانتقال لإسطنبول وزيارة قصر دولمة بهجة والأسواق التاريخية وجولة البوسفور."}]}, {"id": 4, "name": "كروز النيل الذهبي 5 نجوم دي لوكس مع جولات الأهرامات الملكية", "destination": "egypt", "destName": "مصر • EGYPT", "price": 2850, "oldPrice": 3600, "badge": "باقة شاملة VIP", "duration": "7 أيام / 6 ليالٍ", "rating": 5, "reviews": 54, "image": "images/egypt_pyramids.jpg", "desc": "إبحار أسطوري على نهر النيل الخالد بين الأقصر وأسوان على متن باخرة عائمة 5 نجوم دي لوكس مع زيارة أهرامات الجيزة والمتحف المصري الكبير.", "flights": "شامل الطيران الداخلي القاهرة / الأقصر / أسوان / القاهرة", "hotel": "باخرة نيلية فاخرة + فندق 5 نجوم بالقاهرة مطل على النيل", "meals": "إقامة كاملة (Full Board) طوال رحلة الكروز", "includes": ["إقامة 4 ليالٍ على باخرة نيلية فاخرة بنظام الإقامة الكاملة", "إقامة ليلتين بفندق 5 نجوم بالقاهرة مطل على النيل", "زيارة معابد الكرنك، الأقصر، وادي الملوك، حتشبسوت، وإدفو", "زيارة أهرامات الجيزة وأبو الهول والمتحف المصري الكبير", "تذاكر الطيران الداخلي والانتقالات بسيارات VIP حديثة", "مرشد سياحي متخصص في علم المصريات (Egyptologist) مرافق"], "itinerary": [{"day": "اليوم 1-2", "title": "القاهرة وتاريخ الفراعنة", "text": "زيارة أهرامات الجيزة ومتحف الحضارة والمتحف الكبير وجولة في خان الخليلي."}, {"day": "اليوم 3-4", "title": "السفر للأقصر وبدء كروز النيل", "text": "صعود الباخرة النيلية وزيارة معبدي الأقصر والكرنك ووادي الملوك."}, {"day": "اليوم 5-6", "title": "الإبحار إلى إدفو وكوم أمبو وأسوان", "text": "مشاهدة ضفاف النيل الساحرة وزيارة السد العالي ومعبد فيلة وجزيرة النباتات."}, {"day": "اليوم السابع", "title": "العودة للقاهرة والمغادرة للوطن", "text": "الطيران الداخلي إلى القاهرة ثم رحلة العودة الدولية إلى الوطن."}]}, {"id": 5, "name": "منتجعات ريكسوس الفاخرة مع رحلة يخت خاص لمحمية رأس محمد", "destination": "egypt", "destName": "شرم الشيخ • RED SEA", "price": 2150, "oldPrice": 2800, "badge": "الترا شامل كلياً", "duration": "5 أيام / 4 ليالٍ", "rating": 5, "reviews": 41, "image": "images/sharm_resort.jpg", "desc": "استجمام بحري فاخر في أرقى منتجعات البحر الأحمر بنظام الالترا الشامل (Ultra All Inclusive) مع رحلة بحرية بيخت خاص للغوص والسنوركلينج.", "flights": "شامل تذاكر الطيران المباشر لشرم الشيخ", "hotel": "منتجع ريكسوس شرم الشيخ 5 نجوم الترا", "meals": "شامل كلياً جميع الوجبات والمشروبات والسناكس 24/7", "includes": ["تذاكر الطيران المباشر ذهاب وعودة", "إقامة 5 نجوم الترا شامل كلياً (Ultra All Inclusive)", "رحلة يخت بحري خاص لمحمية رأس محمد وجزيرة تيران مع وجبة غداء بحرية", "معدات السنوركلينج والغوص مع مدرب محترف مجاناً", "سفاري صحراوي بسيارات الدفع الرباعي وعشاء بدوي تحت النجوم", "استقبال وتوديع بسيارات ليموزين VIP خاصة"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول والاستقبال في المنتجع", "text": "استقبال بمطار شرم والتوجه للمنتجع والاستمتاع بالمرافق والشواطئ الخاصة."}, {"day": "اليوم الثاني", "title": "رحلة اليخت الخاص ورأس محمد", "text": "إبحار بيخت خاص لأشهر محمية طبيعية بحرية في العالم والغوص بين الشعاب النادرة."}, {"day": "اليوم الثالث", "title": "سفاري بيتش باجي وعشاء بدوي", "text": "مغامرة قيادة سيارات الدفع الرباعي بين جبال سيناء وسهرة بدوية تراثية."}, {"day": "اليوم الرابع", "title": "يوم استرخاء كامل بالسبا والمسابح", "text": "يوم هادئ للاستمتاع بمسابح المنتجع والألعاب المائية والسبا."}, {"day": "اليوم الخامس", "title": "التسوق الختامي والعودة للوطن", "text": "جولة تسوق في سوهو سكوير وخليج نعمة ثم الانتقال للمطار للعودة."}]}, {"id": 6, "name": "واحة العلا الفاخرة - إقامة في منتجعات بانيان تري ومسار الحجر", "destination": "alula", "destName": "العلا • SAUDI ARABIA", "price": 4200, "oldPrice": 5300, "badge": "تجربة استثنائية", "duration": "4 أيام / 3 ليالٍ", "rating": 5, "reviews": 29, "image": "images/alula_resort.jpg", "desc": "رحلة خيالية عبر الزمن تجمع بين الفخامة المعمارية العالمية في وادي عشار وتاريخ الحضارات العريقة في الحجر وجبل الفيل.", "flights": "شامل تذاكر الطيران المباشر لمطار العلا الدولي", "hotel": "فيلا فاخرة في منتجع بانيان تري العلا (Banyan Tree)", "meals": "إفطار فاخر يومياً + عشاء في قمة حرة عويرض", "includes": ["تذاكر الطيران المباشر ذهاب وعودة", "إقامة 3 ليالٍ في فيلا خاصة بمنتجع بانيان تري الفاخر", "جولة خاصة بسيارات لاند روفر كلاسيكية في موقع الحجر (مدائن صالح)", "جولة هليكوبتر جوية لمشاهدة صخرة الفيل ومسرح مرايا من السماء", "سهرة تأمل النجوم في صحراء الغراميل مع عشاء فاخر", "سيارة دفع رباعي فارهة خاصة مع سائق طوال مدة الرحلة"], "itinerary": [{"day": "اليوم الأول", "title": "الوصول إلى العلا وسحر جبل الفيل", "text": "استقبال VIP بمطار العلا والانتقال للفيلا وزيارة جبل الفيل وقت الغروب."}, {"day": "اليوم الثاني", "title": "عجائب الحجر ومسرح مرايا العالمي", "text": "جولة تراثية خاصة في المقابر النبطية ومسرح مرايا الأيقوني الأكبر في العالم."}, {"day": "اليوم الثالث", "title": "جولة الهليكوبتر وسهرة النجوم", "text": "التحليق فوق أودية العلا الساحرة وسهرة استكشاف النجوم مع فلكي متخصص."}, {"day": "اليوم الرابع", "title": "بلدة العلا القديمة والتوديع", "text": "جولة في البلدة القديمة وسوق الحرفيين التراثي ثم التوجه للمطار."}]}, {"id": 7, "name": "مغامرة الكامبر فان الفاخرة بين الوديان والشلالات السويسرية", "destination": "swiss", "destName": "سويسرا • SWITZERLAND", "price": 3650, "oldPrice": 4600, "badge": "حرية واستكشاف", "duration": "7 أيام / 6 ليالٍ", "rating": 5, "reviews": 33, "image": "images/camper_van.jpg", "desc": "اكتشف روعة جبال الألب بحرية تامة بقيادة كارفان كامبر فان حديث مجهز بالكامل للطهي والنوم والتنقل بين أجمل بحيرات وأرياف العالم.", "flights": "شامل الطيران المباشر ذهاب وعودة لمطار جنيف", "hotel": "كامبر فان مرسيدس / فولكسفاجن فاخر موديل 2026", "meals": "باقة تموين أولية فاخرة + تأمين شامل بدون اقتطاع", "includes": ["تذاكر الطيران الدولي المباشر لمطار جنيف", "استلام كامبر فان فاخر مجهز بمطبخ كامل، دورة مياه، وسرير مريح", "كيلومترات غير محدودة وتأمين شامل VIP ضد جميع الحوادث", "اشتراك في مخيمات الألب الـ 5 نجوم (Campsites) مع كهرباء وواي فاي", "نظام ملاحة GPS مزود بمسارات طبيعية حصرية وسياحية", "دعم فني ومساعد على الطريق 24 ساعة طوال أيام الأسبوع"], "itinerary": [{"day": "اليوم 1-2", "title": "استلام الكامبر فان والانطلاق لبحيرة جنيف", "text": "استلام المركبة بجنيف والتخييم على ضفاف بحيرة ليمان قرب قلعة شيون."}, {"day": "اليوم 3-4", "title": "عبور ممرات الألب ووادي لوتربرونن", "text": "القيادة عبر أروع المنعطفات الجبلية والتخييم تحت شلالات إنترلاكن العظيمة."}, {"day": "اليوم 5-6", "title": "بحيرات ثون وبرينز وريف غريندلفالد", "text": "استكشاف القرى المعلقة بالغيوم والاستيقاظ صباحاً وسط المروج الخضراء."}, {"day": "اليوم السابع", "title": "تسليم الكامبر فان والعودة للوطن", "text": "تسليم الكامبر فان بالمطار والعودة للوطن بأجمل الذكريات."}]}, {"id": 8, "name": "باقة جراند تور شهر العسل - عشاء على الشاطئ ويخت بحري خاص", "destination": "maldives", "destName": "جزر المالديف • HONEYMOON", "price": 5200, "oldPrice": 6800, "badge": "شهر عسل ملكي", "duration": "7 أيام / 6 ليالٍ", "rating": 5, "reviews": 57, "image": "images/honeymoon.jpg", "desc": "الباقة الرومانسية الأكثر فخامة في المحيط الهندي صممت خصيصاً للمتزوجين الجدد لتوفير تجارب لا تنسى تشمل عشاء الشموع الخاص واليخت الفاخر.", "flights": "شامل الطيران الدولي ذهاب وعودة للمالديف", "hotel": "جناح ووتر بول مع مسبح خاص لا متناهي وممر زجاجي", "meals": "إقامة كاملة مع عشاء خاص رومانسي يومياً", "includes": ["تذاكر الطيران الدولي المباشر ذهاب وعودة", "فيلا مائية ملكية بمسبح خاص وأرضية زجاجية تطل على الأسماك المرجانية", "توصيل سريع بالطائرة المائية VIP مع كبار الشخصيات", "عشاء رومانسي فاخر على رمال الشاطئ على ضوء الشموع والمشاعل", "رحلة يخت بحري خاص وقت الغروب مع المشروبات والحلويات الفاخرة", "جلسة سبا ومساج متكاملة للأزواج لمدة ساعتين مع ورود ترحيبية"], "itinerary": [{"day": "اليوم 1-2", "title": "استقبال الورود في الجناح المائي", "text": "استقبال خاص بالورود وسلة فواكه وشوكولاتة فاخرة والاسترخاء بالفيلا."}, {"day": "اليوم 3-4", "title": "رحلة الغروب باليخت الخاص والعشاء الشاطئي", "text": "إبحار خاص لمشاهدة الغروب وعشاء المأكولات البحرية على ضوء النجوم."}, {"day": "اليوم 5-6", "title": "جلسة تصوير احترافية والسبا الملكي", "text": "جلسة تصوير رومانسية بالملابس التراثية أو العصرية والسبا الفاخر."}, {"day": "اليوم السابع", "title": "الإفطار العائم بالفيلا والتوديع", "text": "تجربة الإفطار العائم بالمسبح الخاص ثم الاستعداد لرحلة العودة للوطن."}]}];
 
     document.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams(window.location.search);
-        const id = parseInt(params.get('id')) || 1;
-        const found = allToursList.find(t => t.id === id) || allToursList[0];
-        currentTourData = found;
+        const tourId = parseInt(params.get('id')) || 1;
+        const tour = allTours.find(t => t.id === tourId) || allTours[0];
 
-        document.title = found.name + " | هورايزون تورز للسياحة والسفر";
-        document.getElementById('detailCrumbTitle').textContent = found.name;
-        document.getElementById('detailTitle').textContent = found.name;
-        document.getElementById('detailDestTag').textContent = found.destName;
-        document.getElementById('detailPrice').textContent = found.price.toLocaleString('en-US');
-        if (found.oldPrice) {
-            document.getElementById('detailOldPrice').textContent = found.oldPrice.toLocaleString('en-US') + ' ر.س';
-        } else {
-            document.getElementById('detailOldPrice').style.display = 'none';
-        }
-        document.getElementById('detailBadge').textContent = found.badge || 'عرض الموسم';
-        document.getElementById('detailDuration').innerHTML = '<i class="fa-regular fa-clock"></i> ' + found.duration;
-        document.getElementById('detailMainImg').src = found.image;
-        document.getElementById('detailDesc').textContent = found.desc;
-
-        document.getElementById('detailWhatsAppBtn').href = 'https://wa.me/201027093535?text=' + encodeURIComponent('مرحباً هورايزون تورز، أود الاستفسار وحجز ' + found.name + ' بسعر ' + found.price + ' ر.س');
-
-        if (found.includes && found.includes.length) {
-            document.getElementById('detailIncludes').innerHTML = found.includes.map(inc => `
-                <div style="font-size:13.5px; color:#334155;"><i class="fa-solid fa-check" style="color:var(--color-primary); margin-left:8px;"></i> ${inc}</div>
-            `).join('');
-        }
-
-        if (found.itinerary && found.itinerary.length) {
-            document.getElementById('detailItineraryList').innerHTML = found.itinerary.map(it => `
-                <div style="display:flex; gap:16px; margin-bottom:20px; align-items:flex-start;">
-                    <div style="width:54px; height:54px; background:var(--color-primary-light); color:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13.5px; flex-shrink:0;">
-                        ${it.day}
-                    </div>
-                    <div>
-                        <h4 style="font-size:15.5px; font-weight:800; color:var(--color-navy); margin-bottom:4px;">${it.title}</h4>
-                        <p style="font-size:13.5px; color:#475569; line-height:1.7; margin:0;">${it.text}</p>
-                    </div>
-                </div>
-            `).join('');
+        if (tour) {
+            document.title = tour.name + ' | هورايزون تورز';
+            document.getElementById('detailTitle').textContent = tour.name;
+            document.getElementById('detailHeroImg').src = tour.image;
+            document.getElementById('detailBadge').textContent = tour.badge || 'عرض خاص';
+            document.getElementById('detailCat').innerHTML = '<i class="fa-solid fa-location-dot" style="color:var(--color-primary); margin-left:6px;"></i> ' + (tour.destName || 'وجهة عالمية');
+            document.getElementById('detailPrice').textContent = tour.price;
+            if (tour.duration) {
+                document.getElementById('detailDuration').textContent = tour.duration;
+            }
+            const waMsg = encodeURIComponent('مرحباً هورايزون تورز، أود الاستفسار وحجز ' + tour.name + ' بسعر ' + tour.price + ' ر.س');
+            document.getElementById('detailWaBtn').href = 'https://wa.me/201027093535?text=' + waMsg;
         }
     });
-</script>
+    </script>
     <!-- FOOTER -->
     <footer class="tour-footer">
         <div class="tour-container">
@@ -356,7 +358,7 @@ let currentTourData = allToursList[0];
         </div>
     </footer>
 
-    <!-- SLIDE-OUT MOBILE MENU DRAWER (Exact standard as organic-food & modest-fashion) -->
+    <!-- SLIDE-OUT MOBILE MENU DRAWER -->
     <div class="mobile-menu-overlay" id="mobileDrawerOverlay" onclick="toggleMobileMenu()"></div>
     <div class="mobile-menu-drawer" id="mobileMenuDrawer">
         <div class="mob-drawer-header">
@@ -396,7 +398,6 @@ let currentTourData = allToursList[0];
                 <a href="destination.html?dest=swiss" class="mob-cat-item"><span>🏔️ سويسرا وقمم الألب</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
                 <a href="destination.html?dest=cappadocia" class="mob-cat-item"><span>🎈 تركيا ومناطيد كابادوكيا</span> <span style="font-size:11.5px; color:#64748b;">3 باقات</span></a>
                 <a href="destination.html?dest=egypt" class="mob-cat-item"><span>🚢 مصر وكروز النيل الملكي</span> <span style="font-size:11.5px; color:#64748b;">4 باقات</span></a>
-                <a href="destination.html?dest=sharm" class="mob-cat-item"><span>🏖️ منتجعات شرم الشيخ</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
                 <a href="destination.html?dest=alula" class="mob-cat-item"><span>🏛️ واحة العلا التاريخية</span> <span style="font-size:11.5px; color:#64748b;">2 باقات</span></a>
             </div>
 
@@ -411,7 +412,7 @@ let currentTourData = allToursList[0];
         </div>
     </div>
 
-    <!-- MOBILE BOTTOM NAVIGATION (Fixed at bottom on phones) -->
+    <!-- MOBILE BOTTOM NAVIGATION -->
     <div class="mobile-bottom-nav">
         <div class="mob-nav-grid">
             <a href="index.html" class="mob-nav-item">
